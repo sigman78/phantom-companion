@@ -25,6 +25,7 @@ const initialTurn: TurnState = {
   units: [],
   decks: {},
   activations: [],
+  activeActivationIndex: 0,
   selectedUnitId: null,
   selectedAdversaryName: null,
   phase: 'game',
@@ -73,7 +74,6 @@ export async function addAdversaryGroup(
     const decks = s.turn.decks[key]
       ? s.turn.decks
       : { ...s.turn.decks, [key]: createDeck() };
-    // Remove any existing units for this adversary type before re-adding
     const existing = s.turn.units.filter(u => u.adversaryName !== type.name);
     return {
       ...s,
@@ -116,11 +116,11 @@ export function drawTurn(): void {
       const { speciesIndex, classIndex, deck: newDeck } = drawCard(decks[key]);
       decks = { ...decks, [key]: newDeck };
 
-      const unit0       = units[0];
-      const speciesJson  = jsonCache.species[unit0.species]!;
-      const classJson    = jsonCache.class[unit0.className]!;
-      const speciesCard  = speciesJson[speciesIndex];
-      const classEntry   = classJson[classIndex];
+      const unit0      = units[0];
+      const speciesJson = jsonCache.species[unit0.species]!;
+      const classJson   = jsonCache.class[unit0.className]!;
+      const speciesCard = speciesJson[speciesIndex];
+      const classEntry  = classJson[classIndex];
 
       for (const unit of units) {
         const classCard  = classEntry[unit.color];
@@ -135,8 +135,46 @@ export function drawTurn(): void {
     }
 
     const activations = numberActivations(sortActivations(entries));
-    return { ...s, turn: { ...turn, decks, activations, selectedUnitId: null } };
+    const firstUnit   = activations[0]?.unit ?? null;
+    return {
+      ...s,
+      turn: {
+        ...turn,
+        decks,
+        activations,
+        activeActivationIndex: 0,
+        selectedUnitId: firstUnit?.id ?? null,
+        selectedAdversaryName: firstUnit?.adversaryName ?? null,
+      },
+    };
   });
+}
+
+function setActivationIndex(index: number): void {
+  gameStore.update(s => {
+    const { activations } = s.turn;
+    const clamped = Math.max(0, Math.min(index, activations.length - 1));
+    const unit    = activations[clamped]?.unit ?? null;
+    return {
+      ...s,
+      turn: {
+        ...s.turn,
+        activeActivationIndex: clamped,
+        selectedUnitId: unit?.id ?? null,
+        selectedAdversaryName: unit?.adversaryName ?? null,
+      },
+    };
+  });
+}
+
+export function nextActivation(): void {
+  const { turn } = get(gameStore);
+  setActivationIndex(turn.activeActivationIndex + 1);
+}
+
+export function prevActivation(): void {
+  const { turn } = get(gameStore);
+  setActivationIndex(turn.activeActivationIndex - 1);
 }
 
 export function endTurn(): void {
@@ -146,19 +184,8 @@ export function endTurn(): void {
       ...s.turn,
       turnNumber: s.turn.turnNumber + 1,
       activations: [],
+      activeActivationIndex: 0,
       selectedUnitId: null,
-    },
-  }));
-}
-
-export function selectUnit(id: string): void {
-  const unit = get(gameStore).turn.units.find(u => u.id === id);
-  gameStore.update(s => ({
-    ...s,
-    turn: {
-      ...s.turn,
-      selectedUnitId: id,
-      selectedAdversaryName: unit?.adversaryName ?? s.turn.selectedAdversaryName,
     },
   }));
 }

@@ -47,9 +47,11 @@ export interface DeckState {
 export interface ActionStep {
   Action: string;
   Value?: number;
-  Type?: string;
-  Effect?: string;
-  Target?: string;
+  Type?: string;     // "Round" | "Reaction"
+  Mod?: string;      // e.g. "Pierce 3", "Range 4", "Target 3"
+  Effect?: string;   // free-text effect description
+  Target?: string;   // e.g. "Self", "Primary target", "All attacks"
+  Trigger?: string;  // condition text for Reaction-type actions
 }
 
 export interface ColorCard {
@@ -81,7 +83,8 @@ export interface TurnState {
   units: AdversaryUnit[];                  // all units (alive and dead)
   decks: Record<string, DeckState>;        // key: "{species}:{class}"
   activations: ActivationEntry[];          // sorted, populated after draw
-  selectedUnitId: string | null;           // specific color unit (post-draw)
+  activeActivationIndex: number;           // which activation is "current" (Next/Prev)
+  selectedUnitId: string | null;           // mirrors activations[activeActivationIndex].unit.id
   selectedAdversaryName: string | null;    // adversary type (pre-draw or group context)
   phase: 'game';
 }
