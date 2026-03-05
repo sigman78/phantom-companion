@@ -70,7 +70,9 @@
           style="--row-bg:{colorBg}; --row-accent:{colorAccent}"
         >
           <span class="order">{entry.activationOrder}</span>
-          <img src={adversaryIconUrl(entry.unit.adversaryName)} alt="" class="icon" />
+          <div class="icon-crop">
+            <img src={adversaryIconUrl(entry.unit.adversaryName)} alt="" class="icon-img" />
+          </div>
           <div class="info">
             <span class="name">{entry.unit.adversaryName}</span>
             <span class="color-tag" style="color:{colorAccent}; border-color:{colorAccent}">{entry.unit.color}</span>
@@ -199,35 +201,35 @@
   }
   .act-row.dead { opacity: 0.25; }
 
-  /* Past: small, dimmed */
+  /* Past: small, dimmed -- icon 3x=72px, crop to middle 50% => 36px tall */
   .act-row.past {
+    --icon-sz: 72px;
     padding: 4px var(--space-3);
     opacity: 0.35;
     filter: grayscale(0.6);
   }
   .act-row.past .order { font-size: 11px; width: 18px; }
-  .act-row.past .icon  { width: 24px; height: 24px; }
   .act-row.past .name  { font-size: 12px; }
   .act-row.past .color-tag { display: none; }
   .act-row.past .init  { font-size: 14px; }
 
-  /* Current: prominent */
+  /* Current: prominent -- icon 3x=120px, crop to middle 50% => 60px tall */
   .act-row.current {
+    --icon-sz: 120px;
     padding: var(--space-3) var(--space-3);
     border-left-width: 5px;
     filter: brightness(1.15);
   }
   .act-row.current .order { font-size: 13px; width: 22px; }
-  .act-row.current .icon  { width: 40px; height: 40px; }
   .act-row.current .name  { font-size: 17px; font-weight: 600; }
   .act-row.current .init  { font-size: 24px; }
 
-  /* Future: compact */
+  /* Future: compact -- icon 3x=84px, crop to middle 50% => 42px tall */
   .act-row.future {
+    --icon-sz: 84px;
     padding: 6px var(--space-3);
   }
   .act-row.future .order { font-size: 12px; width: 20px; }
-  .act-row.future .icon  { width: 28px; height: 28px; }
   .act-row.future .name  { font-size: 13px; }
   .act-row.future .init  { font-size: 16px; }
 
@@ -236,7 +238,20 @@
     color: var(--color-text-dim);
     flex-shrink: 0;
   }
-  .icon { object-fit: contain; flex-shrink: 0; }
+  /* Cropped hex portrait: show middle 50% vertically, 92% horizontally */
+  .icon-crop {
+    flex-shrink: 0;
+    width: calc(var(--icon-sz) * 0.76);
+    height: calc(var(--icon-sz) * 0.5);
+    overflow: hidden;
+  }
+  .icon-img {
+    display: block;
+    width: var(--icon-sz);
+    height: var(--icon-sz);
+    object-fit: contain;
+    transform: translateY(-25%) translateX(-12%);
+  }
 
   .info { flex: 1; display: flex; flex-direction: column; gap: 2px; min-width: 0; }
   .name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
