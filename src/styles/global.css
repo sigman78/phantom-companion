@@ -1,0 +1,36 @@
+@import './tokens.css';
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  height: 100%;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.5;
+  overflow: hidden;
+}
+
+#app-root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.game-layout {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.panel-left {
+  width: var(--panel-left-width);
+  overflow-y: auto;
+  border-right: 1px solid var(--color-border);
+}
+
+.panel-right {
+  width: var(--panel-right-width);
+  overflow-y: auto;
+}

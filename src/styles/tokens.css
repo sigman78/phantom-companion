@@ -1,0 +1,48 @@
+:root {
+  /* Color palette */
+  --color-bg:          #0e0c0a;
+  --color-surface:     #1a1714;
+  --color-surface-alt: #231f1b;
+  --color-border:      #3a3028;
+  --color-text:        #d4c9b8;
+  --color-text-dim:    #8a7e70;
+  --color-accent:      #b87333;
+  --color-accent-dim:  #7a4e22;
+
+  /* Unit colors */
+  --color-red:    #c0392b;
+  --color-blue:   #2980b9;
+  --color-cyan:   #00b4d8;
+  --color-yellow: #d4ac0d;
+
+  /* Skeuomorphic texture tints */
+  --texture-leather: rgba(92, 60, 30, 0.15);
+  --texture-wood:    rgba(60, 40, 20, 0.12);
+
+  /* Layout */
+  --panel-left-width:  62%;
+  --panel-right-width: 38%;
+  --bottom-bar-height: 56px;
+
+  /* Typography */
+  --font-body:    'Segoe UI', system-ui, sans-serif;
+  --font-heading: Georgia, 'Times New Roman', serif;
+
+  /* Spacing scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+
+  /* Radius */
+  --radius-sm: 3px;
+  --radius-md: 6px;
+  --radius-lg: 12px;
+
+  /* Shadows */
+  --shadow-inset: inset 0 1px 3px rgba(0,0,0,0.5);
+  --shadow-card:  0 2px 8px rgba(0,0,0,0.6);
+  --shadow-panel: 0 0 24px rgba(0,0,0,0.8);
+}
