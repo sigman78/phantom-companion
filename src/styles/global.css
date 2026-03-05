@@ -15,7 +15,11 @@ html, body {
 #app-root {
   display: flex;
   flex-direction: column;
+  /* dvh shrinks when Android Chrome's address bar is visible; vh as fallback */
   height: 100vh;
+  height: 100dvh;
+  /* account for gesture bar on notched/gesture-nav devices */
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 .game-layout {
