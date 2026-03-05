@@ -1,0 +1,323 @@
+[
+  {
+    "Blue": {
+      "Name": "Overextend",
+      "Cost": 4,
+      "Actions": [
+        { "Action": "Guard", "Type": "Round", "Value": -3 },
+        { "Action": "Attack", "Value": 3 }
+      ]
+    },
+    "Cyan": {
+      "Name": "Overextend",
+      "Cost": 4,
+      "Actions": [
+        { "Action": "Guard", "Type": "Round", "Value": -3 },
+        { "Action": "Attack", "Value": 3 }
+      ]
+    },
+    "Yellow": {
+      "Name": "Pain Fueled",
+      "Cost": 5,
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -3,
+          "Effect": "If the Attack would deal at least 1 damage, instead deal damage equal to the amount of HP the Berserker is missing (minimum 1)."
+        }
+      ]
+    },
+    "Red": {
+      "Name": "Wild Fury",
+      "Cost": 6,
+      "Actions": [
+        { "Action": "Attack", "Value": -1, "Target": "Primary target" },
+        { "Action": "Attack", "Value": -1, "Target": "All other adjacent enemies" },
+        { "Action": "Attack", "Value": -1, "Target": "All adjacent allies" }
+      ]
+    }
+  },
+  {
+    "Blue": {
+      "Name": "Fast Strike",
+      "Cost": 1,
+      "Actions": [{ "Action": "Attack", "Value": -1 }]
+    },
+    "Yellow": {
+      "Name": "Overextend",
+      "Cost": 4,
+      "Actions": [
+        { "Action": "Guard", "Type": "Round", "Value": -3 },
+        { "Action": "Attack", "Value": 3 }
+      ]
+    },
+    "Red": {
+      "Name": "Overextend",
+      "Cost": 4,
+      "Actions": [
+        { "Action": "Guard", "Type": "Round", "Value": -3 },
+        { "Action": "Attack", "Value": 3 }
+      ]
+    },
+    "Cyan": {
+      "Name": "Wild Fury",
+      "Cost": 6,
+      "Actions": [
+        { "Action": "Attack", "Value": -1, "Target": "Primary target" },
+        { "Action": "Attack", "Value": -1, "Target": "All other adjacent enemies" },
+        { "Action": "Attack", "Value": -1, "Target": "All adjacent allies" }
+      ]
+    }
+  },
+  {
+    "Cyan": {
+      "Name": "Fast Strike",
+      "Cost": 1,
+      "Actions": [{ "Action": "Attack", "Value": -1 }]
+    },
+    "Red": {
+      "Name": "Pain Fueled",
+      "Cost": 5,
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -3,
+          "Effect": "If the Attack would deal at least 1 damage, instead deal damage equal to the amount of HP the Berserker is missing (minimum 1)."
+        }
+      ]
+    },
+    "Blue": {
+      "Name": "Wild Fury",
+      "Cost": 6,
+      "Actions": [
+        { "Action": "Attack", "Value": -1, "Target": "Primary target" },
+        { "Action": "Attack", "Value": -1, "Target": "All other adjacent enemies" },
+        { "Action": "Attack", "Value": -1, "Target": "All adjacent allies" }
+      ]
+    },
+    "Yellow": {
+      "Name": "Severing Blow",
+      "Cost": 7,
+      "Actions": [{ "Action": "Attack", "Value": 2, "Effect": "Inflict Bleeding" }]
+    }
+  },
+  {
+    "Red": {
+      "Name": "Overextend",
+      "Cost": 4,
+      "Actions": [
+        { "Action": "Guard", "Type": "Round", "Value": -3 },
+        { "Action": "Attack", "Value": 3 }
+      ]
+    },
+    "Blue": {
+      "Name": "Overextend",
+      "Cost": 4,
+      "Actions": [
+        { "Action": "Guard", "Type": "Round", "Value": -3 },
+        { "Action": "Attack", "Value": 3 }
+      ]
+    },
+    "Cyan": {
+      "Name": "Pain Fueled",
+      "Cost": 5,
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -3,
+          "Effect": "If the Attack would deal at least 1 damage, instead deal damage equal to the amount of HP the Berserker is missing (minimum 1)."
+        }
+      ]
+    },
+    "Yellow": {
+      "Name": "Severing Blow",
+      "Cost": 7,
+      "Actions": [{ "Action": "Attack", "Value": 2, "Effect": "Inflict Bleeding" }]
+    }
+  },
+  {
+    "Red": {
+      "Name": "Fast Strike",
+      "Cost": 1,
+      "Actions": [{ "Action": "Attack", "Value": -1 }]
+    },
+    "Blue": {
+      "Name": "Fast Strike",
+      "Cost": 1,
+      "Actions": [{ "Action": "Attack", "Value": -1 }]
+    },
+    "Yellow": {
+      "Name": "Overextend",
+      "Cost": 4,
+      "Actions": [
+        { "Action": "Guard", "Type": "Round", "Value": -3 },
+        { "Action": "Attack", "Value": 3 }
+      ]
+    },
+    "Cyan": {
+      "Name": "Severing Blow",
+      "Cost": 7,
+      "Actions": [{ "Action": "Attack", "Value": 2, "Effect": "Inflict Bleeding" }]
+    }
+  },
+  {
+    "Cyan": {
+      "Name": "Overextend",
+      "Cost": 4,
+      "Actions": [
+        { "Action": "Guard", "Type": "Round", "Value": -3 },
+        { "Action": "Attack", "Value": 3 }
+      ]
+    },
+    "Blue": {
+      "Name": "Pain Fueled",
+      "Cost": 5,
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -3,
+          "Effect": "If the Attack would deal at least 1 damage, instead deal damage equal to the amount of HP the Berserker is missing (minimum 1)."
+        }
+      ]
+    },
+    "Yellow": {
+      "Name": "Pain Fueled",
+      "Cost": 5,
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -3,
+          "Effect": "If the Attack would deal at least 1 damage, instead deal damage equal to the amount of HP the Berserker is missing (minimum 1)."
+        }
+      ]
+    },
+    "Red": {
+      "Name": "Severing Blow",
+      "Cost": 7,
+      "Actions": [{ "Action": "Attack", "Value": 2, "Effect": "Inflict Bleeding" }]
+    }
+  },
+  {
+    "Blue": {
+      "Name": "Overextend",
+      "Cost": 4,
+      "Actions": [
+        { "Action": "Guard", "Type": "Round", "Value": -3 },
+        { "Action": "Attack", "Value": 3 }
+      ]
+    },
+    "Yellow": {
+      "Name": "Overextend",
+      "Cost": 4,
+      "Actions": [
+        { "Action": "Guard", "Type": "Round", "Value": -3 },
+        { "Action": "Attack", "Value": 3 }
+      ]
+    },
+    "Cyan": {
+      "Name": "Pain Fueled",
+      "Cost": 5,
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -3,
+          "Effect": "If the Attack would deal at least 1 damage, instead deal damage equal to the amount of HP the Berserker is missing (minimum 1)."
+        }
+      ]
+    },
+    "Red": {
+      "Name": "Severing Blow",
+      "Cost": 7,
+      "Actions": [{ "Action": "Attack", "Value": 2, "Effect": "Inflict Bleeding" }]
+    }
+  },
+  {
+    "Cyan": {
+      "Name": "Overextend",
+      "Cost": 4,
+      "Actions": [
+        { "Action": "Guard", "Type": "Round", "Value": -3 },
+        { "Action": "Attack", "Value": 3 }
+      ]
+    },
+    "Red": {
+      "Name": "Pain Fueled",
+      "Cost": 5,
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -3,
+          "Effect": "If the Attack would deal at least 1 damage, instead deal damage equal to the amount of HP the Berserker is missing (minimum 1)."
+        }
+      ]
+    },
+    "Yellow": {
+      "Name": "Wild Fury",
+      "Cost": 5,
+      "Actions": [
+        { "Action": "Attack", "Value": -1, "Target": "Primary target" },
+        { "Action": "Attack", "Value": -1, "Target": "All other adjacent enemies" },
+        { "Action": "Attack", "Value": -1, "Target": "All adjacent allies" }
+      ]
+    },
+    "Blue": {
+      "Name": "Severing Blow",
+      "Cost": 7,
+      "Actions": [{ "Action": "Attack", "Value": 2, "Effect": "Inflict Bleeding" }]
+    }
+  },
+  {
+    "Yellow": {
+      "Name": "Fast Strike",
+      "Cost": 1,
+      "Actions": [{ "Action": "Attack", "Value": -1 }]
+    },
+    "Red": {
+      "Name": "Fast Strike",
+      "Cost": 1,
+      "Actions": [{ "Action": "Attack", "Value": -1 }]
+    },
+    "Blue": {
+      "Name": "Pain Fueled",
+      "Cost": 5,
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -3,
+          "Effect": "If the Attack would deal at least 1 damage, instead deal damage equal to the amount of HP the Berserker is missing (minimum 1)."
+        }
+      ]
+    },
+    "Cyan": {
+      "Name": "Severing Blow",
+      "Cost": 7,
+      "Actions": [{ "Action": "Attack", "Value": 2, "Effect": "Inflict Bleeding" }]
+    }
+  },
+  {
+    "Yellow": {
+      "Name": "Fast Strike",
+      "Cost": 1,
+      "Actions": [{ "Action": "Attack", "Value": -1 }]
+    },
+    "Cyan": {
+      "Name": "Fast Strike",
+      "Cost": 1,
+      "Actions": [{ "Action": "Attack", "Value": -1 }]
+    },
+    "Red": {
+      "Name": "Overextend",
+      "Cost": 4,
+      "Actions": [
+        { "Action": "Guard", "Type": "Round", "Value": -3 },
+        { "Action": "Attack", "Value": 3 }
+      ]
+    },
+    "Blue": {
+      "Name": "Severing Blow",
+      "Cost": 7,
+      "Actions": [{ "Action": "Attack", "Value": 2, "Effect": "Inflict Bleeding" }]
+    }
+  }
+]
+

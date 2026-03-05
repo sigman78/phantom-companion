@@ -1,0 +1,76 @@
+[
+  {
+    "Name": "Natural Armor",
+    "Cost": 3,
+    "Actions": [
+      { "Action": "Guard", "Type": "Round", "Value": 1 }
+    ]
+  },
+  {
+    "Name": "Swift Creep",
+    "Cost": 2,
+    "Actions": [
+      { "Action": "Move", "Value": 4 }
+    ]
+  },
+  {
+    "Name": "Swift Creep",
+    "Cost": 2,
+    "Actions": [
+      { "Action": "Move", "Value": 4 }
+    ]
+  },
+  {
+    "Name": "Swift Creep",
+    "Cost": 2,
+    "Actions": [
+      { "Action": "Move", "Value": 4 }
+    ]
+  },
+  {
+    "Name": "Barreling Run",
+    "Cost": 3,
+    "Actions": [
+      { "Action": "Move", "Value": 6 }
+    ]
+  },
+  {
+    "Name": "Barreling Run",
+    "Cost": 3,
+    "Actions": [
+      { "Action": "Move", "Value": 6 }
+    ]
+  },
+  {
+    "Name": "Barreling Run",
+    "Cost": 3,
+    "Actions": [
+      { "Action": "Move", "Value": 6 }
+    ]
+  },
+  {
+    "Name": "Venomous Spit",
+    "Cost": 4,
+    "Actions": [
+      { "Action": "Attack", "Value": -3, "Mod": "Range 4", "Effect": "Inflict Weakened" }
+    ]
+  },
+  {
+    "Name": "Venomous Spit",
+    "Cost": 4,
+    "Actions": [
+      { "Action": "Attack", "Value": -3, "Mod": "Range 4", "Effect": "Inflict Weakened" }
+    ]
+  },
+  {
+    "Name": "Venomous Trail",
+    "Cost": 3,
+    "Actions": [
+      { "Action": "Move", "Value": 2 },
+      {
+        "Action": "Special",
+        "Effect": "Create a poison hazard in an empty adjacent space closest to the primary target."
+      }
+    ]
+  }
+]

@@ -1,0 +1,79 @@
+[
+  {
+    "Name": "Stride",
+    "Cost": 3,
+    "Actions": [{ "Action": "Move", "Value": 5 }]
+  },
+  {
+    "Name": "Stride",
+    "Cost": 3,
+    "Actions": [{ "Action": "Move", "Value": 5 }]
+  },
+  {
+    "Name": "Stride",
+    "Cost": 3,
+    "Actions": [{ "Action": "Move", "Value": 5 }]
+  },
+  {
+    "Name": "Cautious Approach",
+    "Cost": 4,
+    "Actions": [
+      { "Action": "Guard", "Type": "Round", "Value": 1 },
+      { "Action": "Move", "Value": 3 }
+    ]
+  },
+  {
+    "Name": "Cautious Approach",
+    "Cost": 4,
+    "Actions": [
+      { "Action": "Guard", "Type": "Round", "Value": 1 },
+      { "Action": "Move", "Value": 3 }
+    ]
+  },
+  {
+    "Name": "Attack Command",
+    "Cost": 3,
+    "Actions": [
+      {
+        "Action": "Special",
+        "Effect": "The closest ally within Range 5 that is able to attack an enemy performs an Attack -1. If there is no ally within Range 5 that is able to attack an enemy, convert this card to movement instead."
+      }
+    ]
+  },
+  {
+    "Name": "Defensive Command",
+    "Cost": 3,
+    "Actions": [
+      {
+        "Action": "Special",
+        "Effect": "Any ally within Range 5 that is attacked performs a Retreat 2 after the attack and any other triggered effects complete. This effect may only occur once per attack."
+      }
+    ]
+  },
+  {
+    "Name": "Defensive Command",
+    "Cost": 3,
+    "Actions": [
+      {
+        "Action": "Special",
+        "Effect": "Any ally within Range 5 that is attacked performs a Retreat 2 after the attack and any other triggered effects complete. This effect may only occur once per attack."
+      }
+    ]
+  },
+  {
+    "Name": "Adaptability",
+    "Cost": 5,
+    "Actions": [
+      { "Action": "Move", "Value": 5 },
+      { "Action": "Gain", "Effect": "Resilient" }
+    ]
+  },
+  {
+    "Name": "Adaptability",
+    "Cost": 5,
+    "Actions": [
+      { "Action": "Move", "Value": 5 },
+      { "Action": "Gain", "Effect": "Resilient" }
+    ]
+  }
+]

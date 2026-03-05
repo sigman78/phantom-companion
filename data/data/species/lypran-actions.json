@@ -1,0 +1,83 @@
+[
+  {
+    "Name": "Barbed Tail",
+    "Cost": 2,
+    "Actions": [
+      {
+        "Action": "Special",
+        "Effect": "If the Lypran's primary target is an enemy within Range 3, Teleport the target to an empty space or hazard space adjacent to the Lypran. Use the Decision die to determine which. If there are no available adjacent spaces, convert to MP instead."
+      }
+    ]
+  },
+  {
+    "Name": "Barbed Tail",
+    "Cost": 2,
+    "Actions": [
+      {
+        "Action": "Special",
+        "Effect": "If the Lypran's primary target is an enemy within Range 3, Teleport the target to an empty space or hazard space adjacent to the Lypran. Use the Decision die to determine which. If there are no available adjacent spaces, convert to MP instead."
+      }
+    ]
+  },
+  {
+    "Name": "Brachiation",
+    "Cost": 5,
+    "Actions": [{ "Action": "Leap", "Value": 6 }]
+  },
+  {
+    "Name": "Brachiation",
+    "Cost": 5,
+    "Actions": [{ "Action": "Leap", "Value": 6 }]
+  },
+  {
+    "Name": "Brachiation",
+    "Cost": 5,
+    "Actions": [{ "Action": "Leap", "Value": 6 }]
+  },
+  {
+    "Name": "Fight or Flight",
+    "Cost": 3,
+    "Actions": [
+      {
+        "Action": "Special",
+        "Effect": "If the Lypran's primary target is not within the Lypran's range, Leap 3. Otherwise, Retreat 3 using Leap at the end of the Lypran's turn."
+      }
+    ]
+  },
+  {
+    "Name": "Fight or Flight",
+    "Cost": 3,
+    "Actions": [
+      {
+        "Action": "Special",
+        "Effect": "If the Lypran's primary target is not within the Lypran's range, Leap 3. Otherwise, Retreat 3 using Leap at the end of the Lypran's turn."
+      }
+    ]
+  },
+  {
+    "Name": "Animal Bloodlust",
+    "Cost": 2,
+    "Actions": [
+      { "Action": "Attack", "Type": "Round", "Value": 1, "Target": "All attacks" },
+      { "Action": "Guard", "Type": "Round", "Value": -1 }
+    ]
+  },
+  {
+    "Name": "Animal Bloodlust",
+    "Cost": 2,
+    "Actions": [
+      { "Action": "Attack", "Type": "Round", "Value": 1, "Target": "All attacks" },
+      { "Action": "Guard", "Type": "Round", "Value": -1 }
+    ]
+  },
+  {
+    "Name": "Deadly Stalker",
+    "Cost": 2,
+    "Actions": [
+      {
+        "Action": "Special",
+        "Effect": "Any time an adjacent enemy moves a space, the Lypran moves into the space that the enemy just left. The Lypran is immune to the effects of entering hazards while moving in this way."
+      }
+    ]
+  }
+]

@@ -1,0 +1,29 @@
+Grallok Archer
+Grallok Berserker
+Grallok Scout
+Grallok Sentry
+
+Human Archer
+Human Berserker
+Human Scout
+Human Sentry
+
+Slink Archer
+Slink Berserker
+Slink Scout
+Slink Sentry
+
+Timeless Archer
+Timeless Berserker
+Timeless Sentry
+
+Gryllo Trained Beast
+Gryllo Wild Beast
+
+Lypran Trained Beast
+Lypran Wild Beast
+
+Wolf Trained Beast
+Wolf Wild Beast
+
+Other Scout

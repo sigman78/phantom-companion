@@ -1,0 +1,149 @@
+{
+  "Grallok Archer": [
+    { "HP": 7, "GUARD": -1, "ATTACK": 1, "RANGE": 5, "CRIT": "Inflict Bleeding." },
+    { "HP": 9, "GUARD": 0, "ATTACK": 1, "RANGE": 6, "CRIT": "Inflict Bleeding." },
+    { "HP": 12, "GUARD": 0, "ATTACK": 2, "RANGE": 6, "CRIT": "Inflict Bleeding." },
+    { "HP": 13, "GUARD": 0, "ATTACK": 3, "RANGE": 7, "CRIT": "Inflict Bleeding." }
+  ],
+  "Grallok Berserker": [
+    { "HP": 9, "GUARD": -1, "ATTACK": 3, "RANGE": 1, "CRIT": "Roll the Blitz Attack die. If a Critical Strike is rolled, add 3 damage to this attack." },
+    { "HP": 12, "GUARD": 0, "ATTACK": 3, "RANGE": 1, "CRIT": "Roll the Blitz Attack die. If a Critical Strike is rolled, add 3 damage to this attack." },
+    { "HP": 13, "GUARD": 1, "ATTACK": 4, "RANGE": 1, "CRIT": "Roll the Blitz Attack die. If a Critical Strike is rolled, add 3 damage to this attack." },
+    { "HP": 16, "GUARD": 1, "ATTACK": 5, "RANGE": 1, "CRIT": "Roll the Blitz Attack die. If a Critical Strike is rolled, add 3 damage to this attack." }
+  ],
+  "Grallok Scout": [
+    { "HP": 7, "GUARD": 1, "ATTACK": 0, "RANGE": 3, "CRIT": "Remove any detrimental conditions, then gain Resilient." },
+    { "HP": 10, "GUARD": 1, "ATTACK": 0, "RANGE": 3, "CRIT": "Remove any detrimental conditions, then gain Resilient." },
+    { "HP": 10, "GUARD": 2, "ATTACK": 0, "RANGE": 4, "CRIT": "Remove any detrimental conditions, then gain Resilient." },
+    { "HP": 12, "GUARD": 2, "ATTACK": 1, "RANGE": 4, "CRIT": "Remove any detrimental conditions, then gain Resilient." }
+  ],
+  "Grallok Sentry": [
+    { "HP": 11, "GUARD": 2, "ATTACK": 1, "RANGE": 1, "CRIT": "Gain Barrier." },
+    { "HP": 16, "GUARD": 2, "ATTACK": 1, "RANGE": 1, "CRIT": "Gain Barrier." },
+    { "HP": 18, "GUARD": 2, "ATTACK": 2, "RANGE": 1, "CRIT": "Gain Barrier." },
+    { "HP": 18, "GUARD": 3, "ATTACK": 2, "RANGE": 1, "CRIT": "Gain Barrier." }
+  ],
+  "Gryllo Trained Beast": [
+    { "HP": 6, "GUARD": 1, "ATTACK": 1, "RANGE": 1, "CRIT": "Place a poison hazard in an empty space as close as possible to the target." },
+    { "HP": 9, "GUARD": 1, "ATTACK": 2, "RANGE": 1, "CRIT": "Place a poison hazard in an empty space as close as possible to the target." },
+    { "HP": 13, "GUARD": 1, "ATTACK": 2, "RANGE": 1, "CRIT": "Place a poison hazard in an empty space as close as possible to the target." },
+    { "HP": 13, "GUARD": 2, "ATTACK": 2, "RANGE": 1, "CRIT": "Place a poison hazard in an empty space as close as possible to the target." }
+  ],
+  "Gryllo Wild Beast": [
+    { "HP": 7, "GUARD": 0, "ATTACK": 2, "RANGE": 1, "CRIT": "Inflict Weakened or add 2 damage to the attack if the target is already Weakened." },
+    { "HP": 10, "GUARD": 1, "ATTACK": 2, "RANGE": 1, "CRIT": "Inflict Weakened or add 2 damage to the attack if the target is already Weakened." },
+    { "HP": 12, "GUARD": 1, "ATTACK": 3, "RANGE": 1, "CRIT": "Inflict Weakened or add 2 damage to the attack if the target is already Weakened." },
+    { "HP": 15, "GUARD": 1, "ATTACK": 4, "RANGE": 1, "CRIT": "Inflict Weakened or add 2 damage to the attack if the target is already Weakened." }
+  ],
+  "Human Archer": [
+    { "HP": 6, "GUARD": -2, "ATTACK": 3, "RANGE": 5, "CRIT": "Inflict Stunned." },
+    { "HP": 8, "GUARD": -1, "ATTACK": 3, "RANGE": 6, "CRIT": "Inflict Stunned." },
+    { "HP": 11, "GUARD": -1, "ATTACK": 4, "RANGE": 6, "CRIT": "Inflict Stunned." },
+    { "HP": 12, "GUARD": -1, "ATTACK": 5, "RANGE": 6, "CRIT": "Inflict Stunned." }
+  ],
+  "Human Berserker": [
+    { "HP": 8, "GUARD": -2, "ATTACK": 3, "RANGE": 1, "CRIT": "Inflict Vulnerable." },
+    { "HP": 11, "GUARD": -1, "ATTACK": 3, "RANGE": 1, "CRIT": "Inflict Vulnerable." },
+    { "HP": 12, "GUARD": 0, "ATTACK": 4, "RANGE": 1, "CRIT": "Inflict Vulnerable." },
+    { "HP": 15, "GUARD": 0, "ATTACK": 5, "RANGE": 1, "CRIT": "Inflict Vulnerable." }
+  ],
+  "Human Scout": [
+    { "HP": 6, "GUARD": 0, "ATTACK": 2, "RANGE": 3, "CRIT": "Force target to Retreat 2 following adversary rules at the end of the current turn." },
+    { "HP": 9, "GUARD": 0, "ATTACK": 2, "RANGE": 3, "CRIT": "Force target to Retreat 2 following adversary rules at the end of the current turn." },
+    { "HP": 9, "GUARD": 1, "ATTACK": 2, "RANGE": 4, "CRIT": "Force target to Retreat 2 following adversary rules at the end of the current turn." },
+    { "HP": 11, "GUARD": 1, "ATTACK": 3, "RANGE": 4, "CRIT": "Force target to Retreat 2 following adversary rules at the end of the current turn." }
+  ],
+  "Human Sentry": [
+    { "HP": 10, "GUARD": 1, "ATTACK": 1, "RANGE": 1, "CRIT": "Gain Vengeful." },
+    { "HP": 15, "GUARD": 1, "ATTACK": 1, "RANGE": 1, "CRIT": "Gain Vengeful." },
+    { "HP": 17, "GUARD": 1, "ATTACK": 2, "RANGE": 1, "CRIT": "Gain Vengeful." },
+    { "HP": 17, "GUARD": 2, "ATTACK": 2, "RANGE": 1, "CRIT": "Gain Vengeful." }
+  ],
+  "Other Scout": [
+    { "HP": 3, "GUARD": 2, "ATTACK": 1, "RANGE": 3, "CRIT": "Gain Invisible at the end of the current turn." },
+    { "HP": 6, "GUARD": 2, "ATTACK": 1, "RANGE": 3, "CRIT": "Gain Invisible at the end of the current turn." },
+    { "HP": 6, "GUARD": 3, "ATTACK": 1, "RANGE": 4, "CRIT": "Gain Invisible at the end of the current turn." },
+    { "HP": 8, "GUARD": 3, "ATTACK": 2, "RANGE": 4, "CRIT": "Gain Invisible at the end of the current turn." }
+  ],
+  "Slink Archer": [
+    { "HP": 5, "GUARD": -1, "ATTACK": 3, "RANGE": 5, "CRIT": "At the end of the current turn, Retreat 3 and Heal 2 to self." },
+    { "HP": 7, "GUARD": 0, "ATTACK": 3, "RANGE": 6, "CRIT": "At the end of the current turn, Retreat 3 and Heal 2 to self." },
+    { "HP": 10, "GUARD": 0, "ATTACK": 4, "RANGE": 6, "CRIT": "At the end of the current turn, Retreat 3 and Heal 2 to self." },
+    { "HP": 11, "GUARD": 0, "ATTACK": 5, "RANGE": 7, "CRIT": "At the end of the current turn, Retreat 3 and Heal 2 to self." }
+  ],
+  "Slink Berserker": [
+    { "HP": 7, "GUARD": -1, "ATTACK": 1, "RANGE": 1, "CRIT": "Restore HP equal to half of the damage dealt. Round up." },
+    { "HP": 10, "GUARD": 0, "ATTACK": 1, "RANGE": 1, "CRIT": "Restore HP equal to half of the damage dealt. Round up." },
+    { "HP": 11, "GUARD": 1, "ATTACK": 2, "RANGE": 1, "CRIT": "Restore HP equal to half of the damage dealt. Round up." },
+    { "HP": 14, "GUARD": 1, "ATTACK": 3, "RANGE": 1, "CRIT": "Restore HP equal to half of the damage dealt. Round up." }
+  ],
+  "Slink Scout": [
+    { "HP": 5, "GUARD": 1, "ATTACK": 2, "RANGE": 3, "CRIT": "Heal 4 to self." },
+    { "HP": 8, "GUARD": 1, "ATTACK": 2, "RANGE": 3, "CRIT": "Heal 4 to self." },
+    { "HP": 8, "GUARD": 2, "ATTACK": 2, "RANGE": 4, "CRIT": "Heal 4 to self." },
+    { "HP": 10, "GUARD": 2, "ATTACK": 3, "RANGE": 4, "CRIT": "Heal 4 to self." }
+  ],
+  "Slink Sentry": [
+    { "HP": 9, "GUARD": 2, "ATTACK": -1, "RANGE": 1, "CRIT": "Inflict Knocked Down." },
+    { "HP": 14, "GUARD": 2, "ATTACK": -1, "RANGE": 1, "CRIT": "Inflict Knocked Down." },
+    { "HP": 16, "GUARD": 2, "ATTACK": 0, "RANGE": 1, "CRIT": "Inflict Knocked Down." },
+    { "HP": 16, "GUARD": 3, "ATTACK": 0, "RANGE": 1, "CRIT": "Inflict Knocked Down." }
+  ],
+  "Lypran Trained Beast": [
+    { "HP": 4, "GUARD": 1, "ATTACK": 2, "RANGE": 2, "CRIT": "Move the target to a space adjacent to the Lypran, determined by the Decision die." },
+    { "HP": 7, "GUARD": 1, "ATTACK": 3, "RANGE": 2, "CRIT": "Move the target to a space adjacent to the Lypran, determined by the Decision die." },
+    { "HP": 11, "GUARD": 1, "ATTACK": 3, "RANGE": 2, "CRIT": "Move the target to a space adjacent to the Lypran, determined by the Decision die." },
+    { "HP": 11, "GUARD": 2, "ATTACK": 3, "RANGE": 2, "CRIT": "Move the target to a space adjacent to the Lypran, determined by the Decision die." }
+  ],
+  "Lypran Wild Beast": [
+    { "HP": 5, "GUARD": 0, "ATTACK": 3, "RANGE": 2, "CRIT": "Retreat 1, then move the target into the space the Lypran left." },
+    { "HP": 8, "GUARD": 1, "ATTACK": 3, "RANGE": 2, "CRIT": "Retreat 1, then move the target into the space the Lypran left." },
+    { "HP": 10, "GUARD": 1, "ATTACK": 4, "RANGE": 2, "CRIT": "Retreat 1, then move the target into the space the Lypran left." },
+    { "HP": 13, "GUARD": 1, "ATTACK": 5, "RANGE": 2, "CRIT": "Retreat 1, then move the target into the space the Lypran left." }
+  ],
+  "Wolf Trained Beast": [
+    { "HP": 5, "GUARD": 0, "ATTACK": 2, "RANGE": 1, "CRIT": "Inflict Stunned." },
+    { "HP": 8, "GUARD": 0, "ATTACK": 3, "RANGE": 1, "CRIT": "Inflict Stunned." },
+    { "HP": 12, "GUARD": 0, "ATTACK": 3, "RANGE": 1, "CRIT": "Inflict Stunned." },
+    { "HP": 12, "GUARD": 1, "ATTACK": 3, "RANGE": 1, "CRIT": "Inflict Stunned." }
+  ],
+  "Wolf Wild Beast": [
+    { "HP": 6, "GUARD": -1, "ATTACK": 3, "RANGE": 1, "CRIT": "Inflict Bleeding." },
+    { "HP": 9, "GUARD": 0, "ATTACK": 3, "RANGE": 1, "CRIT": "Inflict Bleeding." },
+    { "HP": 11, "GUARD": 0, "ATTACK": 4, "RANGE": 1, "CRIT": "Inflict Bleeding." },
+    { "HP": 14, "GUARD": 0, "ATTACK": 5, "RANGE": 1, "CRIT": "Inflict Bleeding." }
+  ],
+  "Timeless Archer": [
+    { "HP": 7, "GUARD": -1, "ATTACK": 3, "RANGE": 4, "CRIT": "Leap 5." },
+    { "HP": 9, "GUARD": 0, "ATTACK": 3, "RANGE": 5, "CRIT": "Leap 6." },
+    { "HP": 12, "GUARD": 0, "ATTACK": 4, "RANGE": 5, "CRIT": "Leap 6." },
+    { "HP": 13, "GUARD": 0, "ATTACK": 5, "RANGE": 6, "CRIT": "Leap 7." }
+  ],
+  "Timeless Berserker": [
+    { "HP": 9, "GUARD": -1, "ATTACK": 3, "RANGE": 1, "CRIT": "Inflict Knocked Down and Bleeding on target, and Knocked Down on self." },
+    { "HP": 12, "GUARD": 0, "ATTACK": 3, "RANGE": 1, "CRIT": "Inflict Knocked Down and Bleeding on target, and Knocked Down on self." },
+    { "HP": 13, "GUARD": 1, "ATTACK": 4, "RANGE": 1, "CRIT": "Inflict Knocked Down and Bleeding on target, and Knocked Down on self." },
+    { "HP": 16, "GUARD": 1, "ATTACK": 5, "RANGE": 1, "CRIT": "Inflict Knocked Down and Bleeding on target, and Knocked Down on self." }
+  ],
+  "Timeless Sentry": [
+    { "HP": 11, "GUARD": 2, "ATTACK": 1, "RANGE": 2, "CRIT": "Force all adjacent enemies to Retreat 1 following adversary movement rules." },
+    { "HP": 16, "GUARD": 2, "ATTACK": 1, "RANGE": 2, "CRIT": "Force all adjacent enemies to Retreat 1 following adversary movement rules." },
+    { "HP": 18, "GUARD": 2, "ATTACK": 2, "RANGE": 2, "CRIT": "Force all adjacent enemies to Retreat 1 following adversary movement rules." },
+    { "HP": 18, "GUARD": 3, "ATTACK": 2, "RANGE": 2, "CRIT": "Force all adjacent enemies to Retreat 1 following adversary movement rules." }
+  ],
+  "Mutant Grallok": [
+    { "HP": 23, "GUARD": 1, "ATTACK": 2, "RANGE": 1, "CRIT": "Immediately perform an Attack -1 on all adjacent enemies. This critical ability can only be activated once per round." },
+    { "HP": 26, "GUARD": 1, "ATTACK": 3, "RANGE": 1, "CRIT": "Immediately perform an Attack -1 on all adjacent enemies. This critical ability can only be activated once per round." },
+    { "HP": 32, "GUARD": 1, "ATTACK": 3, "RANGE": 1, "CRIT": "Immediately perform an Attack -1 on all adjacent enemies. This critical ability can only be activated once per round." }
+  ],
+  "Sarhanna": [
+    { "HP": 24, "GUARD": 3, "ATTACK": 2, "RANGE": 1, "CRIT": "The target is teleported to an entrance point determined by the Decision die." },
+    { "HP": 29, "GUARD": 3, "ATTACK": 3, "RANGE": 1, "CRIT": "The target is teleported to an entrance point determined by the Decision die." },
+    { "HP": 38, "GUARD": 3, "ATTACK": 3, "RANGE": 1, "CRIT": "The target is teleported to an entrance point determined by the Decision die." }
+  ],
+  "Lindor": [
+    { "HP": 40, "GUARD": 2, "ATTACK": 2, "RANGE": 7, "CRIT": "Gain Barrier." },
+    { "HP": 43, "GUARD": 3, "ATTACK": 2, "RANGE": 7, "CRIT": "Gain Barrier." },
+    { "HP": 48, "GUARD": 3, "ATTACK": 3, "RANGE": 7, "CRIT": "Gain Barrier." }
+  ]
+}

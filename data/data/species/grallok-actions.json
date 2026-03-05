@@ -1,0 +1,78 @@
+[
+  {
+    "Name": "Defensive Stride",
+    "Cost": 4,
+    "Actions": [
+      { "Action": "Guard", "Type": "Round", "Value": 1 },
+      { "Action": "Move", "Value": 2 }
+    ]
+  },
+  {
+    "Name": "Defensive Stride",
+    "Cost": 4,
+    "Actions": [
+      { "Action": "Guard", "Type": "Round", "Value": 1 },
+      { "Action": "Move", "Value": 2 }
+    ]
+  },
+  {
+    "Name": "Lumbering Charge",
+    "Cost": 4,
+    "Actions": [
+      { "Action": "Move", "Value": 3 },
+      { "Action": "Attack", "Value": -2 }
+    ]
+  },
+  {
+    "Name": "Lumbering Charge",
+    "Cost": 4,
+    "Actions": [
+      { "Action": "Move", "Value": 3 },
+      { "Action": "Attack", "Value": -2 }
+    ]
+  },
+  {
+    "Name": "Lumbering Charge",
+    "Cost": 4,
+    "Actions": [
+      { "Action": "Move", "Value": 3 },
+      { "Action": "Attack", "Value": -2 }
+    ]
+  },
+  {
+    "Name": "Bowl Over",
+    "Cost": 7,
+    "Actions": [
+      { "Action": "Move", "Value": 4 },
+      {
+        "Action": "Special",
+        "Effect": "Move through the primary target and as many other enemies as possible. Inflict 1 damage and Knocked Down on all enemies moved through. If the primary target is no longer in range, select a new primary target before resuming normal movement rules with any remaining MP."
+      }
+    ]
+  },
+  {
+    "Name": "Invincible Gralloc",
+    "Cost": 5,
+    "Actions": [
+      {
+        "Action": "Special",
+        "Effect": "The Gralloc is immune to detrimental conditions. Remove any such conditions already on the Gralloc at the start of the round, including conditions that normally interrupt round effects."
+      }
+    ]
+  },
+  {
+    "Name": "Cumbersome Run",
+    "Cost": 3,
+    "Actions": [{ "Action": "Move", "Value": 4 }]
+  },
+  {
+    "Name": "Cumbersome Run",
+    "Cost": 3,
+    "Actions": [{ "Action": "Move", "Value": 4 }]
+  },
+  {
+    "Name": "Cumbersome Run",
+    "Cost": 3,
+    "Actions": [{ "Action": "Move", "Value": 4 }]
+  }
+]

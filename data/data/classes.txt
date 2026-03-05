@@ -1,0 +1,6 @@
+Archer
+Berserker
+Scout
+Sentry
+Trained Beast
+Wild Beast
