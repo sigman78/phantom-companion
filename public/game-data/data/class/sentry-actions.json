@@ -1,0 +1,314 @@
+[
+  {
+    "Cyan": {
+      "Name": "Stoic Defender",
+      "Cost": 3,
+      "Actions": [
+        {
+          "Action": "Special",
+          "Effect": "Guard +1 to self, adjacent non-Sentry allies, and adjacent objects. If able, Attack -2 on primary target. If not, Move 3 toward closest ally. If no path to an ally exists, Move normally."
+        }
+      ]
+    },
+    "Red": {
+      "Name": "Strike",
+      "Cost": 3,
+      "Actions": [{ "Action": "Attack" }]
+    },
+    "Yellow": {
+      "Name": "Strike",
+      "Cost": 3,
+      "Actions": [{ "Action": "Attack" }]
+    },
+    "Blue": {
+      "Name": "Impenetrable Defense",
+      "Cost": 5,
+      "Actions": [
+        { "Action": "Gain", "Effect": "Resilient" },
+        { "Action": "Gain", "Effect": "Barrier" }
+      ]
+    }
+  },
+  {
+    "Yellow": {
+      "Name": "Stoic Defender",
+      "Cost": 3,
+      "Actions": [
+        {
+          "Action": "Special",
+          "Effect": "Guard +1 to self, adjacent non-Sentry allies, and adjacent objects. If able, Attack -2 on primary target. If not, Move 3 toward closest ally. If no path to an ally exists, Move normally."
+        }
+      ]
+    },
+    "Blue": {
+      "Name": "Stoic Defender",
+      "Cost": 3,
+      "Actions": [
+        {
+          "Action": "Special",
+          "Effect": "Guard +1 to self, adjacent non-Sentry allies, and adjacent objects. If able, Attack -2 on primary target. If not, Move 3 toward closest ally. If no path to an ally exists, Move normally."
+        }
+      ]
+    },
+    "Red": {
+      "Name": "Strike",
+      "Cost": 3,
+      "Actions": [{ "Action": "Attack" }]
+    },
+    "Cyan": {
+      "Name": "Strike",
+      "Cost": 3,
+      "Actions": [{ "Action": "Attack" }]
+    }
+  },
+  {
+    "Red": {
+      "Name": "Shield Wall",
+      "Cost": 2,
+      "Actions": [
+        {
+          "Action": "Special",
+          "Effect": "Adjacent allies and objects use the higher of this adversary's Guard value or their own. If able, Attack -2 on primary target. If not, Move 3 toward closest ally. If no path to an ally exists, Move normally."
+        }
+      ]
+    },
+    "Blue": {
+      "Name": "Stoic Defender",
+      "Cost": 3,
+      "Actions": [
+        {
+          "Action": "Special",
+          "Effect": "Guard +1 to self, adjacent non-Sentry allies, and adjacent objects. If able, Attack -2 on primary target. If not, Move 3 toward closest ally. If no path to an ally exists, Move normally."
+        }
+      ]
+    },
+    "Cyan": {
+      "Name": "Strike",
+      "Cost": 3,
+      "Actions": [{ "Action": "Attack" }]
+    },
+    "Yellow": {
+      "Name": "Subdue",
+      "Cost": 4,
+      "Actions": [{ "Action": "Attack", "Effect": "Inflict Knocked Down" }]
+    }
+  },
+  {
+    "Blue": {
+      "Name": "Shield Wall",
+      "Cost": 2,
+      "Actions": [
+        {
+          "Action": "Special",
+          "Effect": "Adjacent allies and objects use the higher of this adversary's Guard value or their own. If able, Attack -2 on primary target. If not, Move 3 toward closest ally. If no path to an ally exists, Move normally."
+        }
+      ]
+    },
+    "Yellow": {
+      "Name": "Stoic Defender",
+      "Cost": 3,
+      "Actions": [
+        {
+          "Action": "Special",
+          "Effect": "Guard +1 to self, adjacent non-Sentry allies, and adjacent objects. If able, Attack -2 on primary target. If not, Move 3 toward closest ally. If no path to an ally exists, Move normally."
+        }
+      ]
+    },
+    "Red": {
+      "Name": "Subdue",
+      "Cost": 4,
+      "Actions": [{ "Action": "Attack", "Effect": "Inflict Knocked Down" }]
+    },
+    "Cyan": {
+      "Name": "Impenetrable Defense",
+      "Cost": 5,
+      "Actions": [
+        { "Action": "Gain", "Effect": "Resilient" },
+        { "Action": "Gain", "Effect": "Barrier" }
+      ]
+    }
+  },
+  {
+    "Blue": {
+      "Name": "Shield Wall",
+      "Cost": 2,
+      "Actions": [
+        {
+          "Action": "Special",
+          "Effect": "Adjacent allies and objects use the higher of this adversary's Guard value or their own. If able, Attack -2 on primary target. If not, Move 3 toward closest ally. If no path to an ally exists, Move normally."
+        }
+      ]
+    },
+    "Cyan": {
+      "Name": "Subdue",
+      "Cost": 4,
+      "Actions": [{ "Action": "Attack", "Effect": "Inflict Knocked Down" }]
+    },
+    "Yellow": {
+      "Name": "Subdue",
+      "Cost": 4,
+      "Actions": [{ "Action": "Attack", "Effect": "Inflict Knocked Down" }]
+    },
+    "Red": {
+      "Name": "Impenetrable Defense",
+      "Cost": 5,
+      "Actions": [
+        { "Action": "Gain", "Effect": "Resilient" },
+        { "Action": "Gain", "Effect": "Barrier" }
+      ]
+    }
+  },
+  {
+    "Cyan": {
+      "Name": "Shield Wall",
+      "Cost": 2,
+      "Actions": [
+        {
+          "Action": "Special",
+          "Effect": "Adjacent allies and objects use the higher of this adversary's Guard value or their own. If able, Attack -2 on primary target. If not, Move 3 toward closest ally. If no path to an ally exists, Move normally."
+        }
+      ]
+    },
+    "Yellow": {
+      "Name": "Strike",
+      "Cost": 3,
+      "Actions": [{ "Action": "Attack" }]
+    },
+    "Blue": {
+      "Name": "Strike",
+      "Cost": 3,
+      "Actions": [{ "Action": "Attack" }]
+    },
+    "Red": {
+      "Name": "Stoic Defender",
+      "Cost": 3,
+      "Actions": [
+        {
+          "Action": "Special",
+          "Effect": "Guard +1 to self, adjacent non-Sentry allies, and adjacent objects. If able, Attack -2 on primary target. If not, Move 3 toward closest ally. If no path to an ally exists, Move normally."
+        }
+      ]
+    }
+  },
+  {
+    "Yellow": {
+      "Name": "Shield Wall",
+      "Cost": 2,
+      "Actions": [
+        {
+          "Action": "Special",
+          "Effect": "Adjacent allies and objects use the higher of this adversary's Guard value or their own. If able, Attack -2 on primary target. If not, Move 3 toward closest ally. If no path to an ally exists, Move normally."
+        }
+      ]
+    },
+    "Cyan": {
+      "Name": "Strike",
+      "Cost": 3,
+      "Actions": [{ "Action": "Attack" }]
+    },
+    "Blue": {
+      "Name": "Strike",
+      "Cost": 3,
+      "Actions": [{ "Action": "Attack" }]
+    },
+    "Red": {
+      "Name": "Stoic Defender",
+      "Cost": 3,
+      "Actions": [
+        {
+          "Action": "Special",
+          "Effect": "Guard +1 to self, adjacent non-Sentry allies, and adjacent objects. If able, Attack -2 on primary target. If not, Move 3 toward closest ally. If no path to an ally exists, Move normally."
+        }
+      ]
+    }
+  },
+  {
+    "Yellow": {
+      "Name": "Shield Wall",
+      "Cost": 2,
+      "Actions": [
+        {
+          "Action": "Special",
+          "Effect": "Adjacent allies and objects use the higher of this adversary's Guard value or their own. If able, Attack -2 on primary target. If not, Move 3 toward closest ally. If no path to an ally exists, Move normally."
+        }
+      ]
+    },
+    "Red": {
+      "Name": "Strike",
+      "Cost": 3,
+      "Actions": [{ "Action": "Attack" }]
+    },
+    "Cyan": {
+      "Name": "Subdue",
+      "Cost": 4,
+      "Actions": [{ "Action": "Attack", "Effect": "Inflict Knocked Down" }]
+    },
+    "Blue": {
+      "Name": "Subdue",
+      "Cost": 4,
+      "Actions": [{ "Action": "Attack", "Effect": "Inflict Knocked Down" }]
+    }
+  },
+  {
+    "Cyan": {
+      "Name": "Shield Wall",
+      "Cost": 2,
+      "Actions": [
+        {
+          "Action": "Special",
+          "Effect": "Adjacent allies and objects use the higher of this adversary's Guard value or their own. If able, Attack -2 on primary target. If not, Move 3 toward closest ally. If no path to an ally exists, Move normally."
+        }
+      ]
+    },
+    "Blue": {
+      "Name": "Strike",
+      "Cost": 3,
+      "Actions": [{ "Action": "Attack" }]
+    },
+    "Red": {
+      "Name": "Subdue",
+      "Cost": 4,
+      "Actions": [{ "Action": "Attack", "Effect": "Inflict Knocked Down" }]
+    },
+    "Yellow": {
+      "Name": "Impenetrable Defense",
+      "Cost": 5,
+      "Actions": [
+        { "Action": "Gain", "Effect": "Resilient" },
+        { "Action": "Gain", "Effect": "Barrier" }
+      ]
+    }
+  },
+  {
+    "Red": {
+      "Name": "Shield Wall",
+      "Cost": 2,
+      "Actions": [
+        {
+          "Action": "Special",
+          "Effect": "Adjacent allies and objects use the higher of this adversary's Guard value or their own. If able, Attack -2 on primary target. If not, Move 3 toward closest ally. If no path to an ally exists, Move normally."
+        }
+      ]
+    },
+    "Cyan": {
+      "Name": "Stoic Defender",
+      "Cost": 3,
+      "Actions": [
+        {
+          "Action": "Special",
+          "Effect": "Guard +1 to self, adjacent non-Sentry allies, and adjacent objects. If able, Attack -2 on primary target. If not, Move 3 toward closest ally. If no path to an ally exists, Move normally."
+        }
+      ]
+    },
+    "Yellow": {
+      "Name": "Strike",
+      "Cost": 3,
+      "Actions": [{ "Action": "Attack" }]
+    },
+    "Blue": {
+      "Name": "Subdue",
+      "Cost": 4,
+      "Actions": [{ "Action": "Attack", "Effect": "Inflict Knocked Down" }]
+    }
+  }
+]

@@ -1,0 +1,278 @@
+[
+  {
+    "Red": {
+      "Name": "Triple Shot",
+      "Cost": 3,
+      "Actions": [{ "Action": "Attack", "Value": -2, "Mod": "Target 3" }]
+    },
+    "Yellow": {
+      "Name": "Retreating Fire",
+      "Cost": 3,
+      "Actions": [
+        { "Action": "Attack", "Value": -1 },
+        { "Action": "Retreat", "Value": 2 }
+      ]
+    },
+    "Cyan": {
+      "Name": "Triple Shot",
+      "Cost": 3,
+      "Actions": [{ "Action": "Attack", "Value": -2, "Mod": "Target 3" }]
+    },
+    "Blue": {
+      "Name": "Retreating Fire",
+      "Cost": 3,
+      "Actions": [
+        { "Action": "Attack", "Value": -1 },
+        { "Action": "Retreat", "Value": 2 }
+      ]
+    }
+  },
+  {
+    "Blue": {
+      "Name": "Triple Shot",
+      "Cost": 3,
+      "Actions": [{ "Action": "Attack", "Value": -2, "Mod": "Target 3" }]
+    },
+    "Yellow": {
+      "Name": "Retreating Fire",
+      "Cost": 3,
+      "Actions": [
+        { "Action": "Attack", "Value": -1 },
+        { "Action": "Retreat", "Value": 2 }
+      ]
+    },
+    "Red": {
+      "Name": "Triple Shot",
+      "Cost": 3,
+      "Actions": [{ "Action": "Attack", "Value": -2, "Mod": "Target 3" }]
+    },
+    "Cyan": {
+      "Name": "Full Draw",
+      "Cost": 4,
+      "Actions": [{ "Action": "Attack", "Mod": "Range +2" }]
+    }
+  },
+  {
+    "Yellow": {
+      "Name": "Triple Shot",
+      "Cost": 3,
+      "Actions": [{ "Action": "Attack", "Value": -2, "Mod": "Target 3" }]
+    },
+    "Blue": {
+      "Name": "Fire Arrows",
+      "Cost": 4,
+      "Actions": [
+        {
+          "Action": "Special",
+          "Effect": "If the primary target is an enemy in range, roll the Accuracy die. If a Success or Block is rolled, the target is inflicted with Burning."
+        }
+      ]
+    },
+    "Red": {
+      "Name": "Full Draw",
+      "Cost": 4,
+      "Actions": [{ "Action": "Attack", "Mod": "Range +2" }]
+    },
+    "Cyan": {
+      "Name": "Precise Shot",
+      "Cost": 5,
+      "Actions": [{ "Action": "Attack", "Mod": "Pierce 3" }]
+    }
+  },
+  {
+    "Blue": {
+      "Name": "Triple Shot",
+      "Cost": 3,
+      "Actions": [{ "Action": "Attack", "Value": -2, "Mod": "Target 3" }]
+    },
+    "Cyan": {
+      "Name": "Retreating Fire",
+      "Cost": 3,
+      "Actions": [
+        { "Action": "Attack", "Value": -1 },
+        { "Action": "Retreat", "Value": 2 }
+      ]
+    },
+    "Yellow": {
+      "Name": "Full Draw",
+      "Cost": 4,
+      "Actions": [{ "Action": "Attack", "Mod": "Range +2" }]
+    },
+    "Red": {
+      "Name": "Precise Shot",
+      "Cost": 5,
+      "Actions": [{ "Action": "Attack", "Mod": "Pierce 3" }]
+    }
+  },
+  {
+    "Cyan": {
+      "Name": "Retreating Fire",
+      "Cost": 3,
+      "Actions": [
+        { "Action": "Attack", "Value": -1 },
+        { "Action": "Retreat", "Value": 2 }
+      ]
+    },
+    "Red": {
+      "Name": "Retreating Fire",
+      "Cost": 3,
+      "Actions": [
+        { "Action": "Attack", "Value": -1 },
+        { "Action": "Retreat", "Value": 2 }
+      ]
+    },
+    "Yellow": {
+      "Name": "Fire Arrows",
+      "Cost": 4,
+      "Actions": [
+        {
+          "Action": "Special",
+          "Effect": "If the primary target is an enemy in range, roll the Accuracy die. If a Success or Block is rolled, the target is inflicted with Burning."
+        }
+      ]
+    },
+    "Blue": {
+      "Name": "Precise Shot",
+      "Cost": 5,
+      "Actions": [{ "Action": "Attack", "Mod": "Pierce 3" }]
+    }
+  },
+  {
+    "Cyan": {
+      "Name": "Triple Shot",
+      "Cost": 3,
+      "Actions": [{ "Action": "Attack", "Value": -2, "Mod": "Target 3" }]
+    },
+    "Yellow": {
+      "Name": "Retreating Fire",
+      "Cost": 3,
+      "Actions": [
+        { "Action": "Attack", "Value": -1 },
+        { "Action": "Retreat", "Value": 2 }
+      ]
+    },
+    "Blue": {
+      "Name": "Full Draw",
+      "Cost": 4,
+      "Actions": [{ "Action": "Attack", "Mod": "Range +2" }]
+    },
+    "Red": {
+      "Name": "Full Draw",
+      "Cost": 4,
+      "Actions": [{ "Action": "Attack", "Mod": "Range +2" }]
+    }
+  },
+  {
+    "Yellow": {
+      "Name": "Triple Shot",
+      "Cost": 3,
+      "Actions": [{ "Action": "Attack", "Value": -2, "Mod": "Target 3" }]
+    },
+    "Red": {
+      "Name": "Fire Arrows",
+      "Cost": 4,
+      "Actions": [
+        {
+          "Action": "Special",
+          "Effect": "If the primary target is an enemy in range, roll the Accuracy die. If a Success or Block is rolled, the target is inflicted with Burning."
+        }
+      ]
+    },
+    "Cyan": {
+      "Name": "Full Draw",
+      "Cost": 4,
+      "Actions": [{ "Action": "Attack", "Mod": "Range +2" }]
+    },
+    "Blue": {
+      "Name": "Precise Shot",
+      "Cost": 5,
+      "Actions": [{ "Action": "Attack", "Mod": "Pierce 3" }]
+    }
+  },
+  {
+    "Red": {
+      "Name": "Retreating Fire",
+      "Cost": 3,
+      "Actions": [
+        { "Action": "Attack", "Value": -1 },
+        { "Action": "Retreat", "Value": 2 }
+      ]
+    },
+    "Blue": {
+      "Name": "Retreating Fire",
+      "Cost": 3,
+      "Actions": [
+        { "Action": "Attack", "Value": -1 },
+        { "Action": "Retreat", "Value": 2 }
+      ]
+    },
+    "Yellow": {
+      "Name": "Full Draw",
+      "Cost": 4,
+      "Actions": [{ "Action": "Attack", "Mod": "Range +2" }]
+    },
+    "Cyan": {
+      "Name": "Precise Shot",
+      "Cost": 5,
+      "Actions": [{ "Action": "Attack", "Mod": "Pierce 3" }]
+    }
+  },
+  {
+    "Cyan": {
+      "Name": "Retreating Fire",
+      "Cost": 3,
+      "Actions": [
+        { "Action": "Attack", "Value": -1 },
+        { "Action": "Retreat", "Value": 2 }
+      ]
+    },
+    "Red": {
+      "Name": "Retreating Fire",
+      "Cost": 3,
+      "Actions": [
+        { "Action": "Attack", "Value": -1 },
+        { "Action": "Retreat", "Value": 2 }
+      ]
+    },
+    "Blue": {
+      "Name": "Full Draw",
+      "Cost": 4,
+      "Actions": [{ "Action": "Attack", "Mod": "Range +2" }]
+    },
+    "Yellow": {
+      "Name": "Precise Shot",
+      "Cost": 5,
+      "Actions": [{ "Action": "Attack", "Mod": "Pierce 3" }]
+    }
+  },
+  {
+    "Blue": {
+      "Name": "Retreating Fire",
+      "Cost": 3,
+      "Actions": [
+        { "Action": "Attack", "Value": -1 },
+        { "Action": "Retreat", "Value": 2 }
+      ]
+    },
+    "Cyan": {
+      "Name": "Fire Arrows",
+      "Cost": 4,
+      "Actions": [
+        {
+          "Action": "Special",
+          "Effect": "If the primary target is an enemy in range, roll the Accuracy die. If a Success or Block is rolled, the target is inflicted with Burning."
+        }
+      ]
+    },
+    "Red": {
+      "Name": "Precise Shot",
+      "Cost": 5,
+      "Actions": [{ "Action": "Attack", "Mod": "Pierce 3" }]
+    },
+    "Yellow": {
+      "Name": "Precise Shot",
+      "Cost": 5,
+      "Actions": [{ "Action": "Attack", "Mod": "Pierce 3" }]
+    }
+  }
+]

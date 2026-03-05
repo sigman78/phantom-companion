@@ -1,0 +1,408 @@
+[
+  {
+    "Blue": {
+      "Name": "Horrifying Howl",
+      "Cost": 2,
+      "Actions": [
+        { "Action": "Attack" },
+        {
+          "Action": "Special",
+          "Effect": "All adjacent enemies perform a Retreat 3 using adversary movement rules."
+        }
+      ]
+    },
+    "Red": {
+      "Name": "Savage Claws",
+      "Cost": 3,
+      "Actions": [{ "Action": "Attack", "Value": -1, "Mod": "Pierce 4" }]
+    },
+    "Cyan": {
+      "Name": "Ferocious Pounce",
+      "Cost": 4,
+      "Actions": [
+        { "Action": "Leap", "Value": 2 },
+        {
+          "Action": "Special",
+          "Effect": "If possible, end adjacent to primary target. If adjacent to target, roll Accuracy die. Inflict Stunned and Bleeding on Success. Inflict Bleeding on Block."
+        }
+      ]
+    },
+    "Yellow": {
+      "Name": "Feral Beast",
+      "Cost": 4,
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Effect": "Attack primary target and all non-beast figures in range."
+        }
+      ]
+    }
+  },
+  {
+    "Cyan": {
+      "Name": "Horrifying Howl",
+      "Cost": 2,
+      "Actions": [
+        { "Action": "Attack" },
+        {
+          "Action": "Special",
+          "Effect": "All adjacent enemies perform a Retreat 3 using adversary movement rules."
+        }
+      ]
+    },
+    "Blue": {
+      "Name": "Savage Claws",
+      "Cost": 3,
+      "Actions": [{ "Action": "Attack", "Value": -1, "Mod": "Pierce 4" }]
+    },
+    "Red": {
+      "Name": "Rabid Response",
+      "Cost": 4,
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -1,
+          "Type": "Reaction",
+          "Trigger": "Any enemies that enter an adjacent space (each time they do so)."
+        },
+        { "Action": "Guard", "Type": "Round", "Value": -1 }
+      ]
+    },
+    "Yellow": {
+      "Name": "Feral Beast",
+      "Cost": 4,
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Effect": "Attack primary target and all non-beast figures in range."
+        }
+      ]
+    }
+  },
+  {
+    "Red": {
+      "Name": "Horrifying Howl",
+      "Cost": 2,
+      "Actions": [
+        { "Action": "Attack" },
+        {
+          "Action": "Special",
+          "Effect": "All adjacent enemies perform a Retreat 3 using adversary movement rules."
+        }
+      ]
+    },
+    "Blue": {
+      "Name": "Savage Claws",
+      "Cost": 3,
+      "Actions": [{ "Action": "Attack", "Value": -1, "Mod": "Pierce 4" }]
+    },
+    "Cyan": {
+      "Name": "Rabid Response",
+      "Cost": 4,
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -1,
+          "Type": "Reaction",
+          "Trigger": "Any enemies that enter an adjacent space (each time they do so)."
+        },
+        { "Action": "Guard", "Type": "Round", "Value": -1 }
+      ]
+    },
+    "Yellow": {
+      "Name": "Feral Beast",
+      "Cost": 4,
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Effect": "Attack primary target and all non-beast figures in range."
+        }
+      ]
+    }
+  },
+  {
+    "Red": {
+      "Name": "Horrifying Howl",
+      "Cost": 2,
+      "Actions": [
+        { "Action": "Attack" },
+        {
+          "Action": "Special",
+          "Effect": "All adjacent enemies perform a Retreat 3 using adversary movement rules."
+        }
+      ]
+    },
+    "Yellow": {
+      "Name": "Ferocious Pounce",
+      "Cost": 4,
+      "Actions": [
+        { "Action": "Leap", "Value": 2 },
+        {
+          "Action": "Special",
+          "Effect": "If possible, end adjacent to primary target. If adjacent to target, roll Accuracy die. Inflict Stunned and Bleeding on Success. Inflict Bleeding on Block."
+        }
+      ]
+    },
+    "Cyan": {
+      "Name": "Feral Beast",
+      "Cost": 4,
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Effect": "Attack primary target and all non-beast figures in range."
+        }
+      ]
+    },
+    "Blue": {
+      "Name": "Rabid Response",
+      "Cost": 4,
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -1,
+          "Type": "Reaction",
+          "Trigger": "Any enemies that enter an adjacent space (each time they do so)."
+        },
+        { "Action": "Guard", "Type": "Round", "Value": -1 }
+      ]
+    }
+  },
+  {
+    "Yellow": {
+      "Name": "Savage Claws",
+      "Cost": 3,
+      "Actions": [{ "Action": "Attack", "Value": -1, "Mod": "Pierce 4" }]
+    },
+    "Blue": {
+      "Name": "Rabid Response",
+      "Cost": 4,
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -1,
+          "Type": "Reaction",
+          "Trigger": "Any enemies that enter an adjacent space (each time they do so)."
+        },
+        { "Action": "Guard", "Type": "Round", "Value": -1 }
+      ]
+    },
+    "Red": {
+      "Name": "Feral Beast",
+      "Cost": 4,
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Effect": "Attack primary target and all non-beast figures in range."
+        }
+      ]
+    },
+    "Cyan": {
+      "Name": "Feral Beast",
+      "Cost": 4,
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Effect": "Attack primary target and all non-beast figures in range."
+        }
+      ]
+    }
+  },
+  {
+    "Blue": {
+      "Name": "Horrifying Howl",
+      "Cost": 2,
+      "Actions": [
+        { "Action": "Attack" },
+        {
+          "Action": "Special",
+          "Effect": "All adjacent enemies perform a Retreat 3 using adversary movement rules."
+        }
+      ]
+    },
+    "Yellow": {
+      "Name": "Savage Claws",
+      "Cost": 3,
+      "Actions": [{ "Action": "Attack", "Value": -1, "Mod": "Pierce 4" }]
+    },
+    "Cyan": {
+      "Name": "Feral Beast",
+      "Cost": 4,
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Effect": "Attack primary target and all non-beast figures in range."
+        }
+      ]
+    },
+    "Red": {
+      "Name": "Rabid Response",
+      "Cost": 4,
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -1,
+          "Type": "Reaction",
+          "Trigger": "Any enemies that enter an adjacent space (each time they do so)."
+        },
+        { "Action": "Guard", "Type": "Round", "Value": -1 }
+      ]
+    }
+  },
+  {
+    "Blue": {
+      "Name": "Horrifying Howl",
+      "Cost": 2,
+      "Actions": [
+        { "Action": "Attack" },
+        {
+          "Action": "Special",
+          "Effect": "All adjacent enemies perform a Retreat 3 using adversary movement rules."
+        }
+      ]
+    },
+    "Cyan": {
+      "Name": "Savage Claws",
+      "Cost": 3,
+      "Actions": [{ "Action": "Attack", "Value": -1, "Mod": "Pierce 4" }]
+    },
+    "Yellow": {
+      "Name": "Rabid Response",
+      "Cost": 4,
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -1,
+          "Type": "Reaction",
+          "Trigger": "Any enemies that enter an adjacent space (each time they do so)."
+        },
+        { "Action": "Guard", "Type": "Round", "Value": -1 }
+      ]
+    },
+    "Red": {
+      "Name": "Feral Beast",
+      "Cost": 4,
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Effect": "Attack primary target and all non-beast figures in range."
+        }
+      ]
+    }
+  },
+  {
+    "Red": {
+      "Name": "Savage Claws",
+      "Cost": 3,
+      "Actions": [{ "Action": "Attack", "Value": -1, "Mod": "Pierce 4" }]
+    },
+    "Cyan": {
+      "Name": "Ferocious Pounce",
+      "Cost": 4,
+      "Actions": [
+        { "Action": "Leap", "Value": 2 },
+        {
+          "Action": "Special",
+          "Effect": "If possible, end adjacent to primary target. If adjacent to target, roll Accuracy die. Inflict Stunned and Bleeding on Success. Inflict Bleeding on Block."
+        }
+      ]
+    },
+    "Yellow": {
+      "Name": "Rabid Response",
+      "Cost": 4,
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -1,
+          "Type": "Reaction",
+          "Trigger": "Any enemies that enter an adjacent space (each time they do so)."
+        },
+        { "Action": "Guard", "Type": "Round", "Value": -1 }
+      ]
+    },
+    "Blue": {
+      "Name": "Feral Beast",
+      "Cost": 4,
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Effect": "Attack primary target and all non-beast figures in range."
+        }
+      ]
+    }
+  },
+  {
+    "Yellow": {
+      "Name": "Horrifying Howl",
+      "Cost": 2,
+      "Actions": [
+        { "Action": "Attack" },
+        {
+          "Action": "Special",
+          "Effect": "All adjacent enemies perform a Retreat 3 using adversary movement rules."
+        }
+      ]
+    },
+    "Red": {
+      "Name": "Feral Beast",
+      "Cost": 4,
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Effect": "Attack primary target and all non-beast figures in range."
+        }
+      ]
+    },
+    "Blue": {
+      "Name": "Rabid Response",
+      "Cost": 4,
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -1,
+          "Type": "Reaction",
+          "Trigger": "Any enemies that enter an adjacent space (each time they do so)."
+        },
+        { "Action": "Guard", "Type": "Round", "Value": -1 }
+      ]
+    }
+  },
+  {
+    "Yellow": {
+      "Name": "Horrifying Howl",
+      "Cost": 2,
+      "Actions": [
+        { "Action": "Attack" },
+        {
+          "Action": "Special",
+          "Effect": "All adjacent enemies perform a Retreat 3 using adversary movement rules."
+        }
+      ]
+    },
+    "Cyan": {
+      "Name": "Savage Claws",
+      "Cost": 3,
+      "Actions": [{ "Action": "Attack", "Value": -1, "Mod": "Pierce 4" }]
+    },
+    "Blue": {
+      "Name": "Feral Beast",
+      "Cost": 4,
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Effect": "Attack primary target and all non-beast figures in range."
+        }
+      ]
+    },
+    "Red": {
+      "Name": "Ferocious Pounce",
+      "Cost": 4,
+      "Actions": [
+        { "Action": "Leap", "Value": 2 },
+        {
+          "Action": "Special",
+          "Effect": "If possible, end adjacent to primary target. If adjacent to target, roll Accuracy die. Inflict Stunned and Bleeding on Success. Inflict Bleeding on Block."
+        }
+      ]
+    }
+  }
+]

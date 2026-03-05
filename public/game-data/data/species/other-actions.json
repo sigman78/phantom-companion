@@ -1,0 +1,107 @@
+[
+  {
+    "Name": "Dimensional Phasing",
+    "Cost": 4,
+    "Actions": [
+      { "Action": "Leap", "Value": 4 },
+      {
+        "Action": "Special",
+        "Effect": "If the Other performs an attack this turn, at the end of its turn, return to the space it started its turn in."
+      }
+    ]
+  },
+  {
+    "Name": "Dimensional Phasing",
+    "Cost": 4,
+    "Actions": [
+      { "Action": "Leap", "Value": 4 },
+      {
+        "Action": "Special",
+        "Effect": "If the Other performs an attack this turn, at the end of its turn, return to the space it started its turn in."
+      }
+    ]
+  },
+  {
+    "Name": "Dimensional Phasing",
+    "Cost": 4,
+    "Actions": [
+      { "Action": "Leap", "Value": 4 },
+      {
+        "Action": "Special",
+        "Effect": "If the Other performs an attack this turn, at the end of its turn, return to the space it started its turn in."
+      }
+    ]
+  },
+  {
+    "Name": "Disorienting Teleportation",
+    "Cost": 1,
+    "Actions": [
+      {
+        "Action": "Special",
+        "Effect": "If the Other does not have an enemy in range, Teleport to the closest empty space that is within range and line of sight of the primary target, then inflict Vulnerable on self."
+      }
+    ]
+  },
+  {
+    "Name": "Disorienting Teleportation",
+    "Cost": 1,
+    "Actions": [
+      {
+        "Action": "Special",
+        "Effect": "If the Other does not have an enemy in range, Teleport to the closest empty space that is within range and line of sight of the primary target, then inflict Vulnerable on self."
+      }
+    ]
+  },
+  {
+    "Name": "Pocket Dimension",
+    "Cost": 2,
+    "Actions": [
+      {
+        "Action": "Special",
+        "Effect": "The Other gains Invisible at the end of its turn."
+      }
+    ]
+  },
+  {
+    "Name": "Cold Beyond",
+    "Cost": 6,
+    "Actions": [
+      {
+        "Action": "Special",
+        "Effect": "If the Other has an enemy in range, add inflict Frozen to all attacks this turn. Otherwise, Leap 3."
+      }
+    ]
+  },
+  {
+    "Name": "Cold Beyond",
+    "Cost": 6,
+    "Actions": [
+      {
+        "Action": "Special",
+        "Effect": "If the Other has an enemy in range, add inflict Frozen to all attacks this turn. Otherwise, Leap 3."
+      }
+    ]
+  },
+  {
+    "Name": "Antimatter Shift",
+    "Cost": 5,
+    "Actions": [
+      { "Action": "Leap", "Value": 4 },
+      {
+        "Action": "Special",
+        "Effect": "End the leap adjacent to the primary target and as many enemies as possible. If it's not possible to end adjacent to the primary target, use normal adversary movement rules. Roll the Basic Attack die once for each enemy adjacent to the Other. For each Critical Strike rolled, inflict Frozen on the corresponding enemy."
+      }
+    ]
+  },
+  {
+    "Name": "Antimatter Shift",
+    "Cost": 5,
+    "Actions": [
+      { "Action": "Leap", "Value": 4 },
+      {
+        "Action": "Special",
+        "Effect": "End the leap adjacent to the primary target and as many enemies as possible. If it's not possible to end adjacent to the primary target, use normal adversary movement rules. Roll the Basic Attack die once for each enemy adjacent to the Other. For each Critical Strike rolled, inflict Frozen on the corresponding enemy."
+      }
+    ]
+  }
+]

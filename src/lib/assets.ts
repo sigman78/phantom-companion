@@ -25,9 +25,9 @@ export function speciesCardBackUrl(species: SpeciesName): string {
   return `${BASE_SPECIES_ART}/${SPECIES_ART_PREFIX[species]}_back.jpg`;
 }
 
-// "Grallok Archer" -> /game-data/art/adv-icons/Grallok_Archer.jpg
+// "Grallok Archer" -> /game-data/art/adv-icons/Grallok_Archer.png
 export function adversaryIconUrl(adversaryName: string): string {
-  return `${BASE_ICONS}/${adversaryName.replace(/ /g, '_')}.jpg`;
+  return `${BASE_ICONS}/${adversaryName.replace(/ /g, '_')}.png`;
 }
 
 // Phase 1: reuse icon as portrait

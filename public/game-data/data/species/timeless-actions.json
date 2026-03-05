@@ -1,0 +1,92 @@
+[
+  {
+    "Name": "Energy Shield",
+    "Cost": 4,
+    "Actions": [
+      { "Action": "Guard", "Type": "Round", "Value": 2 },
+      { "Action": "Move", "Value": 2 }
+    ]
+  },
+  {
+    "Name": "Ancient Flames",
+    "Cost": 4,
+    "Actions": [
+      { "Action": "Move", "Value": 2 },
+      {
+        "Action": "Special",
+        "Effect": "Add inflict Burning to all attacks this turn."
+      }
+    ]
+  },
+  {
+    "Name": "Self-Destruct",
+    "Cost": 6,
+    "Actions": [
+      { "Action": "Move", "Value": 2 },
+      {
+        "Action": "Special",
+        "Effect": "If the Timeless is defeated, all adjacent figures and destructible objects receive 3 damage, and the adjacent figures are also inflicted with Burning."
+      }
+    ]
+  },
+  {
+    "Name": "Incendiary Projectile",
+    "Cost": 6,
+    "Actions": [
+      { "Action": "Attack", "Value": -1, "Mod": "Range 6", "Effect": "Inflict Burning" }
+    ]
+  },
+  {
+    "Name": "Self-Repair",
+    "Cost": 4,
+    "Actions": [
+      { "Action": "Move", "Value": 2 },
+      { "Action": "Heal", "Value": 4, "Target": "Self" }
+    ]
+  },
+  {
+    "Name": "Energy Shield",
+    "Cost": 4,
+    "Actions": [
+      { "Action": "Guard", "Type": "Round", "Value": 2 },
+      { "Action": "Move", "Value": 2 }
+    ]
+  },
+  {
+    "Name": "Ancient Flames",
+    "Cost": 4,
+    "Actions": [
+      { "Action": "Move", "Value": 2 },
+      {
+        "Action": "Special",
+        "Effect": "Add inflict Burning to all attacks this turn."
+      }
+    ]
+  },
+  {
+    "Name": "Self-Destruct",
+    "Cost": 6,
+    "Actions": [
+      { "Action": "Move", "Value": 2 },
+      {
+        "Action": "Special",
+        "Effect": "If the Timeless is defeated, all adjacent figures and destructible objects receive 3 damage, and the adjacent figures are also inflicted with Burning."
+      }
+    ]
+  },
+  {
+    "Name": "Incendiary Projectile",
+    "Cost": 6,
+    "Actions": [
+      { "Action": "Attack", "Value": -1, "Mod": "Range 6", "Effect": "Inflict Burning" }
+    ]
+  },
+  {
+    "Name": "Self-Repair",
+    "Cost": 4,
+    "Actions": [
+      { "Action": "Move", "Value": 2 },
+      { "Action": "Heal", "Value": 4, "Target": "Self" }
+    ]
+  }
+]
