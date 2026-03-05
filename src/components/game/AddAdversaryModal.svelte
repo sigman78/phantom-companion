@@ -29,7 +29,7 @@
   const close = () => dispatch('close');
 </script>
 
-<div class="backdrop" on:click|self={close} role="dialog" aria-modal="true">
+<div class="backdrop" on:click|self={close} on:keydown={e => e.key === 'Escape' && close()} role="presentation">
   <div class="modal">
     <div class="modal-header">
       <h2>Add Adversary</h2>
