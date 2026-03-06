@@ -9,6 +9,7 @@
   import { deckKey } from '../../lib/deck';
   import ColorBadge from './ColorBadge.svelte';
   import ActionStepRow from './ActionStepRow.svelte';
+  import CardDeck from './CardDeck.svelte';
   import { DIFFICULTY_STARS } from '../../lib/constants';
 
   let statsJson: Record<string, AdversaryStatBlock[]> | null = null;
@@ -54,9 +55,6 @@
     ? classCardArtUrl(className, activation.classCardIndex)
     : null;
 
-  function stackH(remaining: number): string {
-    return `${Math.max(28, Math.round(remaining / 10 * 110))}px`;
-  }
 </script>
 
 <div class="detail">
@@ -145,43 +143,21 @@
       aria-label={!drawn ? 'Draw cards' : undefined}
     >
       {#if speciesName}
-        <div class="deck-unit">
-          <div class="deck-stack">
-            <div class="card c1" style="background-image:url('{speciesCardBackUrl(speciesName)}')"></div>
-            <div class="card c2" style="background-image:url('{speciesCardBackUrl(speciesName)}')"></div>
-            <div class="card c3" style="background-image:url('{speciesCardBackUrl(speciesName)}')"></div>
-            {#if drawn && speciesCardImageUrl}
-              {#key speciesCardImageUrl}
-                <div
-                  class="card face-up card-revealed"
-                  style="background-image:url('{speciesCardImageUrl}')"
-                ></div>
-              {/key}
-            {/if}
-          </div>
-          <span class="deck-label">Species</span>
-        </div>
+        <CardDeck
+          backUrl={speciesCardBackUrl(speciesName)}
+          drawnUrl={drawn && speciesCardImageUrl ? speciesCardImageUrl : null}
+          remaining={speciesRemaining}
+        />
       {/if}
       {#if className}
-        <div class="deck-unit">
-          <div class="deck-stack">
-            <div class="card c1" style="background-image:url('{classCardBackUrl(className)}')"></div>
-            <div class="card c2" style="background-image:url('{classCardBackUrl(className)}')"></div>
-            <div class="card c3" style="background-image:url('{classCardBackUrl(className)}')"></div>
-            {#if drawn && classCardImageUrl}
-              {#key classCardImageUrl}
-                <div
-                  class="card face-up card-revealed"
-                  style="background-image:url('{classCardImageUrl}')"
-                ></div>
-              {/key}
-            {/if}
-          </div>
-          <span class="deck-label">{activation ? `Class \u00b7 ${activation.unit.color}` : 'Class'}</span>
-        </div>
+        <CardDeck
+          backUrl={classCardBackUrl(className)}
+          drawnUrl={drawn && classCardImageUrl ? classCardImageUrl : null}
+          remaining={classRemaining}
+        />
       {/if}
       {#if !drawn && (speciesName || className)}
-        <div class="draw-prompt">Tap to draw</div>
+        <div class="draw-prompt"><span class="draw-prompt-inner">Tap to draw</span></div>
       {/if}
     </div>
   </div>
@@ -196,9 +172,11 @@
     overflow: hidden;
   }
 
-  /* TOP SECTION: auto-height by content */
+  /* TOP SECTION: fixed 30% of panel height */
   .top-section {
-    flex-shrink: 0;
+    flex: 0 0 30%;
+    min-height: 0;
+    overflow: hidden;
     display: flex;
     border-bottom: 2px solid var(--color-border);
   }
@@ -360,9 +338,9 @@
     flex-shrink: 0;
   }
 
-  /* BOTTOM SECTION: fills remaining space */
+  /* BOTTOM SECTION: fixed 70% of panel height */
   .bottom-section {
-    flex: 1;
+    flex: 0 0 70%;
     min-height: 0;
     display: flex;
     flex-direction: column;
@@ -371,6 +349,7 @@
 
   /* Deck area - unified physical card design */
   .deck-area {
+    position: relative;
     flex: 1;
     display: flex;
     flex-direction: row;
@@ -385,74 +364,33 @@
   .deck-area.pre-draw {
     cursor: pointer;
     user-select: none;
-    outline: 1px solid rgba(184,115,51,0.0);
-    animation: deck-pulse 2.5s ease-in-out infinite;
   }
-  .deck-area.pre-draw:hover .c1,
-  .deck-area.pre-draw:hover .c2,
-  .deck-area.pre-draw:hover .c3 {
+  .deck-area.pre-draw:hover :global(.c1),
+  .deck-area.pre-draw:hover :global(.c2),
+  .deck-area.pre-draw:hover :global(.c3) {
     filter: brightness(0.9);
   }
 
-  .deck-unit {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-2);
-  }
-
-  /* Fixed 5:7 ratio (110x154) matches 300x420 art */
-  .deck-stack {
-    position: relative;
-    width: 110px;
-    height: 154px;
-  }
-
-  .card {
+  .draw-prompt {
     position: absolute;
     inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  .draw-prompt-inner {
+    padding: 10px 28px;
+    background: rgba(0, 0, 0, 0.72);
+    border: 1px solid rgba(255,255,255,0.08);
     border-radius: var(--radius-sm);
-    border: 1px solid var(--color-border);
-    background-size: cover;
-    background-position: center;
-  }
-  .c1 {
-    transform: rotate(-2.5deg) translate(-3px, 4px);
-    z-index: 1;
-    filter: brightness(0.75);
-    box-shadow: 1px 3px 6px rgba(0,0,0,0.7);
-  }
-  .c2 {
-    transform: rotate(-1.2deg) translate(-1.5px, 2px);
-    z-index: 2;
-    filter: brightness(0.75);
-    box-shadow: 1px 3px 6px rgba(0,0,0,0.7);
-  }
-  .c3 {
-    transform: none;
-    z-index: 3;
-    filter: brightness(0.75);
-    box-shadow: 1px 3px 6px rgba(0,0,0,0.7);
-  }
-  .face-up {
-    z-index: 5;
-    filter: none;
-    box-shadow: 4px 8px 18px rgba(0,0,0,0.95), 0 0 0 2px var(--color-accent);
-  }
-
-  .deck-label {
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--color-text-dim);
-  }
-
-  .draw-prompt {
-    width: 100%;
-    text-align: center;
-    font-size: 13px;
+    font-size: 28px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    letter-spacing: 0.06em;
     color: var(--color-accent);
-    opacity: 0.7;
-    letter-spacing: 0.04em;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.9);
   }
 </style>
