@@ -62,4 +62,26 @@ describe('highlight', () => {
     const result = highlight('Nothing special here');
     expect(result).toBe('Nothing special here');
   });
+
+  it('wraps *text* with kw-em', () => {
+    const result = highlight('Inflict *1 damage* on target');
+    expect(result).toContain('<em class="kw-em">1 damage</em>');
+  });
+
+  it('converts [p] to paragraph break', () => {
+    const result = highlight('First sentence. [p] Second sentence.');
+    expect(result).toContain('<br><br>');
+  });
+
+  it('strips [icon:name] tags and collapses spaces', () => {
+    const result = highlight('Inflict *Burning* [icon:burning] on target');
+    expect(result).not.toContain('[icon:');
+    expect(result).not.toContain('  '); // no double spaces
+  });
+
+  it('strips unknown icon and collapses surrounding spaces', () => {
+    const result = highlight('a [icon:unknown] b');
+    expect(result).not.toContain('[icon:');
+    expect(result).toMatch(/a\s+b|a b/);
+  });
 });

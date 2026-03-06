@@ -11,11 +11,7 @@
     "Name": "Ancient Flames",
     "Cost": 4,
     "Actions": [
-      { "Action": "Move", "Value": 2 },
-      {
-        "Action": "Special",
-        "Effect": "Add inflict Burning to all attacks this turn."
-      }
+      { "Action": "Move", "Value": 2, "Effect": "Add inflict *Burning* [icon:burning] to all attacks this turn." }
     ]
   },
   {
@@ -25,7 +21,8 @@
       { "Action": "Move", "Value": 2 },
       {
         "Action": "Special",
-        "Effect": "If the Timeless is defeated, all adjacent figures and destructible objects receive 3 damage, and the adjacent figures are also inflicted with Burning."
+        "Type": "Round",
+        "Effect": "If the Timeless is defeated, all adjacent figures and destructible objects receive 3 damage, and the adjacent figures are also inflicted with *Burning* [icon:burning]"
       }
     ]
   },
@@ -33,7 +30,7 @@
     "Name": "Incendiary Projectile",
     "Cost": 6,
     "Actions": [
-      { "Action": "Attack", "Value": -1, "Mod": "Range 6", "Effect": "Inflict Burning" }
+      { "Action": "Attack", "Value": -1, "Mod": "Range 6", "Effect": "Inflict Burning [icon:burning]" }
     ]
   },
   {
@@ -41,7 +38,7 @@
     "Cost": 4,
     "Actions": [
       { "Action": "Move", "Value": 2 },
-      { "Action": "Heal", "Value": 4, "Target": "Self" }
+      { "Action": "Heal Self", "Value": 4}
     ]
   },
   {
@@ -56,11 +53,7 @@
     "Name": "Ancient Flames",
     "Cost": 4,
     "Actions": [
-      { "Action": "Move", "Value": 2 },
-      {
-        "Action": "Special",
-        "Effect": "Add inflict Burning to all attacks this turn."
-      }
+      { "Action": "Move", "Value": 2, "Effect": "Add inflict *Burning* [icon:burning] to all attacks this turn." }
     ]
   },
   {
@@ -70,7 +63,8 @@
       { "Action": "Move", "Value": 2 },
       {
         "Action": "Special",
-        "Effect": "If the Timeless is defeated, all adjacent figures and destructible objects receive 3 damage, and the adjacent figures are also inflicted with Burning."
+        "Type": "Round",
+        "Effect": "If the Timeless is defeated, all adjacent figures and destructible objects receive 3 damage, and the adjacent figures are also inflicted with *Burning* [icon:burning]"
       }
     ]
   },
@@ -78,7 +72,7 @@
     "Name": "Incendiary Projectile",
     "Cost": 6,
     "Actions": [
-      { "Action": "Attack", "Value": -1, "Mod": "Range 6", "Effect": "Inflict Burning" }
+      { "Action": "Attack", "Value": -1, "Mod": "Range 6", "Effect": "Inflict *Burning* [icon:burning]" }
     ]
   },
   {
@@ -86,7 +80,7 @@
     "Cost": 4,
     "Actions": [
       { "Action": "Move", "Value": 2 },
-      { "Action": "Heal", "Value": 4, "Target": "Self" }
+      { "Action": "Heal Self", "Value": 4}
     ]
   }
 ]

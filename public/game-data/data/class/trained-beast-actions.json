@@ -1,246 +1,534 @@
 [
-  {
-    "Cyan": {
+  [
+    {
+      "Color": "Cyan",
       "Name": "Takedown",
       "Cost": 3,
-      "Actions": [{ "Action": "Attack", "Value": -2, "Effect": "Inflict Knocked Down" }]
-    },
-    "Red": {
-      "Name": "Long Pounce",
-      "Cost": 4,
-      "Actions": [{ "Action": "Leap", "Value": 4 }, { "Action": "Attack", "Value": -2 }]
-    },
-    "Blue": {
-      "Name": "Long Pounce",
-      "Cost": 4,
-      "Actions": [{ "Action": "Leap", "Value": 4 }, { "Action": "Attack", "Value": -2 }]
-    },
-    "Yellow": {
-      "Name": "Pack Training",
-      "Cost": 5,
-      "Actions": [{ "Action": "Attack", "Mod": "+2 if Trained Beast is adjacent to an ally" }]
-    }
-  },
-  {
-    "Red": {
-      "Name": "Pack Leader",
-      "Cost": 3,
       "Actions": [
-        { "Action": "Attack", "Value": -1 },
         {
-          "Action": "Special",
-          "Effect": "All adjacent Trained Beast allies that have an enemy in range perform an Attack -2."
+          "Action": "Attack",
+          "Value": -2,
+          "Effect": "Inflict Knocked Down [icon:knocked-down]"
         }
       ]
     },
-    "Yellow": {
-      "Name": "Takedown",
-      "Cost": 3,
-      "Actions": [{ "Action": "Attack", "Value": -2, "Effect": "Inflict Knocked Down" }]
-    },
-    "Cyan": {
+    {
+      "Color": "Red",
       "Name": "Long Pounce",
       "Cost": 4,
-      "Actions": [{ "Action": "Leap", "Value": 4 }, { "Action": "Attack", "Value": -2 }]
-    },
-    "Blue": {
-      "Name": "Long Pounce",
-      "Cost": 4,
-      "Actions": [{ "Action": "Leap", "Value": 4 }, { "Action": "Attack", "Value": -2 }]
-    }
-  },
-  {
-    "Red": {
-      "Name": "Nip",
-      "Cost": 1,
-      "Actions": [{ "Action": "Attack", "Value": -2 }]
-    },
-    "Cyan": {
-      "Name": "Takedown",
-      "Cost": 3,
-      "Actions": [{ "Action": "Attack", "Value": -2, "Effect": "Inflict Knocked Down" }]
-    },
-    "Yellow": {
-      "Name": "Long Pounce",
-      "Cost": 4,
-      "Actions": [{ "Action": "Leap", "Value": 4 }, { "Action": "Attack", "Value": -2 }]
-    },
-    "Blue": {
-      "Name": "Pack Training",
-      "Cost": 5,
-      "Actions": [{ "Action": "Attack", "Mod": "+2 if Trained Beast is adjacent to an ally" }]
-    }
-  },
-  {
-    "Blue": {
-      "Name": "Nip",
-      "Cost": 1,
-      "Actions": [{ "Action": "Attack", "Value": -2 }]
-    },
-    "Yellow": {
-      "Name": "Takedown",
-      "Cost": 3,
-      "Actions": [{ "Action": "Attack", "Value": -2, "Effect": "Inflict Knocked Down" }]
-    },
-    "Cyan": {
-      "Name": "Long Pounce",
-      "Cost": 4,
-      "Actions": [{ "Action": "Leap", "Value": 4 }, { "Action": "Attack", "Value": -2 }]
-    },
-    "Red": {
-      "Name": "Pack Training",
-      "Cost": 5,
-      "Actions": [{ "Action": "Attack", "Mod": "+2 if Trained Beast is adjacent to an ally" }]
-    }
-  },
-  {
-    "Blue": {
-      "Name": "Takedown",
-      "Cost": 3,
-      "Actions": [{ "Action": "Attack", "Value": -2, "Effect": "Inflict Knocked Down" }]
-    },
-    "Yellow": {
-      "Name": "Long Pounce",
-      "Cost": 4,
-      "Actions": [{ "Action": "Leap", "Value": 4 }, { "Action": "Attack", "Value": -2 }]
-    },
-    "Red": {
-      "Name": "Long Pounce",
-      "Cost": 4,
-      "Actions": [{ "Action": "Leap", "Value": 4 }, { "Action": "Attack", "Value": -2 }]
-    },
-    "Cyan": {
-      "Name": "Pack Training",
-      "Cost": 5,
-      "Actions": [{ "Action": "Attack", "Mod": "+2 if Trained Beast is adjacent to an ally" }]
-    }
-  },
-  {
-    "Cyan": {
-      "Name": "Nip",
-      "Cost": 1,
-      "Actions": [{ "Action": "Attack", "Value": -2 }]
-    },
-    "Red": {
-      "Name": "Takedown",
-      "Cost": 3,
-      "Actions": [{ "Action": "Attack", "Value": -2, "Effect": "Inflict Knocked Down" }]
-    },
-    "Yellow": {
-      "Name": "Long Pounce",
-      "Cost": 4,
-      "Actions": [{ "Action": "Leap", "Value": 4 }, { "Action": "Attack", "Value": -2 }]
-    },
-    "Blue": {
-      "Name": "Pack Training",
-      "Cost": 5,
-      "Actions": [{ "Action": "Attack", "Mod": "+2 if Trained Beast is adjacent to an ally" }]
-    }
-  },
-  {
-    "Yellow": {
-      "Name": "Nip",
-      "Cost": 1,
-      "Actions": [{ "Action": "Attack", "Value": -2 }]
-    },
-    "Blue": {
-      "Name": "Pack Leader",
-      "Cost": 3,
       "Actions": [
-        { "Action": "Attack", "Value": -1 },
         {
-          "Action": "Special",
-          "Effect": "All adjacent Trained Beast allies that have an enemy in range perform an Attack -2."
+          "Action": "Leap",
+          "Value": 4
+        },
+        {
+          "Action": "Attack",
+          "Value": -2
         }
       ]
     },
-    "Red": {
-      "Name": "Takedown",
-      "Cost": 3,
-      "Actions": [{ "Action": "Attack", "Value": -2, "Effect": "Inflict Knocked Down" }]
-    },
-    "Cyan": {
-      "Name": "Pack Training",
-      "Cost": 5,
-      "Actions": [{ "Action": "Attack", "Mod": "+2 if Trained Beast is adjacent to an ally" }]
-    }
-  },
-  {
-    "Blue": {
-      "Name": "Takedown",
-      "Cost": 3,
-      "Actions": [{ "Action": "Attack", "Value": -2, "Effect": "Inflict Knocked Down" }]
-    },
-    "Cyan": {
-      "Name": "Pack Leader",
-      "Cost": 3,
+    {
+      "Color": "Blue",
+      "Name": "Long Pounce",
+      "Cost": 4,
       "Actions": [
-        { "Action": "Attack", "Value": -1 },
         {
-          "Action": "Special",
-          "Effect": "All adjacent Trained Beast allies that have an enemy in range perform an Attack -2."
+          "Action": "Leap",
+          "Value": 4
+        },
+        {
+          "Action": "Attack",
+          "Value": -2
         }
       ]
     },
-    "Red": {
-      "Name": "Long Pounce",
-      "Cost": 4,
-      "Actions": [{ "Action": "Leap", "Value": 4 }, { "Action": "Attack", "Value": -2 }]
-    },
-    "Yellow": {
+    {
+      "Color": "Yellow",
       "Name": "Pack Training",
       "Cost": 5,
-      "Actions": [{ "Action": "Attack", "Mod": "+2 if Trained Beast is adjacent to an ally" }]
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Effect": "+2 if Trained Beast is adjacent to an ally"
+        }
+      ]
     }
-  },
-  {
-    "Cyan": {
-      "Name": "Nip",
-      "Cost": 1,
-      "Actions": [{ "Action": "Attack", "Value": -2 }]
-    },
-    "Blue": {
-      "Name": "Nip",
-      "Cost": 1,
-      "Actions": [{ "Action": "Attack", "Value": -2 }]
-    },
-    "Yellow": {
+  ],
+  [
+    {
+      "Color": "Red",
       "Name": "Pack Leader",
       "Cost": 3,
       "Actions": [
-        { "Action": "Attack", "Value": -1 },
+        {
+          "Action": "Attack",
+          "Value": -1
+        },
         {
           "Action": "Special",
-          "Effect": "All adjacent Trained Beast allies that have an enemy in range perform an Attack -2."
+          "Effect": "All adjacent Trained Beast allies that have an enemy in range perform an *Attack -2*."
         }
       ]
     },
-    "Red": {
+    {
+      "Color": "Yellow",
+      "Name": "Takedown",
+      "Cost": 3,
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -2,
+          "Effect": "Inflict Knocked Down [icon:knocked-down]"
+        }
+      ]
+    },
+    {
+      "Color": "Cyan",
+      "Name": "Long Pounce",
+      "Cost": 4,
+      "Actions": [
+        {
+          "Action": "Leap",
+          "Value": 4
+        },
+        {
+          "Action": "Attack",
+          "Value": -2
+        }
+      ]
+    },
+    {
+      "Color": "Blue",
+      "Name": "Long Pounce",
+      "Cost": 4,
+      "Actions": [
+        {
+          "Action": "Leap",
+          "Value": 4
+        },
+        {
+          "Action": "Attack",
+          "Value": -2
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "Color": "Red",
+      "Name": "Nip",
+      "Cost": 1,
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -2
+        }
+      ]
+    },
+    {
+      "Color": "Cyan",
+      "Name": "Takedown",
+      "Cost": 3,
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -2,
+          "Effect": "Inflict Knocked Down [icon:knocked-down]"
+        }
+      ]
+    },
+    {
+      "Color": "Yellow",
+      "Name": "Long Pounce",
+      "Cost": 4,
+      "Actions": [
+        {
+          "Action": "Leap",
+          "Value": 4
+        },
+        {
+          "Action": "Attack",
+          "Value": -2
+        }
+      ]
+    },
+    {
+      "Color": "Blue",
       "Name": "Pack Training",
       "Cost": 5,
-      "Actions": [{ "Action": "Attack", "Mod": "+2 if Trained Beast is adjacent to an ally" }]
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Effect": "+2 if Trained Beast is adjacent to an ally"
+        }
+      ]
     }
-  },
-  {
-    "Yellow": {
+  ],
+  [
+    {
+      "Color": "Blue",
       "Name": "Nip",
       "Cost": 1,
-      "Actions": [{ "Action": "Attack", "Value": -2 }]
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -2
+        }
+      ]
     },
-    "Red": {
+    {
+      "Color": "Yellow",
+      "Name": "Takedown",
+      "Cost": 3,
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -2,
+          "Effect": "Inflict Knocked Down [icon:knocked-down]"
+        }
+      ]
+    },
+    {
+      "Color": "Cyan",
+      "Name": "Long Pounce",
+      "Cost": 4,
+      "Actions": [
+        {
+          "Action": "Leap",
+          "Value": 4
+        },
+        {
+          "Action": "Attack",
+          "Value": -2
+        }
+      ]
+    },
+    {
+      "Color": "Red",
+      "Name": "Pack Training",
+      "Cost": 5,
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Effect": "+2 if Trained Beast is adjacent to an ally"
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "Color": "Blue",
+      "Name": "Takedown",
+      "Cost": 3,
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -2,
+          "Effect": "Inflict Knocked Down [icon:knocked-down]"
+        }
+      ]
+    },
+    {
+      "Color": "Yellow",
+      "Name": "Long Pounce",
+      "Cost": 4,
+      "Actions": [
+        {
+          "Action": "Leap",
+          "Value": 4
+        },
+        {
+          "Action": "Attack",
+          "Value": -2
+        }
+      ]
+    },
+    {
+      "Color": "Red",
+      "Name": "Long Pounce",
+      "Cost": 4,
+      "Actions": [
+        {
+          "Action": "Leap",
+          "Value": 4
+        },
+        {
+          "Action": "Attack",
+          "Value": -2
+        }
+      ]
+    },
+    {
+      "Color": "Cyan",
+      "Name": "Pack Training",
+      "Cost": 5,
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Effect": "+2 if Trained Beast is adjacent to an ally"
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "Color": "Cyan",
       "Name": "Nip",
       "Cost": 1,
-      "Actions": [{ "Action": "Attack", "Value": -2 }]
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -2
+        }
+      ]
     },
-    "Blue": {
+    {
+      "Color": "Red",
+      "Name": "Takedown",
+      "Cost": 3,
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -2,
+          "Effect": "Inflict Knocked Down [icon:knocked-down]"
+        }
+      ]
+    },
+    {
+      "Color": "Yellow",
       "Name": "Long Pounce",
       "Cost": 4,
-      "Actions": [{ "Action": "Leap", "Value": 4 }, { "Action": "Attack", "Value": -2 }]
+      "Actions": [
+        {
+          "Action": "Leap",
+          "Value": 4
+        },
+        {
+          "Action": "Attack",
+          "Value": -2
+        }
+      ]
     },
-    "Cyan": {
-      "Name": "Long Pounce",
-      "Cost": 4,
-      "Actions": [{ "Action": "Leap", "Value": 4 }, { "Action": "Attack", "Value": -2 }]
+    {
+      "Color": "Blue",
+      "Name": "Pack Training",
+      "Cost": 5,
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Effect": "+2 if Trained Beast is adjacent to an ally"
+        }
+      ]
     }
-  }
+  ],
+  [
+    {
+      "Color": "Yellow",
+      "Name": "Nip",
+      "Cost": 1,
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -2
+        }
+      ]
+    },
+    {
+      "Color": "Blue",
+      "Name": "Pack Leader",
+      "Cost": 3,
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -1
+        },
+        {
+          "Action": "Special",
+          "Effect": "All adjacent Trained Beast allies that have an enemy in range perform an *Attack -2*."
+        }
+      ]
+    },
+    {
+      "Color": "Red",
+      "Name": "Takedown",
+      "Cost": 3,
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -2,
+          "Effect": "Inflict Knocked Down [icon:knocked-down]"
+        }
+      ]
+    },
+    {
+      "Color": "Cyan",
+      "Name": "Pack Training",
+      "Cost": 5,
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Effect": "+2 if Trained Beast is adjacent to an ally"
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "Color": "Blue",
+      "Name": "Takedown",
+      "Cost": 3,
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -2,
+          "Effect": "Inflict Knocked Down [icon:knocked-down]"
+        }
+      ]
+    },
+    {
+      "Color": "Cyan",
+      "Name": "Pack Leader",
+      "Cost": 3,
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -1
+        },
+        {
+          "Action": "Special",
+          "Effect": "All adjacent Trained Beast allies that have an enemy in range perform an *Attack -2*."
+        }
+      ]
+    },
+    {
+      "Color": "Red",
+      "Name": "Long Pounce",
+      "Cost": 4,
+      "Actions": [
+        {
+          "Action": "Leap",
+          "Value": 4
+        },
+        {
+          "Action": "Attack",
+          "Value": -2
+        }
+      ]
+    },
+    {
+      "Color": "Yellow",
+      "Name": "Pack Training",
+      "Cost": 5,
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Effect": "+2 if Trained Beast is adjacent to an ally"
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "Color": "Cyan",
+      "Name": "Nip",
+      "Cost": 1,
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -2
+        }
+      ]
+    },
+    {
+      "Color": "Blue",
+      "Name": "Nip",
+      "Cost": 1,
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -2
+        }
+      ]
+    },
+    {
+      "Color": "Yellow",
+      "Name": "Pack Leader",
+      "Cost": 3,
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -1
+        },
+        {
+          "Action": "Special",
+          "Effect": "All adjacent Trained Beast allies that have an enemy in range perform an *Attack -2*."
+        }
+      ]
+    },
+    {
+      "Color": "Red",
+      "Name": "Pack Training",
+      "Cost": 5,
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Effect": "+2 if Trained Beast is adjacent to an ally"
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "Color": "Yellow",
+      "Name": "Nip",
+      "Cost": 1,
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -2
+        }
+      ]
+    },
+    {
+      "Color": "Red",
+      "Name": "Nip",
+      "Cost": 1,
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -2
+        }
+      ]
+    },
+    {
+      "Color": "Blue",
+      "Name": "Long Pounce",
+      "Cost": 4,
+      "Actions": [
+        {
+          "Action": "Leap",
+          "Value": 4
+        },
+        {
+          "Action": "Attack",
+          "Value": -2
+        }
+      ]
+    },
+    {
+      "Color": "Cyan",
+      "Name": "Long Pounce",
+      "Cost": 4,
+      "Actions": [
+        {
+          "Action": "Leap",
+          "Value": 4
+        },
+        {
+          "Action": "Attack",
+          "Value": -2
+        }
+      ]
+    }
+  ]
 ]

@@ -1,278 +1,518 @@
 [
-  {
-    "Red": {
+  [
+    {
+      "Color": "Red",
       "Name": "Triple Shot",
       "Cost": 3,
-      "Actions": [{ "Action": "Attack", "Value": -2, "Mod": "Target 3" }]
-    },
-    "Yellow": {
-      "Name": "Retreating Fire",
-      "Cost": 3,
       "Actions": [
-        { "Action": "Attack", "Value": -1 },
-        { "Action": "Retreat", "Value": 2 }
+        {
+          "Action": "Attack",
+          "Value": -2,
+          "Mod": "Target 3"
+        }
       ]
     },
-    "Cyan": {
-      "Name": "Triple Shot",
-      "Cost": 3,
-      "Actions": [{ "Action": "Attack", "Value": -2, "Mod": "Target 3" }]
-    },
-    "Blue": {
+    {
+      "Color": "Yellow",
       "Name": "Retreating Fire",
       "Cost": 3,
       "Actions": [
-        { "Action": "Attack", "Value": -1 },
-        { "Action": "Retreat", "Value": 2 }
+        {
+          "Action": "Attack",
+          "Value": -1
+        },
+        {
+          "Action": "Retreat",
+          "Value": 2
+        }
+      ]
+    },
+    {
+      "Color": "Cyan",
+      "Name": "Triple Shot",
+      "Cost": 3,
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -2,
+          "Mod": "Target 3"
+        }
+      ]
+    },
+    {
+      "Color": "Blue",
+      "Name": "Retreating Fire",
+      "Cost": 3,
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -1
+        },
+        {
+          "Action": "Retreat",
+          "Value": 2
+        }
       ]
     }
-  },
-  {
-    "Blue": {
+  ],
+  [
+    {
+      "Color": "Blue",
       "Name": "Triple Shot",
       "Cost": 3,
-      "Actions": [{ "Action": "Attack", "Value": -2, "Mod": "Target 3" }]
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -2,
+          "Mod": "Target 3"
+        }
+      ]
     },
-    "Yellow": {
+    {
+      "Color": "Yellow",
       "Name": "Retreating Fire",
       "Cost": 3,
       "Actions": [
-        { "Action": "Attack", "Value": -1 },
-        { "Action": "Retreat", "Value": 2 }
+        {
+          "Action": "Attack",
+          "Value": -1
+        },
+        {
+          "Action": "Retreat",
+          "Value": 2
+        }
       ]
     },
-    "Red": {
+    {
+      "Color": "Red",
       "Name": "Triple Shot",
       "Cost": 3,
-      "Actions": [{ "Action": "Attack", "Value": -2, "Mod": "Target 3" }]
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -2,
+          "Mod": "Target 3"
+        }
+      ]
     },
-    "Cyan": {
+    {
+      "Color": "Cyan",
       "Name": "Full Draw",
       "Cost": 4,
-      "Actions": [{ "Action": "Attack", "Mod": "Range +2" }]
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Mod": "Range +2"
+        }
+      ]
     }
-  },
-  {
-    "Yellow": {
+  ],
+  [
+    {
+      "Color": "Yellow",
       "Name": "Triple Shot",
       "Cost": 3,
-      "Actions": [{ "Action": "Attack", "Value": -2, "Mod": "Target 3" }]
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -2,
+          "Mod": "Target 3"
+        }
+      ]
     },
-    "Blue": {
+    {
+      "Color": "Blue",
       "Name": "Fire Arrows",
       "Cost": 4,
       "Actions": [
         {
           "Action": "Special",
-          "Effect": "If the primary target is an enemy in range, roll the Accuracy die. If a Success or Block is rolled, the target is inflicted with Burning."
+          "Effect": "If the primary target is an enemy in range, roll the *Accuracy* die. If a *Success* [icon:success] or *Block* [icon:block] is rolled, the target is inflicted with *Burning* [icon:burning]."
         }
       ]
     },
-    "Red": {
+    {
+      "Color": "Red",
       "Name": "Full Draw",
       "Cost": 4,
-      "Actions": [{ "Action": "Attack", "Mod": "Range +2" }]
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Mod": "Range +2"
+        }
+      ]
     },
-    "Cyan": {
+    {
+      "Color": "Cyan",
       "Name": "Precise Shot",
       "Cost": 5,
-      "Actions": [{ "Action": "Attack", "Mod": "Pierce 3" }]
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Mod": "Pierce 3"
+        }
+      ]
     }
-  },
-  {
-    "Blue": {
+  ],
+  [
+    {
+      "Color": "Blue",
       "Name": "Triple Shot",
       "Cost": 3,
-      "Actions": [{ "Action": "Attack", "Value": -2, "Mod": "Target 3" }]
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -2,
+          "Mod": "Target 3"
+        }
+      ]
     },
-    "Cyan": {
+    {
+      "Color": "Cyan",
       "Name": "Retreating Fire",
       "Cost": 3,
       "Actions": [
-        { "Action": "Attack", "Value": -1 },
-        { "Action": "Retreat", "Value": 2 }
+        {
+          "Action": "Attack",
+          "Value": -1
+        },
+        {
+          "Action": "Retreat",
+          "Value": 2
+        }
       ]
     },
-    "Yellow": {
+    {
+      "Color": "Yellow",
       "Name": "Full Draw",
       "Cost": 4,
-      "Actions": [{ "Action": "Attack", "Mod": "Range +2" }]
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Mod": "Range +2"
+        }
+      ]
     },
-    "Red": {
+    {
+      "Color": "Red",
       "Name": "Precise Shot",
       "Cost": 5,
-      "Actions": [{ "Action": "Attack", "Mod": "Pierce 3" }]
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Mod": "Pierce 3"
+        }
+      ]
     }
-  },
-  {
-    "Cyan": {
+  ],
+  [
+    {
+      "Color": "Cyan",
       "Name": "Retreating Fire",
       "Cost": 3,
       "Actions": [
-        { "Action": "Attack", "Value": -1 },
-        { "Action": "Retreat", "Value": 2 }
+        {
+          "Action": "Attack",
+          "Value": -1
+        },
+        {
+          "Action": "Retreat",
+          "Value": 2
+        }
       ]
     },
-    "Red": {
+    {
+      "Color": "Red",
       "Name": "Retreating Fire",
       "Cost": 3,
       "Actions": [
-        { "Action": "Attack", "Value": -1 },
-        { "Action": "Retreat", "Value": 2 }
+        {
+          "Action": "Attack",
+          "Value": -1
+        },
+        {
+          "Action": "Retreat",
+          "Value": 2
+        }
       ]
     },
-    "Yellow": {
+    {
+      "Color": "Yellow",
       "Name": "Fire Arrows",
       "Cost": 4,
       "Actions": [
         {
           "Action": "Special",
-          "Effect": "If the primary target is an enemy in range, roll the Accuracy die. If a Success or Block is rolled, the target is inflicted with Burning."
+          "Effect": "If the primary target is an enemy in range, roll the *Accuracy* die. If a *Success* [icon:success] or *Block* [icon:block] is rolled, the target is inflicted with *Burning* [icon:burning]."
         }
       ]
     },
-    "Blue": {
+    {
+      "Color": "Blue",
       "Name": "Precise Shot",
       "Cost": 5,
-      "Actions": [{ "Action": "Attack", "Mod": "Pierce 3" }]
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Mod": "Pierce 3"
+        }
+      ]
     }
-  },
-  {
-    "Cyan": {
+  ],
+  [
+    {
+      "Color": "Cyan",
       "Name": "Triple Shot",
       "Cost": 3,
-      "Actions": [{ "Action": "Attack", "Value": -2, "Mod": "Target 3" }]
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -2,
+          "Mod": "Target 3"
+        }
+      ]
     },
-    "Yellow": {
+    {
+      "Color": "Yellow",
       "Name": "Retreating Fire",
       "Cost": 3,
       "Actions": [
-        { "Action": "Attack", "Value": -1 },
-        { "Action": "Retreat", "Value": 2 }
+        {
+          "Action": "Attack",
+          "Value": -1
+        },
+        {
+          "Action": "Retreat",
+          "Value": 2
+        }
       ]
     },
-    "Blue": {
+    {
+      "Color": "Blue",
       "Name": "Full Draw",
       "Cost": 4,
-      "Actions": [{ "Action": "Attack", "Mod": "Range +2" }]
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Mod": "Range +2"
+        }
+      ]
     },
-    "Red": {
+    {
+      "Color": "Red",
       "Name": "Full Draw",
       "Cost": 4,
-      "Actions": [{ "Action": "Attack", "Mod": "Range +2" }]
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Mod": "Range +2"
+        }
+      ]
     }
-  },
-  {
-    "Yellow": {
+  ],
+  [
+    {
+      "Color": "Yellow",
       "Name": "Triple Shot",
       "Cost": 3,
-      "Actions": [{ "Action": "Attack", "Value": -2, "Mod": "Target 3" }]
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -2,
+          "Mod": "Target 3"
+        }
+      ]
     },
-    "Red": {
+    {
+      "Color": "Red",
       "Name": "Fire Arrows",
       "Cost": 4,
       "Actions": [
         {
           "Action": "Special",
-          "Effect": "If the primary target is an enemy in range, roll the Accuracy die. If a Success or Block is rolled, the target is inflicted with Burning."
+          "Effect": "If the primary target is an enemy in range, roll the *Accuracy* die. If a *Success* [icon:success] or *Block* [icon:block] is rolled, the target is inflicted with *Burning* [icon:burning]."
         }
       ]
     },
-    "Cyan": {
+    {
+      "Color": "Cyan",
       "Name": "Full Draw",
       "Cost": 4,
-      "Actions": [{ "Action": "Attack", "Mod": "Range +2" }]
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Mod": "Range +2"
+        }
+      ]
     },
-    "Blue": {
+    {
+      "Color": "Blue",
       "Name": "Precise Shot",
       "Cost": 5,
-      "Actions": [{ "Action": "Attack", "Mod": "Pierce 3" }]
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Mod": "Pierce 3"
+        }
+      ]
     }
-  },
-  {
-    "Red": {
+  ],
+  [
+    {
+      "Color": "Red",
       "Name": "Retreating Fire",
       "Cost": 3,
       "Actions": [
-        { "Action": "Attack", "Value": -1 },
-        { "Action": "Retreat", "Value": 2 }
+        {
+          "Action": "Attack",
+          "Value": -1
+        },
+        {
+          "Action": "Retreat",
+          "Value": 2
+        }
       ]
     },
-    "Blue": {
+    {
+      "Color": "Blue",
       "Name": "Retreating Fire",
       "Cost": 3,
       "Actions": [
-        { "Action": "Attack", "Value": -1 },
-        { "Action": "Retreat", "Value": 2 }
+        {
+          "Action": "Attack",
+          "Value": -1
+        },
+        {
+          "Action": "Retreat",
+          "Value": 2
+        }
       ]
     },
-    "Yellow": {
+    {
+      "Color": "Yellow",
       "Name": "Full Draw",
       "Cost": 4,
-      "Actions": [{ "Action": "Attack", "Mod": "Range +2" }]
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Mod": "Range +2"
+        }
+      ]
     },
-    "Cyan": {
+    {
+      "Color": "Cyan",
       "Name": "Precise Shot",
       "Cost": 5,
-      "Actions": [{ "Action": "Attack", "Mod": "Pierce 3" }]
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Mod": "Pierce 3"
+        }
+      ]
     }
-  },
-  {
-    "Cyan": {
+  ],
+  [
+    {
+      "Color": "Cyan",
       "Name": "Retreating Fire",
       "Cost": 3,
       "Actions": [
-        { "Action": "Attack", "Value": -1 },
-        { "Action": "Retreat", "Value": 2 }
+        {
+          "Action": "Attack",
+          "Value": -1
+        },
+        {
+          "Action": "Retreat",
+          "Value": 2
+        }
       ]
     },
-    "Red": {
+    {
+      "Color": "Red",
       "Name": "Retreating Fire",
       "Cost": 3,
       "Actions": [
-        { "Action": "Attack", "Value": -1 },
-        { "Action": "Retreat", "Value": 2 }
+        {
+          "Action": "Attack",
+          "Value": -1
+        },
+        {
+          "Action": "Retreat",
+          "Value": 2
+        }
       ]
     },
-    "Blue": {
+    {
+      "Color": "Blue",
       "Name": "Full Draw",
       "Cost": 4,
-      "Actions": [{ "Action": "Attack", "Mod": "Range +2" }]
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Mod": "Range +2"
+        }
+      ]
     },
-    "Yellow": {
+    {
+      "Color": "Yellow",
       "Name": "Precise Shot",
       "Cost": 5,
-      "Actions": [{ "Action": "Attack", "Mod": "Pierce 3" }]
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Mod": "Pierce 3"
+        }
+      ]
     }
-  },
-  {
-    "Blue": {
+  ],
+  [
+    {
+      "Color": "Blue",
       "Name": "Retreating Fire",
       "Cost": 3,
       "Actions": [
-        { "Action": "Attack", "Value": -1 },
-        { "Action": "Retreat", "Value": 2 }
+        {
+          "Action": "Attack",
+          "Value": -1
+        },
+        {
+          "Action": "Retreat",
+          "Value": 2
+        }
       ]
     },
-    "Cyan": {
+    {
+      "Color": "Cyan",
       "Name": "Fire Arrows",
       "Cost": 4,
       "Actions": [
         {
           "Action": "Special",
-          "Effect": "If the primary target is an enemy in range, roll the Accuracy die. If a Success or Block is rolled, the target is inflicted with Burning."
+          "Effect": "If the primary target is an enemy in range, roll the *Accuracy* die. If a *Success* [icon:success] or *Block* [icon:block] is rolled, the target is inflicted with *Burning* [icon:burning]."
         }
       ]
     },
-    "Red": {
+    {
+      "Color": "Red",
       "Name": "Precise Shot",
       "Cost": 5,
-      "Actions": [{ "Action": "Attack", "Mod": "Pierce 3" }]
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Mod": "Pierce 3"
+        }
+      ]
     },
-    "Yellow": {
+    {
+      "Color": "Yellow",
       "Name": "Precise Shot",
       "Cost": 5,
-      "Actions": [{ "Action": "Attack", "Mod": "Pierce 3" }]
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Mod": "Pierce 3"
+        }
+      ]
     }
-  }
+  ]
 ]

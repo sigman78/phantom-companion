@@ -55,6 +55,7 @@ export interface ActionStep {
 }
 
 export interface ColorCard {
+  Color: AdversaryColor;
   Name: string;
   Cost: number;
   Actions: ActionStep[];

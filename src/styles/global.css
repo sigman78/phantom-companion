@@ -137,3 +137,10 @@ html, body {
   color: #5dba7d;
   white-space: nowrap;
 }
+
+/* Explicit *emphasis* from data formatting */
+.kw-em {
+  font-style: normal;
+  font-weight: 600;
+  color: var(--color-text);
+}

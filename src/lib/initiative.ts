@@ -5,9 +5,10 @@ const COLOR_ORDER: AdversaryColor[] = ['Red', 'Blue', 'Cyan', 'Yellow'];
 export function calcInitiative(
   unit: AdversaryUnit,
   speciesCard: SpeciesCard,
-  classCardEntry: Record<AdversaryColor, ColorCard>
+  classCardEntry: ColorCard[]
 ): number {
-  return speciesCard.Cost + classCardEntry[unit.color].Cost;
+  const card = classCardEntry.find(c => c.Color === unit.color);
+  return speciesCard.Cost + (card?.Cost ?? 0);
 }
 
 export function sortActivations(entries: ActivationEntry[]): ActivationEntry[] {

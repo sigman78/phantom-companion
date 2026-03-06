@@ -8,7 +8,7 @@ import { createDeck, drawCard, deckKey } from '../lib/deck';
 import { calcInitiative, sortActivations, numberActivations } from '../lib/initiative';
 import { CLASS_FILE, SPECIES_FILE } from '../lib/adversaries';
 
-export type ClassDeckJson   = Array<Record<AdversaryColor, ColorCard>>;
+export type ClassDeckJson   = Array<ColorCard[]>;
 export type SpeciesDeckJson = SpeciesCard[];
 
 interface GameStore {
@@ -134,7 +134,7 @@ export function drawTurn(): void {
       const classEntry  = classJson[classIndex];
 
       for (const unit of units) {
-        const classCard  = classEntry[unit.color];
+        const classCard  = classEntry.find(c => c.Color === unit.color) ?? classEntry[0];
         const initiative = calcInitiative(unit, speciesCard, classEntry);
         entries.push({
           unit, speciesCard, classCard, initiative,

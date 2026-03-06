@@ -18,28 +18,20 @@
     "Name": "Tactical Retreat",
     "Cost": 3,
     "Actions": [
-      { "Action": "Guard", "Type": "Round", "Value": 2 },
-      {
-        "Action": "Special",
-        "Effect": "If an enemy is within the Slink's range at the start of the Slink's turn, Retreat 2 at the end of the Slink's turn."
-      }
+      { "Action": "Guard", "Type": "Round", "Value": 2, "Effect": "If an enemy is within the Slink's range at the start of the Slink's turn, *Retreat 2* at the end of the Slink's turn." }
     ]
   },
   {
     "Name": "Tactical Retreat",
     "Cost": 3,
     "Actions": [
-      { "Action": "Guard", "Type": "Round", "Value": 2 },
-      {
-        "Action": "Special",
-        "Effect": "If an enemy is within the Slink's range at the start of the Slink's turn, Retreat 2 at the end of the Slink's turn."
-      }
+      { "Action": "Guard", "Type": "Round", "Value": 2, "Effect": "If an enemy is within the Slink's range at the start of the Slink's turn, *Retreat 2* at the end of the Slink's turn." }
     ]
   },
   {
     "Name": "Rabid Response",
     "Cost": 2,
-    "Actions": [{ "Action": "Gain", "Effect": "Vengeful" }]
+    "Actions": [{ "Action": "Gain", "Value": "Vengeful [icon:vengeful]" }]
   },
   {
     "Name": "Scamper",
@@ -50,11 +42,7 @@
     "Name": "Stealthy Slink",
     "Cost": 4,
     "Actions": [
-      { "Action": "Move", "Value": 3 },
-      {
-        "Action": "Special",
-        "Effect": "The Slink gains Invisible at the end of the turn."
-      }
+      { "Action": "Move", "Value": 3, "Effect": "The Slink gains *Invisible* [icon:invisible] at the end of the turn." }
     ]
   },
   {

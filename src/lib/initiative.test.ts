@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { calcInitiative, sortActivations, numberActivations } from './initiative';
-import type { AdversaryUnit, SpeciesCard, ColorCard, ActivationEntry } from '../types/game';
+import type { AdversaryUnit, SpeciesCard, ColorCard, ActivationEntry, AdversaryColor } from '../types/game';
 
 function makeUnit(color: 'Red' | 'Blue' | 'Cyan' | 'Yellow'): AdversaryUnit {
   return {
@@ -14,8 +14,8 @@ function makeUnit(color: 'Red' | 'Blue' | 'Cyan' | 'Yellow'): AdversaryUnit {
   };
 }
 
-function makeColorCard(cost: number): ColorCard {
-  return { Name: 'Card', Cost: cost, Actions: [] };
+function makeColorCard(cost: number) {
+  return { Name: 'Card', Cost: cost, Actions: [] as ColorCard['Actions'] };
 }
 
 function makeEntry(unit: AdversaryUnit, initiative: number): ActivationEntry {
@@ -30,27 +30,26 @@ function makeEntry(unit: AdversaryUnit, initiative: number): ActivationEntry {
   };
 }
 
+function makeColorCardEntry(red: number, blue: number, cyan: number, yellow: number): ColorCard[] {
+  return [
+    { Color: 'Red',    ...makeColorCard(red) },
+    { Color: 'Blue',   ...makeColorCard(blue) },
+    { Color: 'Cyan',   ...makeColorCard(cyan) },
+    { Color: 'Yellow', ...makeColorCard(yellow) },
+  ];
+}
+
 describe('calcInitiative', () => {
   it('sums species card Cost + color class Cost', () => {
     const unit = makeUnit('Red');
     const speciesCard: SpeciesCard = { Name: 'S', Cost: 3, Actions: [] };
-    const classEntry = {
-      Red:    makeColorCard(2),
-      Blue:   makeColorCard(1),
-      Cyan:   makeColorCard(4),
-      Yellow: makeColorCard(5),
-    };
+    const classEntry = makeColorCardEntry(2, 1, 4, 5);
     expect(calcInitiative(unit, speciesCard, classEntry)).toBe(5);
   });
   it('uses the unit color to select the class card', () => {
     const unit = makeUnit('Cyan');
     const speciesCard: SpeciesCard = { Name: 'S', Cost: 1, Actions: [] };
-    const classEntry = {
-      Red:    makeColorCard(0),
-      Blue:   makeColorCard(0),
-      Cyan:   makeColorCard(6),
-      Yellow: makeColorCard(0),
-    };
+    const classEntry = makeColorCardEntry(0, 0, 6, 0);
     expect(calcInitiative(unit, speciesCard, classEntry)).toBe(7);
   });
 });

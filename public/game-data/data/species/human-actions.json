@@ -36,7 +36,7 @@
     "Actions": [
       {
         "Action": "Special",
-        "Effect": "The closest ally within Range 5 that is able to attack an enemy performs an Attack -1. If there is no ally within Range 5 that is able to attack an enemy, convert this card to movement instead."
+        "Effect": "The closest ally within *Range 5* that is able to attack an enemy performs an *Attack -1*. If there is no ally within *Range 5* that is able to attack an enemy, convert this card to movement instead."
       }
     ]
   },
@@ -46,7 +46,7 @@
     "Actions": [
       {
         "Action": "Special",
-        "Effect": "Any ally within Range 5 that is attacked performs a Retreat 2 after the attack and any other triggered effects complete. This effect may only occur once per attack."
+        "Effect": "Any ally within *Range 5* that is attacked performs a *Retreat 2* after the attack and any other triggered effects complete. [p] This effect may only occur once per attack."
       }
     ]
   },
@@ -56,7 +56,7 @@
     "Actions": [
       {
         "Action": "Special",
-        "Effect": "Any ally within Range 5 that is attacked performs a Retreat 2 after the attack and any other triggered effects complete. This effect may only occur once per attack."
+        "Effect": "Any ally within *Range 5* that is attacked performs a *Retreat 2* after the attack and any other triggered effects complete. [p] This effect may only occur once per attack."
       }
     ]
   },
@@ -65,7 +65,7 @@
     "Cost": 5,
     "Actions": [
       { "Action": "Move", "Value": 5 },
-      { "Action": "Gain", "Effect": "Resilient" }
+      { "Action": "Gain", "Value": "Resilient [icon:resilient]" }
     ]
   },
   {
@@ -73,7 +73,7 @@
     "Cost": 5,
     "Actions": [
       { "Action": "Move", "Value": 5 },
-      { "Action": "Gain", "Effect": "Resilient" }
+      { "Action": "Gain", "Value": "Resilient [icon:resilient]" }
     ]
   }
 ]

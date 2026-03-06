@@ -29,7 +29,7 @@ function makeEntry(unit: AdversaryUnit, order: number): ActivationEntry {
   return {
     unit,
     speciesCard: { Name: 'S', Cost: 1, Actions: [] },
-    classCard:   { Name: 'C', Cost: 1, Actions: [] },
+    classCard:   { Color: 'Red' as const, Name: 'C', Cost: 1, Actions: [] },
     initiative: order,
     activationOrder: order,
     speciesCardIndex: 0,
