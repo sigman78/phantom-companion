@@ -52,14 +52,14 @@
     "Name": "Venomous Spit",
     "Cost": 4,
     "Actions": [
-      { "Action": "Attack", "Value": -3, "Mod": "Range 4", "Effect": "Inflict Weakened" }
+      { "Action": "Attack", "Value": -3, "Mod": "Range 4", "Effect": "Inflict Weakened [icon:weakened]" }
     ]
   },
   {
     "Name": "Venomous Spit",
     "Cost": 4,
     "Actions": [
-      { "Action": "Attack", "Value": -3, "Mod": "Range 4", "Effect": "Inflict Weakened" }
+      { "Action": "Attack", "Value": -3, "Mod": "Range 4", "Effect": "Inflict Weakened [icon:weakened]" }
     ]
   },
   {

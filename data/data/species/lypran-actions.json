@@ -5,7 +5,7 @@
     "Actions": [
       {
         "Action": "Special",
-        "Effect": "If the Lypran's primary target is an enemy within Range 3, Teleport the target to an empty space or hazard space adjacent to the Lypran. Use the Decision die to determine which. If there are no available adjacent spaces, convert to MP instead."
+        "Effect": "If the Lypran's primary target is an enemy within *Range *3, Teleport the target to an empty space or hazard space adjacent to the Lypran. Use the Decision die to determine which. [p] If there are no available adjacent spaces, convert to MP instead."
       }
     ]
   },
@@ -15,7 +15,7 @@
     "Actions": [
       {
         "Action": "Special",
-        "Effect": "If the Lypran's primary target is an enemy within Range 3, Teleport the target to an empty space or hazard space adjacent to the Lypran. Use the Decision die to determine which. If there are no available adjacent spaces, convert to MP instead."
+        "Effect": "If the Lypran's primary target is an enemy within *Range *3, Teleport the target to an empty space or hazard space adjacent to the Lypran. Use the Decision die to determine which. [p] If there are no available adjacent spaces, convert to MP instead."
       }
     ]
   },
@@ -40,7 +40,7 @@
     "Actions": [
       {
         "Action": "Special",
-        "Effect": "If the Lypran's primary target is not within the Lypran's range, Leap 3. Otherwise, Retreat 3 using Leap at the end of the Lypran's turn."
+        "Effect": "If the Lypran's primary target is not within the Lypran's range, *Leap 3*. [p] Otherwise, *Retreat 3* using *Leap* at the end of the Lypran's turn."
       }
     ]
   },
@@ -50,7 +50,7 @@
     "Actions": [
       {
         "Action": "Special",
-        "Effect": "If the Lypran's primary target is not within the Lypran's range, Leap 3. Otherwise, Retreat 3 using Leap at the end of the Lypran's turn."
+        "Effect": "If the Lypran's primary target is not within the Lypran's range, *Leap 3*. [p] Otherwise, *Retreat 3* using *Leap* at the end of the Lypran's turn."
       }
     ]
   },
@@ -58,15 +58,15 @@
     "Name": "Animal Bloodlust",
     "Cost": 2,
     "Actions": [
-      { "Action": "Attack", "Type": "Round", "Value": 1, "Target": "All attacks" },
-      { "Action": "Guard", "Type": "Round", "Value": -1 }
+      { "Action": "Buff", "Type": "Round", "Value": "+1 to all attacks" },
+      { "Action": "Guard", "Type": "Round", "Value": "-1" }
     ]
   },
   {
     "Name": "Animal Bloodlust",
     "Cost": 2,
     "Actions": [
-      { "Action": "Attack", "Type": "Round", "Value": 1, "Target": "All attacks" },
+      { "Action": "Buff", "Type": "Round", "Value": "+1 to all attacks" },
       { "Action": "Guard", "Type": "Round", "Value": -1 }
     ]
   },
@@ -76,6 +76,7 @@
     "Actions": [
       {
         "Action": "Special",
+        "Type": "Round",
         "Effect": "Any time an adjacent enemy moves a space, the Lypran moves into the space that the enemy just left. The Lypran is immune to the effects of entering hazards while moving in this way."
       }
     ]
