@@ -3,16 +3,12 @@
   import { ADVERSARY_TYPES } from '../../lib/adversaries';
   import { adversaryIconUrl } from '../../lib/assets';
   import { addAdversaryGroup } from '../../stores/gameStore';
+  import { DIFFICULTY_STARS } from '../../lib/constants';
   import type { AdversaryType, DifficultyLevel } from '../../types/game';
 
   const dispatch = createEventDispatcher<{ close: void }>();
 
-  const DIFFICULTIES: Array<{ level: DifficultyLevel; stars: string }> = [
-    { level: 0, stars: '★' },
-    { level: 1, stars: '★★' },
-    { level: 2, stars: '★★★' },
-    { level: 3, stars: '★★★★' },
-  ];
+  const LEVELS: DifficultyLevel[] = [0, 1, 2, 3];
 
   let selected: AdversaryType | null = null;
   let difficulty: DifficultyLevel = 1;
@@ -29,9 +25,9 @@
   const close = () => dispatch('close');
 </script>
 
-<div class="backdrop" on:click|self={close} on:keydown={e => e.key === 'Escape' && close()} role="presentation">
+<div class="overlay-backdrop" on:click|self={close} on:keydown={e => e.key === 'Escape' && close()} role="presentation">
   <div class="modal">
-    <div class="modal-header">
+    <div class="overlay-header">
       <h2>Add Adversary</h2>
       <button class="close-btn" on:click={close}>x</button>
     </div>
@@ -54,13 +50,13 @@
         <div class="diff-row">
           <span class="diff-label">Difficulty</span>
           <div class="diff-btns">
-            {#each DIFFICULTIES as d}
+            {#each LEVELS as level}
               <button
                 class="diff-btn"
-                class:active={difficulty === d.level}
-                on:click={() => difficulty = d.level}
+                class:active={difficulty === level}
+                on:click={() => difficulty = level}
               >
-                {d.stars}
+                {DIFFICULTY_STARS[level]}
               </button>
             {/each}
           </div>
@@ -79,16 +75,6 @@
 </div>
 
 <style>
-  .backdrop {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.75);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 100;
-  }
-
   .modal {
     background: var(--color-surface);
     border: 1px solid var(--color-border);
@@ -99,15 +85,6 @@
     max-height: 86vh;
     display: flex;
     flex-direction: column;
-  }
-
-  .modal-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: var(--space-4) var(--space-6);
-    border-bottom: 1px solid var(--color-border);
-    flex-shrink: 0;
   }
 
   h2 { font-family: var(--font-heading); font-size: 18px; color: var(--color-accent); }

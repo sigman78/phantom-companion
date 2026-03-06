@@ -9,9 +9,9 @@ export function classCardArtUrl(className: ClassName, cardIndex: number): string
   return `${BASE_CLASS_ART}/${CLASS_ART_PREFIX[className]}_act${cardIndex}.jpg`;
 }
 
-// SPECIAL CASE: Trained Beast back file is "trainer_beast_back.jpg" (typo in source art).
 export function classCardBackUrl(className: ClassName): string {
-  return `${BASE_CLASS_ART}/${CLASS_ART_PREFIX[className]}_back.jpg`;
+  const prefix = CLASS_ART_PREFIX[className];
+  return `${BASE_CLASS_ART}/${prefix}_back.jpg`;
 }
 
 export function speciesCardArtUrl(species: SpeciesName, cardIndex: number): string {

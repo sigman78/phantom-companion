@@ -1,14 +1,11 @@
 <script lang="ts">
   import type { AdversaryColor } from '../../types/game';
-  export let color: AdversaryColor;
+  import { COLOR_VAR } from '../../lib/constants';
 
-  const COLOR_MAP: Record<AdversaryColor, string> = {
-    Red: 'var(--color-red)', Blue: 'var(--color-blue)',
-    Cyan: 'var(--color-cyan)', Yellow: 'var(--color-yellow)',
-  };
+  export let color: AdversaryColor;
 </script>
 
-<span class="badge" style="background: {COLOR_MAP[color]}" title={color}></span>
+<span class="badge" style="background: {COLOR_VAR[color]}" title={color}></span>
 
 <style>
   .badge {

@@ -1,16 +1,14 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { gameStore, activations } from '../../stores/gameStore';
-  import type { AdversaryStatBlock, AdversaryColor, DifficultyLevel } from '../../types/game';
+  import type { AdversaryStatBlock, DifficultyLevel } from '../../types/game';
   import {
     adversaryPortraitUrl, classCardArtUrl, speciesCardArtUrl,
     classCardBackUrl, speciesCardBackUrl,
   } from '../../lib/assets';
   import ColorBadge from './ColorBadge.svelte';
-
-  const COLORS: AdversaryColor[] = ['Red', 'Blue', 'Cyan', 'Yellow'];
-  // difficulty 0 = 1 star, 1 = 2 stars, 2 = 3 stars, 3 = 4 stars
-  const STARS: Record<DifficultyLevel, string> = { 0: '★', 1: '★★', 2: '★★★', 3: '★★★★' };
+  import ActionStepRow from './ActionStepRow.svelte';
+  import { DIFFICULTY_STARS } from '../../lib/constants';
 
   let statsJson: Record<string, AdversaryStatBlock[]> | null = null;
   onMount(() => {
@@ -46,40 +44,6 @@
   $: ownClassCard = (activation && fullClassEntry)
     ? fullClassEntry[activation.unit.color]
     : null;
-
-  // Highlight keywords in effect/trigger text
-  const NEG_CONDITIONS = [
-    'Knocked Down', 'Weakened', 'Burning', 'Bleeding',
-    'Stunned', 'Blinded', 'Vulnerable', 'Frozen',
-  ];
-  const POS_CONDITIONS = ['Invisible', 'Resilient', 'Vengeful', 'Barrier'];
-  const ACTION_VERBS = 'Attack|Move|Retreat|Leap|Guard|Heal|Range';
-
-  function highlight(text: string): string {
-    // Escape HTML first
-    let s = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-
-    // Die references — most specific first to avoid inner words matching action verb regex
-    s = s.replace(/Blitz Attack die/g, '<span class="kw-die kw-die-yellow">Blitz Attack die</span>');
-    s = s.replace(/Basic Attack die/g, '<span class="kw-die kw-die-cyan">Basic Attack die</span>');
-    s = s.replace(/Accuracy die/g,     '<span class="kw-die kw-die-red">Accuracy die</span>');
-
-    // Action verb + number e.g. "Attack -2", "Retreat 3", "Leap 4", "Range 5"
-    s = s.replace(
-      new RegExp(`\\b(${ACTION_VERBS})(\\s+[+-]?\\d+)`, 'g'),
-      '<span class="kw-action">$1$2</span>'
-    );
-
-    // Condition badges — longest first to avoid partial matches
-    [...NEG_CONDITIONS].sort((a, b) => b.length - a.length).forEach(kw => {
-      s = s.replace(new RegExp(kw, 'g'), `<span class="kw-neg">${kw}</span>`);
-    });
-    [...POS_CONDITIONS].sort((a, b) => b.length - a.length).forEach(kw => {
-      s = s.replace(new RegExp(kw, 'g'), `<span class="kw-pos">${kw}</span>`);
-    });
-
-    return s;
-  }
 </script>
 
 <div class="detail">
@@ -95,7 +59,7 @@
       <div class="adv-meta">
         <div class="name-row">
           <span class="adv-name">{selectedName}</span>
-          <span class="stars">{STARS[difficulty]}</span>
+          <span class="stars">{DIFFICULTY_STARS[difficulty]}</span>
         </div>
 
         {#if stats}
@@ -169,17 +133,7 @@
         </div>
         <div class="actions-list">
           {#each activation.speciesCard.Actions as step}
-            <div class="action-row">
-              <div class="action-main">
-                <span class="action-verb">{step.Action}</span>
-                {#if step.Value !== undefined}<span class="action-val">{step.Value > 0 ? '+' : ''}{step.Value}</span>{/if}
-                {#if step.Mod}<span class="action-tag mod">{step.Mod}</span>{/if}
-                {#if step.Type}<span class="action-tag type">{step.Type}</span>{/if}
-                {#if step.Target}<span class="action-target">{step.Target}</span>{/if}
-              </div>
-              {#if step.Effect}<p class="action-effect">{@html highlight(step.Effect)}</p>{/if}
-              {#if step.Trigger}<p class="action-trigger">{@html highlight(step.Trigger)}</p>{/if}
-            </div>
+            <ActionStepRow {step} />
           {/each}
         </div>
 
@@ -191,17 +145,7 @@
         </div>
         <div class="actions-list">
           {#each ownClassCard.Actions as step}
-            <div class="action-row">
-              <div class="action-main">
-                <span class="action-verb">{step.Action}</span>
-                {#if step.Value !== undefined}<span class="action-val">{step.Value > 0 ? '+' : ''}{step.Value}</span>{/if}
-                {#if step.Mod}<span class="action-tag mod">{step.Mod}</span>{/if}
-                {#if step.Type}<span class="action-tag type">{step.Type}</span>{/if}
-                {#if step.Target}<span class="action-target">{step.Target}</span>{/if}
-              </div>
-              {#if step.Effect}<p class="action-effect">{@html highlight(step.Effect)}</p>{/if}
-              {#if step.Trigger}<p class="action-trigger">{@html highlight(step.Trigger)}</p>{/if}
-            </div>
+            <ActionStepRow {step} />
           {/each}
         </div>
       </div>
@@ -435,151 +379,5 @@
     display: flex;
     flex-direction: column;
     gap: 0;
-  }
-
-  .action-row {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-    padding: var(--space-1) 0;
-  }
-
-  .action-main {
-    display: flex;
-    align-items: baseline;
-    gap: var(--space-2);
-    flex-wrap: wrap;
-  }
-
-  .action-verb {
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 12px;
-    letter-spacing: 0.05em;
-    color: var(--color-text-dim);
-    min-width: 52px;
-    flex-shrink: 0;
-  }
-  .action-val {
-    font-size: 17px;
-    font-weight: bold;
-    color: var(--color-text);
-    flex-shrink: 0;
-    line-height: 1;
-  }
-  .action-tag {
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    border-radius: var(--radius-sm);
-    padding: 1px var(--space-1);
-    flex-shrink: 0;
-  }
-  .action-tag.mod {
-    background: rgba(0,180,216,0.12);
-    border: 1px solid rgba(0,180,216,0.3);
-    color: var(--color-cyan);
-  }
-  .action-tag.type {
-    background: var(--color-surface-alt);
-    border: 1px solid var(--color-border);
-    color: var(--color-text-dim);
-  }
-  .action-target {
-    font-size: 11px;
-    color: var(--color-text-dim);
-    font-style: italic;
-  }
-  .action-effect {
-    margin: 0;
-    font-size: 14px;
-    color: var(--color-text-dim);
-    line-height: 1.5;
-    padding-left: 52px;
-  }
-  .action-trigger {
-    margin: 0;
-    font-size: 13px;
-    color: var(--color-accent);
-    font-style: italic;
-    padding-left: 52px;
-  }
-
-  /* Action phrase highlights e.g. "Attack -2", "Retreat 3" */
-  :global(.kw-action) {
-    display: inline-block;
-    font-weight: 700;
-    font-style: normal;
-    padding: 0 3px;
-    border-radius: var(--radius-sm);
-    background: rgba(184, 115, 51, 0.15);
-    text-decoration: underline;
-    text-decoration-color: rgba(184, 115, 51, 0.5);
-    text-underline-offset: 2px;
-    color: var(--color-text);
-    white-space: nowrap;
-  }
-
-  /* Die reference badges */
-  :global(.kw-die) {
-    display: inline-block;
-    font-weight: 600;
-    font-style: normal;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    padding: 1px 4px;
-    border-radius: var(--radius-sm);
-    white-space: nowrap;
-    text-decoration: underline;
-    text-underline-offset: 2px;
-  }
-  :global(.kw-die-red) {
-    background: rgba(192, 57, 43, 0.15);
-    border: 1px solid rgba(192, 57, 43, 0.35);
-    color: #e07060;
-    text-decoration-color: rgba(192, 57, 43, 0.5);
-  }
-  :global(.kw-die-yellow) {
-    background: rgba(212, 172, 13, 0.15);
-    border: 1px solid rgba(212, 172, 13, 0.35);
-    color: var(--color-yellow);
-    text-decoration-color: rgba(212, 172, 13, 0.5);
-  }
-  :global(.kw-die-cyan) {
-    background: rgba(0, 180, 216, 0.12);
-    border: 1px solid rgba(0, 180, 216, 0.3);
-    color: var(--color-cyan);
-    text-decoration-color: rgba(0, 180, 216, 0.4);
-  }
-
-  /* Condition keyword badges inside effect/trigger text */
-  :global(.kw-neg) {
-    display: inline-block;
-    font-size: 10px;
-    font-style: normal;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    padding: 1px 4px;
-    border-radius: var(--radius-sm);
-    background: rgba(192, 57, 43, 0.18);
-    border: 1px solid rgba(192, 57, 43, 0.45);
-    color: #e07060;
-    white-space: nowrap;
-  }
-  :global(.kw-pos) {
-    display: inline-block;
-    font-size: 10px;
-    font-style: normal;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    padding: 1px 4px;
-    border-radius: var(--radius-sm);
-    background: rgba(39, 174, 96, 0.15);
-    border: 1px solid rgba(39, 174, 96, 0.4);
-    color: #5dba7d;
-    white-space: nowrap;
   }
 </style>

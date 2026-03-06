@@ -2,32 +2,20 @@
   import { createEventDispatcher } from 'svelte';
   import type { ActivationEntry } from '../../types/game';
   import { adversaryIconUrl } from '../../lib/assets';
+  import { COLOR_BG, COLOR_VAR } from '../../lib/constants';
 
   export let entry: ActivationEntry;
   export let selected: boolean = false;
 
   const dispatch = createEventDispatcher<{ select: string }>();
   const handleClick = () => dispatch('select', entry.unit.id);
-
-  const COLOR_BG: Record<string, string> = {
-    Red:    'rgba(192, 57,  43,  0.15)',
-    Blue:   'rgba(41,  128, 185, 0.15)',
-    Cyan:   'rgba(0,   180, 216, 0.12)',
-    Yellow: 'rgba(212, 172, 13,  0.15)',
-  };
-  const COLOR_ACCENT: Record<string, string> = {
-    Red:    'var(--color-red)',
-    Blue:   'var(--color-blue)',
-    Cyan:   'var(--color-cyan)',
-    Yellow: 'var(--color-yellow)',
-  };
 </script>
 
 <div
   class="row"
   class:selected
   class:dead={!entry.unit.alive}
-  style="--row-color-bg:{COLOR_BG[entry.unit.color]}; --row-color-accent:{COLOR_ACCENT[entry.unit.color]}"
+  style="--row-color-bg:{COLOR_BG[entry.unit.color]}; --row-color-accent:{COLOR_VAR[entry.unit.color]}"
   on:click={handleClick}
   role="button"
   tabindex="0"

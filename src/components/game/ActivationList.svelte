@@ -1,40 +1,14 @@
 <script lang="ts">
-  import { activations, gameStore, selectAdversary } from '../../stores/gameStore';
+  import { activations, gameStore, selectAdversary, adversaryGroups } from '../../stores/gameStore';
   import { adversaryIconUrl } from '../../lib/assets';
   import AddAdversaryModal from './AddAdversaryModal.svelte';
-  import type { AdversaryColor, DifficultyLevel } from '../../types/game';
+  import { ADVERSARY_COLORS, DIFFICULTY_STARS, COLOR_BG, COLOR_VAR } from '../../lib/constants';
 
   let addOpen = false;
-
-  const DIFFICULTY_STARS: Record<DifficultyLevel, string> = {
-    0: '★', 1: '★★', 2: '★★★', 3: '★★★★',
-  };
-  const COLORS: AdversaryColor[] = ['Red', 'Blue', 'Cyan', 'Yellow'];
-
-  const COLOR_BG: Record<AdversaryColor, string> = {
-    Red:    'rgba(192,57,43,0.15)',
-    Blue:   'rgba(41,128,185,0.15)',
-    Cyan:   'rgba(0,180,216,0.12)',
-    Yellow: 'rgba(212,172,13,0.15)',
-  };
 
   $: drawn = $activations.length > 0;
   $: selectedName = $gameStore.turn.selectedAdversaryName;
   $: activeIdx    = $gameStore.turn.activeActivationIndex;
-
-  // Unique adversary types in the mission (pre-draw view)
-  $: adversaryGroups = (() => {
-    const seen = new Set<string>();
-    const groups: Array<{ name: string; difficulty: DifficultyLevel; units: typeof $gameStore.turn.units }> = [];
-    for (const unit of $gameStore.turn.units) {
-      if (!seen.has(unit.adversaryName)) {
-        seen.add(unit.adversaryName);
-        const typeUnits = $gameStore.turn.units.filter(u => u.adversaryName === unit.adversaryName);
-        groups.push({ name: unit.adversaryName, difficulty: unit.difficulty, units: typeUnits });
-      }
-    }
-    return groups;
-  })();
 </script>
 
 <div class="list-panel">
@@ -60,7 +34,7 @@
       {#each $activations as entry, i (entry.unit.id)}
         {@const state = i < activeIdx ? 'past' : i === activeIdx ? 'current' : 'future'}
         {@const colorBg = COLOR_BG[entry.unit.color]}
-        {@const colorAccent = `var(--color-${entry.unit.color.toLowerCase()})`}
+        {@const colorAccent = COLOR_VAR[entry.unit.color]}
         <div
           class="act-row"
           class:past={state === 'past'}
@@ -83,7 +57,7 @@
 
     {:else}
       <!-- Pre-draw: one section per adversary type -->
-      {#each adversaryGroups as group}
+      {#each $adversaryGroups as group}
         {@const isSelected = selectedName === group.name}
         <div
           class="group-row"
@@ -99,7 +73,7 @@
             <span class="group-diff">{DIFFICULTY_STARS[group.difficulty]}</span>
           </div>
           <div class="group-colors">
-            {#each COLORS as color}
+            {#each ADVERSARY_COLORS as color}
               {@const unit = group.units.find(u => u.color === color)}
               <span
                 class="color-pip"

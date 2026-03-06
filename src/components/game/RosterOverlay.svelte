@@ -1,47 +1,26 @@
 <script lang="ts">
   import { createEventDispatcher } from 'svelte';
-  import { gameStore, markUnitDead, reviveUnit, removeAdversaryGroup } from '../../stores/gameStore';
+  import { gameStore, markUnitDead, reviveUnit, removeAdversaryGroup, adversaryGroups } from '../../stores/gameStore';
   import { adversaryIconUrl } from '../../lib/assets';
-  import type { AdversaryColor, DifficultyLevel } from '../../types/game';
+  import { ADVERSARY_COLORS, DIFFICULTY_STARS, COLOR_VAR } from '../../lib/constants';
 
   const dispatch = createEventDispatcher<{ close: void }>();
-
-  const COLORS: AdversaryColor[] = ['Red', 'Blue', 'Cyan', 'Yellow'];
-  const DIFFICULTY_STARS: Record<DifficultyLevel, string> = {
-    0: '★', 1: '★★', 2: '★★★', 3: '★★★★',
-  };
-  const COLOR_VAR: Record<AdversaryColor, string> = {
-    Red: 'var(--color-red)', Blue: 'var(--color-blue)',
-    Cyan: 'var(--color-cyan)', Yellow: 'var(--color-yellow)',
-  };
-
-  // Unique adversary groups
-  $: groups = (() => {
-    const seen = new Set<string>();
-    return $gameStore.turn.units
-      .filter(u => { const n = !seen.has(u.adversaryName); seen.add(u.adversaryName); return n; })
-      .map(u => ({
-        name: u.adversaryName,
-        difficulty: u.difficulty as DifficultyLevel,
-        units: $gameStore.turn.units.filter(uu => uu.adversaryName === u.adversaryName),
-      }));
-  })();
 
   const close = () => dispatch('close');
 </script>
 
-<div class="backdrop" on:click|self={close} on:keydown={e => e.key === 'Escape' && close()} role="presentation">
+<div class="overlay-backdrop" on:click|self={close} on:keydown={e => e.key === 'Escape' && close()} role="presentation">
   <div class="panel">
-    <div class="panel-header">
+    <div class="overlay-header">
       <h2>Manage Roster</h2>
       <button class="close-btn" on:click={close}>Close</button>
     </div>
 
     <div class="panel-body">
-      {#if groups.length === 0}
+      {#if $adversaryGroups.length === 0}
         <p class="hint">No adversaries in mission.</p>
       {:else}
-        {#each groups as group}
+        {#each $adversaryGroups as group}
           <div class="group-card">
             <div class="group-head">
               <img src={adversaryIconUrl(group.name)} alt="" class="group-icon" />
@@ -55,7 +34,7 @@
             </div>
 
             <div class="color-rows">
-              {#each COLORS as color}
+              {#each ADVERSARY_COLORS as color}
                 {@const unit = group.units.find(u => u.color === color)}
                 {#if unit}
                   <div class="color-row" class:dead={!unit.alive}>
@@ -79,16 +58,6 @@
 </div>
 
 <style>
-  .backdrop {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.7);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 100;
-  }
-
   .panel {
     background: var(--color-surface);
     border: 1px solid var(--color-border);
@@ -99,15 +68,6 @@
     max-height: 80vh;
     display: flex;
     flex-direction: column;
-  }
-
-  .panel-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: var(--space-4) var(--space-6);
-    border-bottom: 1px solid var(--color-border);
-    flex-shrink: 0;
   }
 
   h2 { font-family: var(--font-heading); font-size: 18px; color: var(--color-accent); }

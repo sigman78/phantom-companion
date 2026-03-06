@@ -41,6 +41,12 @@
   --radius-md: 6px;
   --radius-lg: 12px;
 
+  /* Per-color background tints */
+  --color-red-bg:    rgba(192,57,43,0.15);
+  --color-blue-bg:   rgba(41,128,185,0.15);
+  --color-cyan-bg:   rgba(0,180,216,0.12);
+  --color-yellow-bg: rgba(212,172,13,0.15);
+
   /* Shadows */
   --shadow-inset: inset 0 1px 3px rgba(0,0,0,0.5);
   --shadow-card:  0 2px 8px rgba(0,0,0,0.6);

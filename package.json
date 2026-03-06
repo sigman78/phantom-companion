@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "dependencies": {
     "@astrojs/svelte": "^5.7.0",
@@ -14,6 +16,8 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.6",
-    "typescript": "^5.9.3"
+    "@vitest/coverage-v8": "^4.0.18",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18"
   }
 }

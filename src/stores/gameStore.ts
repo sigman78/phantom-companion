@@ -40,6 +40,17 @@ export const gameStore = writable<GameStore>({
 export const activations  = derived(gameStore, s => s.turn.activations);
 export const currentTurn  = derived(gameStore, s => s.turn.turnNumber);
 
+export const adversaryGroups = derived(gameStore, s => {
+  const seen = new Set<string>();
+  return s.turn.units
+    .filter(u => { const n = !seen.has(u.adversaryName); seen.add(u.adversaryName); return n; })
+    .map(u => ({
+      name: u.adversaryName,
+      difficulty: u.difficulty,
+      units: s.turn.units.filter(uu => uu.adversaryName === u.adversaryName),
+    }));
+});
+
 // Add all 4 color units for an adversary type
 export async function addAdversaryGroup(
   type: AdversaryType,
