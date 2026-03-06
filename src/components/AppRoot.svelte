@@ -3,20 +3,28 @@
   import BottomBar from './shared/BottomBar.svelte';
   import ActivationList from './game/ActivationList.svelte';
   import AdversaryDetail from './game/AdversaryDetail.svelte';
-  import RosterOverlay from './game/RosterOverlay.svelte';
+  import SetupScreen from './game/SetupScreen.svelte';
+  import BattleRosterScreen from './game/BattleRosterScreen.svelte';
 
+  $: phase = $gameStore.phase;
   let rosterOpen = false;
 </script>
 
-<div class="game-layout">
-  <div class="panel-left">
-    <ActivationList />
+{#if phase === 'setup'}
+  <SetupScreen />
+
+{:else if rosterOpen}
+  <BattleRosterScreen on:close={() => rosterOpen = false} />
+
+{:else}
+  <!-- Battle screen -->
+  <div class="game-layout">
+    <div class="panel-left">
+      <ActivationList />
+    </div>
+    <div class="panel-right">
+      <AdversaryDetail />
+    </div>
   </div>
-  <div class="panel-right">
-    <AdversaryDetail />
-  </div>
-</div>
-<BottomBar onManageRoster={() => rosterOpen = true} />
-{#if rosterOpen}
-  <RosterOverlay on:close={() => rosterOpen = false} />
+  <BottomBar onOpenRoster={() => rosterOpen = true} />
 {/if}

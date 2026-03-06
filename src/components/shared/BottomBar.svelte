@@ -1,13 +1,12 @@
 <script lang="ts">
-  import { gameStore, activations, currentTurn, drawTurn, endTurn, nextActivation, prevActivation } from '../../stores/gameStore';
+  import { gameStore, activations, currentTurn, endTurn, nextActivation, prevActivation } from '../../stores/gameStore';
 
-  export let onManageRoster: () => void = () => {};
+  export let onOpenRoster: () => void = () => {};
 
-  $: drawn     = $activations.length > 0;
-  $: idx       = $gameStore.turn.activeActivationIndex;
-  $: total     = $activations.length;
-  $: allDead   = $gameStore.turn.units.length > 0
-               && $gameStore.turn.units.every(u => !u.alive);
+  $: drawn   = $activations.length > 0;
+  $: idx     = $gameStore.turn.activeActivationIndex;
+  $: total   = $activations.length;
+  $: isLast  = drawn && idx === total - 1;
 </script>
 
 <div class="bottom-bar">
@@ -39,27 +38,19 @@
     &#8250;
   </button>
 
-  <!-- Draw Turn -->
-  <button
-    class="cell action-btn"
-    on:click={drawTurn}
-    disabled={drawn || allDead}
-  >
-    Draw
+  <!-- Adversaries -->
+  <button class="cell adversaries-btn" on:click={onOpenRoster}>
+    Adversaries
   </button>
 
   <!-- End Turn -->
   <button
-    class="cell action-btn"
+    class="cell end-turn-btn"
+    class:highlight={isLast}
     on:click={endTurn}
     disabled={!drawn}
   >
     End Turn
-  </button>
-
-  <!-- Roster -->
-  <button class="cell roster-btn" on:click={onManageRoster}>
-    Roster
   </button>
 </div>
 
@@ -87,14 +78,15 @@
     font-family: var(--font-body);
     transition: background 0.12s;
     -webkit-tap-highlight-color: transparent;
+    min-height: 44px;
   }
   .cell:last-child { border-right: none; }
   .cell:disabled   { opacity: 0.3; cursor: not-allowed; }
   .cell:not(:disabled):active { background: rgba(255,255,255,0.06); }
 
-  /* Prev / Next: prominent touch targets */
+  /* Prev / Next: largest touch targets */
   .nav-btn {
-    flex: 1.6;
+    flex: 2;
     font-size: 38px;
     line-height: 1;
     color: var(--color-accent);
@@ -103,7 +95,7 @@
 
   /* Turn counter: compact center block */
   .turn-cell {
-    flex: 0.7;
+    flex: 0.8;
     gap: 2px;
     cursor: default;
     border-right: 1px solid var(--color-border);
@@ -111,20 +103,26 @@
   .turn-num { font-size: 13px; font-weight: 600; color: var(--color-text); }
   .turn-sub { font-size: 11px; color: var(--color-text-dim); }
 
-  /* Action buttons */
-  .action-btn {
-    flex: 1.4;
-    font-size: 15px;
+  /* Adversaries */
+  .adversaries-btn {
+    flex: 1.5;
+    font-size: 14px;
+    color: var(--color-accent);
+  }
+  .adversaries-btn:hover { background: rgba(184,115,51,0.1); }
+
+  /* End Turn */
+  .end-turn-btn {
+    flex: 1.5;
+    font-size: 14px;
     font-weight: 500;
     color: var(--color-text);
   }
-  .action-btn:not(:disabled):hover { background: var(--texture-leather); }
-
-  /* Roster */
-  .roster-btn {
-    flex: 1;
-    font-size: 13px;
+  .end-turn-btn:not(:disabled):hover { background: var(--texture-leather); }
+  .end-turn-btn.highlight {
     color: var(--color-accent);
+    border-left: 1px solid var(--color-accent-dim);
+    background: rgba(184,115,51,0.08);
   }
-  .roster-btn:hover { background: rgba(184,115,51,0.1); }
+  .end-turn-btn.highlight:not(:disabled):hover { background: rgba(184,115,51,0.18); }
 </style>

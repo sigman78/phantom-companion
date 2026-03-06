@@ -7,7 +7,12 @@ import {
 import type { AdversaryUnit, ActivationEntry } from '../types/game';
 
 const CLEAN_STATE = {
-  phase: 'game' as const,
+  phase: 'setup' as const,
+  setup: {
+    selectedTypeName: null,
+    difficulty: 1 as const,
+    colorToggles: { Red: true, Blue: true, Cyan: true, Yellow: true },
+  },
   turn: {
     turnNumber: 1,
     units: [],

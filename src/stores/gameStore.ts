@@ -2,7 +2,7 @@ import { writable, derived, get } from 'svelte/store';
 import type {
   AdversaryType, AdversaryUnit, AdversaryColor, ClassName, SpeciesName,
   DifficultyLevel, TurnState, ActivationEntry,
-  ColorCard, SpeciesCard,
+  ColorCard, SpeciesCard, AppPhase, SetupState,
 } from '../types/game';
 import { createDeck, drawCard, deckKey } from '../lib/deck';
 import { calcInitiative, sortActivations, numberActivations } from '../lib/initiative';
@@ -12,13 +12,20 @@ export type ClassDeckJson   = Array<ColorCard[]>;
 export type SpeciesDeckJson = SpeciesCard[];
 
 interface GameStore {
-  phase: 'game';
+  phase: AppPhase;
+  setup: SetupState;
   turn: TurnState;
   jsonCache: {
     class:   Partial<Record<ClassName,   ClassDeckJson>>;
     species: Partial<Record<SpeciesName, SpeciesDeckJson>>;
   };
 }
+
+const initialSetup: SetupState = {
+  selectedTypeName: null,
+  difficulty: 1,
+  colorToggles: { Red: true, Blue: true, Cyan: true, Yellow: true },
+};
 
 const initialTurn: TurnState = {
   turnNumber: 1,
@@ -32,7 +39,8 @@ const initialTurn: TurnState = {
 };
 
 export const gameStore = writable<GameStore>({
-  phase: 'game',
+  phase: 'setup',
+  setup: initialSetup,
   turn: initialTurn,
   jsonCache: { class: {}, species: {} },
 });
@@ -51,10 +59,55 @@ export const adversaryGroups = derived(gameStore, s => {
     }));
 });
 
-// Add all 4 color units for an adversary type
+// --- Setup actions ---
+
+export function setSetupType(name: string | null): void {
+  gameStore.update(s => ({ ...s, setup: { ...s.setup, selectedTypeName: name } }));
+}
+
+export function setSetupDifficulty(d: DifficultyLevel): void {
+  gameStore.update(s => ({ ...s, setup: { ...s.setup, difficulty: d } }));
+}
+
+export function toggleSetupColor(color: AdversaryColor): void {
+  gameStore.update(s => ({
+    ...s,
+    setup: {
+      ...s.setup,
+      colorToggles: { ...s.setup.colorToggles, [color]: !s.setup.colorToggles[color] },
+    },
+  }));
+}
+
+export function goToBattle(): void {
+  gameStore.update(s => ({ ...s, phase: 'battle' }));
+}
+
+export function goToSetup(): void {
+  gameStore.update(s => ({ ...s, phase: 'setup' }));
+}
+
+export function clearAdversaries(): void {
+  gameStore.update(s => ({
+    ...s,
+    turn: {
+      ...s.turn,
+      units: [],
+      activations: [],
+      activeActivationIndex: 0,
+      selectedUnitId: null,
+      selectedAdversaryName: null,
+    },
+  }));
+}
+
+// --- Adversary group management ---
+
+// Add color units for an adversary type; colorToggles filters which colors to add
 export async function addAdversaryGroup(
   type: AdversaryType,
-  difficulty: DifficultyLevel
+  difficulty: DifficultyLevel,
+  colorToggles?: Record<AdversaryColor, boolean>
 ): Promise<void> {
   const s = get(gameStore);
   const classCache   = { ...s.jsonCache.class };
@@ -69,8 +122,13 @@ export async function addAdversaryGroup(
     speciesCache[type.species] = await res.json() as SpeciesDeckJson;
   }
 
-  const colors: AdversaryColor[] = ['Red', 'Blue', 'Cyan', 'Yellow'];
-  const newUnits: AdversaryUnit[] = colors.map(color => ({
+  const allColors: AdversaryColor[] = ['Red', 'Blue', 'Cyan', 'Yellow'];
+  const activeColors = colorToggles
+    ? allColors.filter(c => colorToggles[c])
+    : allColors;
+  if (activeColors.length === 0) return;
+
+  const newUnits: AdversaryUnit[] = activeColors.map(color => ({
     id: `${type.name}:${color}`,
     adversaryName: type.name,
     species: type.species,
@@ -106,6 +164,8 @@ export function removeAdversaryGroup(adversaryName: string): void {
     },
   }));
 }
+
+// --- Turn actions ---
 
 export function drawTurn(): void {
   gameStore.update(s => {

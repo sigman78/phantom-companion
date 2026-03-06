@@ -144,3 +144,10 @@ html, body {
   font-weight: 600;
   color: var(--color-text);
 }
+
+/* Card draw reveal animation */
+@keyframes card-reveal {
+  from { opacity: 0; transform: translateY(-8px) rotate(-2deg); }
+  to   { opacity: 1; transform: translateY(0) rotate(0deg); }
+}
+.card-revealed { animation: card-reveal 0.25s ease-out; }

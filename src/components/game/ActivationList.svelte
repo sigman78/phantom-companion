@@ -1,14 +1,10 @@
 <script lang="ts">
-  import { activations, gameStore, selectAdversary, adversaryGroups } from '../../stores/gameStore';
+  import { activations, gameStore, adversaryGroups } from '../../stores/gameStore';
   import { adversaryIconUrl } from '../../lib/assets';
-  import AddAdversaryModal from './AddAdversaryModal.svelte';
   import { ADVERSARY_COLORS, DIFFICULTY_STARS, COLOR_BG, COLOR_VAR } from '../../lib/constants';
 
-  let addOpen = false;
-
-  $: drawn = $activations.length > 0;
-  $: selectedName = $gameStore.turn.selectedAdversaryName;
-  $: activeIdx    = $gameStore.turn.activeActivationIndex;
+  $: drawn    = $activations.length > 0;
+  $: activeIdx = $gameStore.turn.activeActivationIndex;
 </script>
 
 <div class="list-panel">
@@ -19,18 +15,17 @@
         <span class="unit-count">{$gameStore.turn.units.filter(u => u.alive).length}</span>
       {/if}
     </span>
-    <button class="add-btn" on:click={() => addOpen = true}>+ Add</button>
   </div>
 
   <div class="list-body">
     {#if $gameStore.turn.units.length === 0}
       <div class="empty-state">
         <p>No adversaries added.</p>
-        <button class="add-btn-large" on:click={() => addOpen = true}>+ Add Adversary</button>
+        <p class="hint">Use the Setup screen to add adversaries before battle.</p>
       </div>
 
     {:else if drawn}
-      <!-- Post-draw: sorted list, styled by position relative to active index -->
+      <!-- Post-draw: sorted activation list, display-only -->
       {#each $activations as entry, i (entry.unit.id)}
         {@const state = i < activeIdx ? 'past' : i === activeIdx ? 'current' : 'future'}
         {@const colorBg = COLOR_BG[entry.unit.color]}
@@ -56,17 +51,9 @@
       {/each}
 
     {:else}
-      <!-- Pre-draw: one section per adversary type -->
+      <!-- Pre-draw: group list, display-only -->
       {#each $adversaryGroups as group}
-        {@const isSelected = selectedName === group.name}
-        <div
-          class="group-row"
-          class:selected={isSelected}
-          on:click={() => selectAdversary(group.name)}
-          role="button"
-          tabindex="0"
-          on:keydown={e => e.key === 'Enter' && selectAdversary(group.name)}
-        >
+        <div class="group-row">
           <img src={adversaryIconUrl(group.name)} alt="" class="group-icon" />
           <div class="group-info">
             <span class="group-name">{group.name}</span>
@@ -75,12 +62,14 @@
           <div class="group-colors">
             {#each ADVERSARY_COLORS as color}
               {@const unit = group.units.find(u => u.color === color)}
-              <span
-                class="color-pip"
-                class:dead={unit && !unit.alive}
-                style="background:var(--color-{color.toLowerCase()})"
-                title="{color}{unit && !unit.alive ? ' (dead)' : ''}"
-              ></span>
+              {#if unit}
+                <span
+                  class="color-pip"
+                  class:dead={!unit.alive}
+                  style="background:{COLOR_VAR[color]}"
+                  title="{color}{!unit.alive ? ' (dead)' : ''}"
+                ></span>
+              {/if}
             {/each}
           </div>
         </div>
@@ -88,10 +77,6 @@
     {/if}
   </div>
 </div>
-
-{#if addOpen}
-  <AddAdversaryModal on:close={() => addOpen = false} />
-{/if}
 
 <style>
   .list-panel {
@@ -129,39 +114,19 @@
     font-size: 11px;
   }
 
-  .add-btn {
-    padding: var(--space-1) var(--space-3);
-    background: none;
-    border: 1px solid var(--color-accent-dim);
-    color: var(--color-accent);
-    border-radius: var(--radius-sm);
-    font-size: 13px;
-    cursor: pointer;
-  }
-  .add-btn:hover { border-color: var(--color-accent); background: rgba(184,115,51,0.1); }
-
   .list-body { flex: 1; overflow-y: auto; }
 
   .empty-state {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: var(--space-4);
-    padding: var(--space-8);
+    gap: var(--space-3);
+    padding: var(--space-8) var(--space-4);
     color: var(--color-text-dim);
     font-style: italic;
+    text-align: center;
   }
-
-  .add-btn-large {
-    padding: var(--space-3) var(--space-6);
-    background: var(--color-surface-alt);
-    border: 1px dashed var(--color-accent-dim);
-    color: var(--color-accent);
-    border-radius: var(--radius-md);
-    font-size: 14px;
-    cursor: pointer;
-  }
-  .add-btn-large:hover { background: rgba(184,115,51,0.1); border-style: solid; }
+  .hint { font-size: 12px; }
 
   /* --- Post-draw activation rows --- */
   .act-row {
@@ -171,11 +136,9 @@
     border-bottom: 1px solid var(--color-border);
     border-left: 3px solid var(--row-accent);
     background: var(--row-bg);
-    transition: opacity 0.15s;
   }
   .act-row.dead { opacity: 0.25; }
 
-  /* Past: small, dimmed -- icon 3x=72px, crop to middle 50% => 36px tall */
   .act-row.past {
     --icon-sz: 72px;
     padding: 4px var(--space-3);
@@ -187,7 +150,6 @@
   .act-row.past .color-tag { display: none; }
   .act-row.past .init  { font-size: 14px; }
 
-  /* Current: prominent -- icon 3x=120px, crop to middle 50% => 60px tall */
   .act-row.current {
     --icon-sz: 120px;
     padding: var(--space-3) var(--space-3);
@@ -198,7 +160,6 @@
   .act-row.current .name  { font-size: 17px; font-weight: 600; }
   .act-row.current .init  { font-size: 24px; }
 
-  /* Future: compact -- icon 3x=84px, crop to middle 50% => 42px tall */
   .act-row.future {
     --icon-sz: 84px;
     padding: 6px var(--space-3);
@@ -212,7 +173,6 @@
     color: var(--color-text-dim);
     flex-shrink: 0;
   }
-  /* Cropped hex portrait: show middle 50% vertically, 92% horizontally */
   .icon-crop {
     flex-shrink: 0;
     width: calc(var(--icon-sz) * 0.76);
@@ -250,7 +210,7 @@
     flex-shrink: 0;
   }
 
-  /* --- Pre-draw group rows --- */
+  /* --- Pre-draw group rows (display-only) --- */
   .group-row {
     display: flex;
     align-items: center;
@@ -258,13 +218,6 @@
     padding: var(--space-3) var(--space-4);
     border-bottom: 1px solid var(--color-border);
     border-left: 3px solid transparent;
-    cursor: pointer;
-    transition: background 0.1s;
-  }
-  .group-row:hover    { background: var(--texture-leather); }
-  .group-row.selected {
-    border-left-color: var(--color-accent);
-    background: rgba(184,115,51,0.08);
   }
 
   .group-icon { width: 40px; height: 40px; object-fit: contain; flex-shrink: 0; }

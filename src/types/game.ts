@@ -78,6 +78,16 @@ export interface ActivationEntry {
   classCardIndex: number;     // drawn index for art URL
 }
 
+// App-level phase drives screen routing
+export type AppPhase = 'setup' | 'battle';
+
+// Setup screen state (persists during setup and is reused by battle roster)
+export interface SetupState {
+  selectedTypeName: string | null;
+  difficulty: DifficultyLevel;
+  colorToggles: Record<AdversaryColor, boolean>;
+}
+
 // Runtime turn state
 export interface TurnState {
   turnNumber: number;
