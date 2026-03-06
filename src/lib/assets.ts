@@ -11,9 +11,6 @@ export function classCardArtUrl(className: ClassName, cardIndex: number): string
 
 // SPECIAL CASE: Trained Beast back file is "trainer_beast_back.jpg" (typo in source art).
 export function classCardBackUrl(className: ClassName): string {
-  if (className === 'Trained Beast') {
-    return `${BASE_CLASS_ART}/trainer_beast_back.jpg`;
-  }
   return `${BASE_CLASS_ART}/${CLASS_ART_PREFIX[className]}_back.jpg`;
 }
 
