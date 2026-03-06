@@ -135,68 +135,55 @@
 
   <!-- BOTTOM: deck area -->
   <div class="bottom-section">
-    {#if !drawn}
-      <!-- Pre-draw: deck stacks + Draw overlay tap target -->
-      <div
-        class="deck-area pre-draw"
-        on:click={drawTurn}
-        role="button"
-        tabindex="0"
-        on:keydown={e => e.key === 'Enter' && drawTurn()}
-        aria-label="Draw cards"
-      >
-        <div class="decks-row">
-          {#if speciesName}
-            <div class="deck-wrap">
-              <div class="deck-stack" style="--stack-h:{stackH(speciesRemaining)}">
-                <div class="card c1" style="background-image:url('{speciesCardBackUrl(speciesName)}')"></div>
-                <div class="card c2" style="background-image:url('{speciesCardBackUrl(speciesName)}')"></div>
-                <div class="card c3" style="background-image:url('{speciesCardBackUrl(speciesName)}')"></div>
-              </div>
-              <span class="deck-label">Species</span>
-              <span class="deck-count">{speciesRemaining} left</span>
-            </div>
-          {/if}
-          {#if className}
-            <div class="deck-wrap">
-              <div class="deck-stack" style="--stack-h:{stackH(classRemaining)}">
-                <div class="card c1" style="background-image:url('{classCardBackUrl(className)}')"></div>
-                <div class="card c2" style="background-image:url('{classCardBackUrl(className)}')"></div>
-                <div class="card c3" style="background-image:url('{classCardBackUrl(className)}')"></div>
-              </div>
-              <span class="deck-label">Class</span>
-              <span class="deck-count">{classRemaining} left</span>
-            </div>
-          {/if}
+    <div
+      class="deck-area"
+      class:pre-draw={!drawn}
+      on:click={!drawn ? drawTurn : undefined}
+      role={!drawn ? 'button' : undefined}
+      tabindex={!drawn ? 0 : undefined}
+      on:keydown={!drawn ? (e => e.key === 'Enter' && drawTurn()) : undefined}
+      aria-label={!drawn ? 'Draw cards' : undefined}
+    >
+      {#if speciesName}
+        <div class="deck-unit">
+          <div class="deck-stack">
+            <div class="card c1" style="background-image:url('{speciesCardBackUrl(speciesName)}')"></div>
+            <div class="card c2" style="background-image:url('{speciesCardBackUrl(speciesName)}')"></div>
+            <div class="card c3" style="background-image:url('{speciesCardBackUrl(speciesName)}')"></div>
+            {#if drawn && speciesCardImageUrl}
+              {#key speciesCardImageUrl}
+                <div
+                  class="card face-up card-revealed"
+                  style="background-image:url('{speciesCardImageUrl}')"
+                ></div>
+              {/key}
+            {/if}
+          </div>
+          <span class="deck-label">Species</span>
         </div>
-        <div class="draw-overlay">
-          <span class="draw-label">Draw Cards</span>
+      {/if}
+      {#if className}
+        <div class="deck-unit">
+          <div class="deck-stack">
+            <div class="card c1" style="background-image:url('{classCardBackUrl(className)}')"></div>
+            <div class="card c2" style="background-image:url('{classCardBackUrl(className)}')"></div>
+            <div class="card c3" style="background-image:url('{classCardBackUrl(className)}')"></div>
+            {#if drawn && classCardImageUrl}
+              {#key classCardImageUrl}
+                <div
+                  class="card face-up card-revealed"
+                  style="background-image:url('{classCardImageUrl}')"
+                ></div>
+              {/key}
+            {/if}
+          </div>
+          <span class="deck-label">{activation ? `Class \u00b7 ${activation.unit.color}` : 'Class'}</span>
         </div>
-      </div>
-
-    {:else}
-      <!-- Post-draw: card images with reveal animation -->
-      <div class="deck-area post-draw">
-        <div class="drawn-cards-row">
-          {#if speciesCardImageUrl}
-            {#key speciesCardImageUrl}
-              <div class="drawn-card-wrap">
-                <span class="card-type-label">Species</span>
-                <img src={speciesCardImageUrl} alt="Species card" class="drawn-card-img card-revealed" />
-              </div>
-            {/key}
-          {/if}
-          {#if classCardImageUrl}
-            {#key classCardImageUrl}
-              <div class="drawn-card-wrap">
-                <span class="card-type-label">Class &middot; {activation?.unit.color}</span>
-                <img src={classCardImageUrl} alt="Class card" class="drawn-card-img card-revealed" />
-              </div>
-            {/key}
-          {/if}
-        </div>
-      </div>
-    {/if}
+      {/if}
+      {#if !drawn && (speciesName || className)}
+        <div class="draw-prompt">Tap to draw</div>
+      {/if}
+    </div>
   </div>
 
 </div>
@@ -209,25 +196,23 @@
     overflow: hidden;
   }
 
-  /* TOP SECTION: 45% of height */
+  /* TOP SECTION: auto-height by content */
   .top-section {
-    flex: 45;
-    min-height: 0;
+    flex-shrink: 0;
     display: flex;
     border-bottom: 2px solid var(--color-border);
-    overflow: hidden;
   }
 
-  /* Left col: portrait + stats (45% of top width) */
+  /* Left col: portrait + stats (30% of top width) */
   .top-left {
-    width: 45%;
+    width: 30%;
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
+    align-items: center;
     border-right: 1px solid var(--color-border);
     background: var(--color-surface);
     border-top: 1px solid var(--color-accent);
-    overflow: hidden;
   }
 
   .portrait-wrap {
@@ -237,20 +222,20 @@
     flex-shrink: 0;
   }
   .portrait {
-    width: 80px;
-    height: 80px;
+    width: 72px;
+    height: 72px;
     object-fit: contain;
-    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.6));
+    filter: drop-shadow(0 3px 8px rgba(0,0,0,0.8));
   }
 
   .adv-meta {
-    flex: 1;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: var(--space-2);
     padding: 0 var(--space-3) var(--space-3);
-    min-height: 0;
-    overflow: hidden;
+    text-align: center;
+    width: 100%;
   }
 
   .name-row {
@@ -258,6 +243,7 @@
     align-items: baseline;
     gap: var(--space-2);
     flex-wrap: wrap;
+    justify-content: center;
   }
   .adv-name {
     font-family: var(--font-heading);
@@ -267,6 +253,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    text-align: center;
   }
   .stars {
     font-size: 12px;
@@ -280,17 +267,18 @@
     align-items: center;
     gap: 0;
     flex-wrap: nowrap;
+    justify-content: center;
   }
   .si {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 var(--space-2);
+    padding: 0 8px;
   }
   .si:first-child { padding-left: 0; }
   .si-sep {
     width: 1px;
-    height: 24px;
+    height: 20px;
     background: var(--color-border);
     flex-shrink: 0;
   }
@@ -307,6 +295,8 @@
     display: flex;
     align-items: baseline;
     gap: var(--space-2);
+    justify-content: center;
+    text-align: center;
   }
   .crit-lbl {
     font-size: 9px;
@@ -370,55 +360,52 @@
     flex-shrink: 0;
   }
 
-  /* BOTTOM SECTION: 55% of height */
+  /* BOTTOM SECTION: fills remaining space */
   .bottom-section {
-    flex: 55;
+    flex: 1;
     min-height: 0;
     display: flex;
     flex-direction: column;
     overflow: hidden;
   }
 
-  /* Deck area - shared */
+  /* Deck area - unified physical card design */
   .deck-area {
     flex: 1;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-8);
+    padding: 24px;
     background: var(--color-surface-alt);
+    flex-wrap: wrap;
   }
 
-  /* Pre-draw: tappable draw area */
   .deck-area.pre-draw {
     cursor: pointer;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    gap: var(--space-4);
     user-select: none;
+    outline: 1px solid rgba(184,115,51,0.0);
+    animation: deck-pulse 2.5s ease-in-out infinite;
   }
-  .deck-area.pre-draw:hover .draw-overlay { background: rgba(184,115,51,0.18); }
-  .deck-area.pre-draw:active .draw-overlay { background: rgba(184,115,51,0.28); }
-
-  .decks-row {
-    display: flex;
-    gap: var(--space-8);
-    align-items: flex-end;
-    justify-content: center;
-    padding: var(--space-4) var(--space-4) 0;
-    z-index: 1;
+  .deck-area.pre-draw:hover .c1,
+  .deck-area.pre-draw:hover .c2,
+  .deck-area.pre-draw:hover .c3 {
+    filter: brightness(0.9);
   }
 
-  .deck-wrap {
+  .deck-unit {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: var(--space-1);
+    gap: var(--space-2);
   }
 
+  /* Fixed 5:7 ratio (110x154) matches 300x420 art */
   .deck-stack {
     position: relative;
-    width: 80px;
-    height: var(--stack-h, 88px);
+    width: 110px;
+    height: 154px;
   }
 
   .card {
@@ -428,11 +415,30 @@
     border: 1px solid var(--color-border);
     background-size: cover;
     background-position: center;
-    box-shadow: var(--shadow-card);
   }
-  .c1 { transform: rotate(-3deg) translate(-3px, 4px); }
-  .c2 { transform: rotate(-1.5deg) translate(-1px, 2px); }
-  .c3 { transform: none; }
+  .c1 {
+    transform: rotate(-2.5deg) translate(-3px, 4px);
+    z-index: 1;
+    filter: brightness(0.75);
+    box-shadow: 1px 3px 6px rgba(0,0,0,0.7);
+  }
+  .c2 {
+    transform: rotate(-1.2deg) translate(-1.5px, 2px);
+    z-index: 2;
+    filter: brightness(0.75);
+    box-shadow: 1px 3px 6px rgba(0,0,0,0.7);
+  }
+  .c3 {
+    transform: none;
+    z-index: 3;
+    filter: brightness(0.75);
+    box-shadow: 1px 3px 6px rgba(0,0,0,0.7);
+  }
+  .face-up {
+    z-index: 5;
+    filter: none;
+    box-shadow: 4px 8px 18px rgba(0,0,0,0.95), 0 0 0 2px var(--color-accent);
+  }
 
   .deck-label {
     font-size: 10px;
@@ -440,72 +446,13 @@
     letter-spacing: 0.08em;
     color: var(--color-text-dim);
   }
-  .deck-count {
-    font-size: 10px;
-    color: var(--color-text-dim);
-    opacity: 0.6;
-  }
 
-  .draw-overlay {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    padding-bottom: var(--space-6);
-    background: rgba(14,12,10,0.35);
-    transition: background 0.15s;
-    z-index: 2;
-  }
-
-  .draw-label {
-    font-size: 18px;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    color: var(--color-accent);
-    text-shadow: 0 1px 4px rgba(0,0,0,0.8);
-  }
-
-  /* Post-draw: card images */
-  .deck-area.post-draw {
-    justify-content: center;
-    align-items: center;
-  }
-
-  .drawn-cards-row {
-    display: flex;
-    gap: var(--space-6);
-    align-items: center;
-    justify-content: center;
-    padding: var(--space-4);
-    height: 100%;
-  }
-
-  .drawn-card-wrap {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-2);
-    height: 100%;
-    justify-content: center;
-  }
-
-  .card-type-label {
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--color-text-dim);
-    flex-shrink: 0;
-  }
-
-  .drawn-card-img {
-    flex: 1;
-    min-height: 0;
-    max-width: 140px;
+  .draw-prompt {
     width: 100%;
-    object-fit: cover;
-    border-radius: var(--radius-sm);
-    border: 1px solid var(--color-accent);
-    box-shadow: var(--shadow-card);
+    text-align: center;
+    font-size: 13px;
+    color: var(--color-accent);
+    opacity: 0.7;
+    letter-spacing: 0.04em;
   }
 </style>

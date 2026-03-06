@@ -27,6 +27,7 @@
     ? (statsJson[selectedType.name]?.[difficulty] ?? null)
     : null;
 
+  $: addedNames = new Set(groups.map(g => g.name));
   $: canAdd    = !!selectedType && ADVERSARY_COLORS.some(c => colorToggles[c]);
   $: canBattle = groups.length > 0;
 
@@ -127,6 +128,8 @@
           <button
             class="type-cell"
             class:sel={setup.selectedTypeName === type.name}
+            class:added={addedNames.has(type.name)}
+            disabled={addedNames.has(type.name)}
             on:click={() => setSetupType(type.name)}
           >
             <img src={adversaryIconUrl(type.name)} alt={type.name} class="type-icon" />
@@ -268,10 +271,10 @@
     padding: var(--space-3) var(--space-4);
     border-bottom: 1px solid var(--color-border);
   }
-  .group-icon { width: 40px; height: 40px; object-fit: contain; flex-shrink: 0; }
+  .group-icon { width: 48px; height: 48px; object-fit: contain; flex-shrink: 0; }
   .group-info { flex: 1; display: flex; flex-direction: column; gap: 2px; }
-  .group-name { font-size: 15px; font-weight: 500; }
-  .group-diff { font-size: 12px; color: var(--color-accent); letter-spacing: 1px; }
+  .group-name { font-size: 17px; font-weight: 500; }
+  .group-diff { font-size: 13px; color: var(--color-accent); letter-spacing: 1px; }
   .group-colors { display: flex; gap: var(--space-1); flex-shrink: 0; }
   .color-pip {
     width: 12px; height: 12px;
@@ -287,12 +290,10 @@
     overflow: hidden;
   }
 
-  /* Top: selected type detail (40% of right height) */
+  /* Top: selected type detail (auto-height by content) */
   .right-top {
-    flex: 40;
-    min-height: 0;
+    flex-shrink: 0;
     border-bottom: 2px solid var(--color-border);
-    overflow: hidden;
     display: flex;
     flex-direction: column;
   }
@@ -300,16 +301,14 @@
   .adv-header {
     display: flex;
     align-items: flex-start;
-    gap: var(--space-4);
-    padding: var(--space-4);
+    gap: var(--space-3);
+    padding: var(--space-3);
     background: var(--color-surface);
     border-top: 1px solid var(--color-accent);
-    flex: 1;
-    overflow: hidden;
   }
   .portrait {
-    width: 72px;
-    height: 72px;
+    width: 56px;
+    height: 56px;
     object-fit: contain;
     filter: drop-shadow(0 2px 6px rgba(0,0,0,0.6));
     flex-shrink: 0;
@@ -354,9 +353,9 @@
     background: var(--color-surface);
   }
 
-  /* Bottom: type picker grid (60% of right height) */
+  /* Bottom: type picker grid (fills remaining space) */
   .right-bottom {
-    flex: 60;
+    flex: 1;
     min-height: 0;
     overflow-y: auto;
     background: var(--color-surface-alt);
@@ -364,7 +363,7 @@
 
   .type-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     gap: var(--space-2);
     padding: var(--space-3);
   }
@@ -384,9 +383,16 @@
   }
   .type-cell:hover { border-color: var(--color-accent-dim); }
   .type-cell.sel   { border-color: var(--color-accent); background: rgba(184,115,51,0.12); }
-  .type-icon { width: 52px; height: 52px; object-fit: contain; }
+  .type-cell:disabled,
+  .type-cell.added {
+    opacity: 0.28;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+  .type-icon { width: 68px; height: 68px; object-fit: contain; }
   .type-name {
-    font-size: 10px;
+    font-size: 12px;
+    font-weight: 500;
     text-align: center;
     color: var(--color-text-dim);
     line-height: 1.3;
@@ -407,12 +413,12 @@
 
   .bar-group { display: flex; align-items: center; gap: var(--space-2); }
   .bar-label {
-    font-size: 10px;
+    font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 0.06em;
     color: var(--color-text-dim);
   }
-  .bar-sep { width: 1px; height: 28px; background: var(--color-border); flex-shrink: 0; }
+  .bar-sep { width: 1px; height: 36px; background: var(--color-border); flex-shrink: 0; }
 
   .diff-btns, .color-btns { display: flex; gap: 3px; }
 
@@ -422,22 +428,22 @@
     border: 1px solid var(--color-border);
     border-radius: var(--radius-sm);
     color: var(--color-text-dim);
-    font-size: 11px;
+    font-size: 13px;
     cursor: pointer;
-    min-height: 28px;
+    min-height: 36px;
     transition: all 0.1s;
   }
   .diff-btn:hover  { border-color: var(--color-accent-dim); color: var(--color-text); }
   .diff-btn.active { border-color: var(--color-accent); color: var(--color-accent); background: rgba(184,115,51,0.1); }
 
   .color-btn {
-    width: 28px;
-    height: 28px;
+    width: 32px;
+    height: 32px;
     border: 2px solid var(--color-border);
     border-radius: var(--radius-sm);
     background: transparent;
     color: var(--color-text-dim);
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 700;
     cursor: pointer;
     transition: all 0.1s;
@@ -450,8 +456,8 @@
     padding: 0 var(--space-3);
     height: 36px;
     border-radius: var(--radius-md);
-    font-size: 13px;
-    font-weight: 500;
+    font-size: 15px;
+    font-weight: 600;
     cursor: pointer;
     transition: background 0.12s;
     white-space: nowrap;

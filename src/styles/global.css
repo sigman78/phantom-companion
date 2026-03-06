@@ -146,8 +146,12 @@ html, body {
 }
 
 /* Card draw reveal animation */
-@keyframes card-reveal {
-  from { opacity: 0; transform: translateY(-8px) rotate(-2deg); }
-  to   { opacity: 1; transform: translateY(0) rotate(0deg); }
+@keyframes card-deal {
+  from { opacity: 0; transform: translateY(-14px) scale(0.93) rotate(-1.5deg); }
+  to   { opacity: 1; transform: translateY(0) scale(1) rotate(0deg); }
 }
-.card-revealed { animation: card-reveal 0.25s ease-out; }
+@keyframes deck-pulse {
+  0%,100% { outline-color: rgba(184,115,51,0.0); }
+  50%     { outline-color: rgba(184,115,51,0.35); }
+}
+.card-revealed { animation: card-deal 0.22s cubic-bezier(0.25, 0.46, 0.45, 0.94); }

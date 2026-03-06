@@ -8,15 +8,6 @@
 </script>
 
 <div class="list-panel">
-  <div class="list-header">
-    <span class="header-title">
-      {drawn ? 'Activation Order' : 'Mission Units'}
-      {#if $gameStore.turn.units.length > 0}
-        <span class="unit-count">{$gameStore.turn.units.filter(u => u.alive).length}</span>
-      {/if}
-    </span>
-  </div>
-
   <div class="list-body">
     {#if $gameStore.turn.units.length === 0}
       <div class="empty-state">
@@ -83,35 +74,6 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-  }
-
-  .list-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: var(--space-2) var(--space-3);
-    border-bottom: 1px solid var(--color-border);
-    background: var(--color-surface);
-    border-top: 1px solid var(--color-accent);
-    flex-shrink: 0;
-  }
-
-  .header-title {
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--color-text-dim);
-    display: flex;
-    align-items: center;
-    gap: var(--space-2);
-  }
-
-  .unit-count {
-    background: var(--color-surface-alt);
-    border: 1px solid var(--color-border);
-    border-radius: 10px;
-    padding: 0 var(--space-2);
-    font-size: 11px;
   }
 
   .list-body { flex: 1; overflow-y: auto; }
