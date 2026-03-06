@@ -1,354 +1,486 @@
 [
-  {
-    "Red": {
+  [
+    {
+      "Color": "Red",
       "Name": "Disabling Strike",
       "Cost": 3,
       "Actions": [
-        { "Action": "Attack", "Value": -1, "Effect": "Inflict Stunned" }
+        {
+          "Action": "Attack",
+          "Value": -1,
+          "Effect": "Inflict Stunned [icon:stunned]"
+        }
       ]
     },
-    "Cyan": {
+    {
+      "Color": "Cyan",
       "Name": "Scout for Weaknesses",
       "Cost": 3,
       "Actions": [
         {
           "Action": "Special",
-          "Effect": "Roll the Blitz Attack die. If a Critical Strike is rolled, inflict Weakened on the closest enemy that is not already Weakened that a valid line of sight can be drawn to."
+          "Effect": "Roll the *Blitz* Attack die. If a *Critical Strike* [icon:critical-strike] is rolled, inflict *Weakened* [icon:weakened] on the closest enemy that is not already *Weakened* that a valid line of sight can be drawn to."
         }
       ]
     },
-    "Blue": {
+    {
+      "Color": "Blue",
       "Name": "Flashbang",
       "Cost": 4,
       "Actions": [
-        { "Action": "Attack", "Effect": "Inflict Blinded" }
+        {
+          "Action": "Attack",
+          "Effect": "Inflict Blinded [icon:blinded]"
+        }
       ]
     },
-    "Yellow": {
+    {
+      "Color": "Yellow",
       "Name": "Flashbang",
       "Cost": 4,
       "Actions": [
-        { "Action": "Attack", "Effect": "Inflict Blinded" }
+        {
+          "Action": "Attack",
+          "Effect": "Inflict Blinded [icon:blinded]"
+        }
       ]
     }
-  },
-  {
-    "Yellow": {
+  ],
+  [
+    {
+      "Color": "Yellow",
       "Name": "Scout for Weaknesses",
       "Cost": 3,
       "Actions": [
         {
           "Action": "Special",
-          "Effect": "Roll the Blitz Attack die. If a Critical Strike is rolled, inflict Weakened on the closest enemy that is not already Weakened that a valid line of sight can be drawn to."
+          "Effect": "Roll the *Blitz* Attack die. If a *Critical Strike* [icon:critical-strike] is rolled, inflict *Weakened* [icon:weakened] on the closest enemy that is not already *Weakened* that a valid line of sight can be drawn to."
         }
       ]
     },
-    "Blue": {
+    {
+      "Color": "Blue",
       "Name": "Disabling Strike",
       "Cost": 3,
       "Actions": [
-        { "Action": "Attack", "Value": -1, "Effect": "Inflict Stunned" }
+        {
+          "Action": "Attack",
+          "Value": -1,
+          "Effect": "Inflict Stunned [icon:stunned]"
+        }
       ]
     },
-    "Red": {
+    {
+      "Color": "Red",
       "Name": "Flashbang",
       "Cost": 4,
       "Actions": [
-        { "Action": "Attack", "Effect": "Inflict Blinded" }
+        {
+          "Action": "Attack",
+          "Effect": "Inflict Blinded [icon:blinded]"
+        }
       ]
     },
-    "Cyan": {
+    {
+      "Color": "Cyan",
       "Name": "Strike and Fade",
       "Cost": 4,
       "Actions": [
-        { "Action": "Attack", "Value": -2 },
-        { "Action": "Gain", "Effect": "Invisible" }
+        {
+          "Action": "Attack",
+          "Value": -2
+        },
+        {
+          "Action": "Gain",
+          "Effect": "Invisible [icon:invisible]"
+        }
       ]
     }
-  },
-  {
-    "Cyan": {
+  ],
+  [
+    {
+      "Color": "Cyan",
       "Name": "Disabling Strike",
       "Cost": 3,
       "Actions": [
-        { "Action": "Attack", "Value": -1, "Effect": "Inflict Stunned" }
+        {
+          "Action": "Attack",
+          "Value": -1,
+          "Effect": "Inflict Stunned [icon:stunned]"
+        }
       ]
     },
-    "Yellow": {
+    {
+      "Color": "Yellow",
       "Name": "Disabling Strike",
       "Cost": 3,
       "Actions": [
-        { "Action": "Attack", "Value": -1, "Effect": "Inflict Stunned" }
+        {
+          "Action": "Attack",
+          "Value": -1,
+          "Effect": "Inflict Stunned [icon:stunned]"
+        }
       ]
     },
-    "Blue": {
+    {
+      "Color": "Blue",
       "Name": "Scout for Vulnerability",
       "Cost": 3,
       "Actions": [
         {
           "Action": "Special",
-          "Effect": "Roll the Blitz Attack die. If a Critical Strike is rolled, inflict Vulnerable on the closest enemy that is not already Vulnerable that a valid line of sight can be drawn to."
+          "Effect": "Roll the *Blitz* Attack die. If a *Critical Strike* is rolled, inflict *Vulnerable* [icon:vulnerable] on the closest enemy that is not already *Vulnerable* that a valid line of sight can be drawn to."
         }
       ]
     },
-    "Red": {
+    {
+      "Color": "Red",
       "Name": "Strike and Fade",
       "Cost": 4,
       "Actions": [
-        { "Action": "Attack", "Value": -2 },
-        { "Action": "Gain", "Effect": "Invisible" }
+        {
+          "Action": "Attack",
+          "Value": -2
+        },
+        {
+          "Action": "Gain",
+          "Effect": "Invisible [icon:invisible]"
+        }
       ]
     }
-  },
-  {
-    "Yellow": {
+  ],
+  [
+    {
+      "Color": "Yellow",
       "Name": "Disabling Strike",
       "Cost": 3,
       "Actions": [
-        { "Action": "Attack", "Value": -1, "Effect": "Inflict Stunned" }
+        {
+          "Action": "Attack",
+          "Value": -1,
+          "Effect": "Inflict Stunned [icon:stunned]"
+        }
       ]
     },
-    "Red": {
+    {
+      "Color": "Red",
       "Name": "Scout for Weaknesses",
       "Cost": 3,
       "Actions": [
         {
           "Action": "Special",
-          "Effect": "Roll the Blitz Attack die. If a Critical Strike is rolled, inflict Weakened on the closest enemy that is not already Weakened that a valid line of sight can be drawn to."
+          "Effect": "Roll the *Blitz* Attack die. If a *Critical Strike* [icon:critical-strike] is rolled, inflict *Weakened* [icon:weakened] on the closest enemy that is not already *Weakened* that a valid line of sight can be drawn to."
         }
       ]
     },
-    "Cyan": {
+    {
+      "Color": "Cyan",
       "Name": "Scout for Vulnerability",
       "Cost": 3,
       "Actions": [
         {
           "Action": "Special",
-          "Effect": "Roll the Blitz Attack die. If a Critical Strike is rolled, inflict Vulnerable on the closest enemy that is not already Vulnerable that a valid line of sight can be drawn to."
+          "Effect": "Roll the *Blitz* Attack die. If a *Critical Strike* is rolled, inflict *Vulnerable* [icon:vulnerable] on the closest enemy that is not already *Vulnerable* that a valid line of sight can be drawn to."
         }
       ]
     },
-    "Blue": {
+    {
+      "Color": "Blue",
       "Name": "Flashbang",
       "Cost": 4,
       "Actions": [
-        { "Action": "Attack", "Effect": "Inflict Blinded" }
+        {
+          "Action": "Attack",
+          "Effect": "Inflict Blinded [icon:blinded]"
+        }
       ]
     }
-  },
-  {
-    "Red": {
+  ],
+  [
+    {
+      "Color": "Red",
       "Name": "Scout for Vulnerability",
       "Cost": 3,
       "Actions": [
         {
           "Action": "Special",
-          "Effect": "Roll the Blitz Attack die. If a Critical Strike is rolled, inflict Vulnerable on the closest enemy that is not already Vulnerable that a valid line of sight can be drawn to."
+          "Effect": "Roll the *Blitz* Attack die. If a *Critical Strike* is rolled, inflict *Vulnerable* [icon:vulnerable] on the closest enemy that is not already *Vulnerable* that a valid line of sight can be drawn to."
         }
       ]
     },
-    "Cyan": {
+    {
+      "Color": "Cyan",
       "Name": "Flashbang",
       "Cost": 4,
       "Actions": [
-        { "Action": "Attack", "Effect": "Inflict Blinded" }
+        {
+          "Action": "Attack",
+          "Effect": "Inflict Blinded [icon:blinded]"
+        }
       ]
     },
-    "Yellow": {
+    {
+      "Color": "Yellow",
       "Name": "Strike and Fade",
       "Cost": 4,
       "Actions": [
-        { "Action": "Attack", "Value": -2 },
-        { "Action": "Gain", "Effect": "Invisible" }
+        {
+          "Action": "Attack",
+          "Value": -2
+        },
+        {
+          "Action": "Gain",
+          "Effect": "Invisible [icon:invisible]"
+        }
       ]
     },
-    "Blue": {
+    {
+      "Color": "Blue",
       "Name": "Strike and Fade",
       "Cost": 4,
       "Actions": [
-        { "Action": "Attack", "Value": -2 },
-        { "Action": "Gain", "Effect": "Invisible" }
+        {
+          "Action": "Attack",
+          "Value": -2
+        },
+        {
+          "Action": "Gain",
+          "Effect": "Invisible [icon:invisible]"
+        }
       ]
     }
-  },
-  {
-    "Blue": {
+  ],
+  [
+    {
+      "Color": "Blue",
       "Name": "Disabling Strike",
       "Cost": 3,
       "Actions": [
-        { "Action": "Attack", "Value": -1, "Effect": "Inflict Stunned" }
+        {
+          "Action": "Attack",
+          "Value": -1,
+          "Effect": "Inflict Stunned [icon:blinded]"
+        }
       ]
     },
-    "Red": {
+    {
+      "Color": "Red",
       "Name": "Scout for Weaknesses",
       "Cost": 3,
       "Actions": [
         {
           "Action": "Special",
-          "Effect": "Roll the Blitz Attack die. If a Critical Strike is rolled, inflict Weakened on the closest enemy that is not already Weakened that a valid line of sight can be drawn to."
+          "Effect": "Roll the *Blitz* Attack die. If a *Critical Strike* [icon:critical-strike] is rolled, inflict *Weakened* [icon:weakened] on the closest enemy that is not already *Weakened* that a valid line of sight can be drawn to."
         }
       ]
     },
-    "Yellow": {
+    {
+      "Color": "Yellow",
       "Name": "Scout for Vulnerability",
       "Cost": 3,
       "Actions": [
         {
           "Action": "Special",
-          "Effect": "Roll the Blitz Attack die. If a Critical Strike is rolled, inflict Vulnerable on the closest enemy that is not already Vulnerable that a valid line of sight can be drawn to."
+          "Effect": "Roll the *Blitz* Attack die. If a *Critical Strike* is rolled, inflict *Vulnerable* [icon:vulnerable] on the closest enemy that is not already *Vulnerable* that a valid line of sight can be drawn to."
         }
       ]
     },
-    "Cyan": {
+    {
+      "Color": "Cyan",
       "Name": "Disabling Strike",
       "Cost": 3,
       "Actions": [
-        { "Action": "Attack", "Value": -1, "Effect": "Inflict Stunned" }
+        {
+          "Action": "Attack",
+          "Value": -1,
+          "Effect": "Inflict Stunned [icon:stunned]"
+        }
       ]
     }
-  },
-  {
-    "Yellow": {
+  ],
+  [
+    {
+      "Color": "Yellow",
       "Name": "Scout for Weaknesses",
       "Cost": 3,
       "Actions": [
         {
           "Action": "Special",
-          "Effect": "Roll the Blitz Attack die. If a Critical Strike is rolled, inflict Weakened on the closest enemy that is not already Weakened that a valid line of sight can be drawn to."
+          "Effect": "Roll the *Blitz* Attack die. If a *Critical Strike* [icon:critical-strike] is rolled, inflict *Weakened* [icon:weakened] on the closest enemy that is not already *Weakened* that a valid line of sight can be drawn to."
         }
       ]
     },
-    "Blue": {
+    {
+      "Color": "Blue",
       "Name": "Scout for Vulnerability",
       "Cost": 3,
       "Actions": [
         {
           "Action": "Special",
-          "Effect": "Roll the Blitz Attack die. If a Critical Strike is rolled, inflict Vulnerable on the closest enemy that is not already Vulnerable that a valid line of sight can be drawn to."
+          "Effect": "Roll the *Blitz* Attack die. If a *Critical Strike* is rolled, inflict *Vulnerable* [icon:vulnerable] on the closest enemy that is not already *Vulnerable* that a valid line of sight can be drawn to."
         }
       ]
     },
-    "Cyan": {
+    {
+      "Color": "Cyan",
       "Name": "Flashbang",
       "Cost": 4,
       "Actions": [
-        { "Action": "Attack", "Effect": "Inflict Blinded" }
+        {
+          "Action": "Attack",
+          "Effect": "Inflict Blinded [icon:blinded]"
+        }
       ]
     },
-    "Red": {
+    {
+      "Color": "Red",
       "Name": "Flashbang",
       "Cost": 4,
       "Actions": [
-        { "Action": "Attack", "Effect": "Inflict Blinded" }
+        {
+          "Action": "Attack",
+          "Effect": "Inflict Blinded [icon:blinded]"
+        }
       ]
     }
-  },
-  {
-    "Cyan": {
+  ],
+  [
+    {
+      "Color": "Cyan",
       "Name": "Scout for Vulnerability",
       "Cost": 3,
       "Actions": [
         {
           "Action": "Special",
-          "Effect": "Roll the Blitz Attack die. If a Critical Strike is rolled, inflict Vulnerable on the closest enemy that is not already Vulnerable that a valid line of sight can be drawn to."
+          "Effect": "Roll the *Blitz* Attack die. If a *Critical Strike* is rolled, inflict *Vulnerable* [icon:vulnerable] on the closest enemy that is not already *Vulnerable* that a valid line of sight can be drawn to."
         }
       ]
     },
-    "Red": {
+    {
+      "Color": "Red",
       "Name": "Disabling Strike",
       "Cost": 3,
       "Actions": [
-        { "Action": "Attack", "Value": -1, "Effect": "Inflict Stunned" }
+        {
+          "Action": "Attack",
+          "Value": -1,
+          "Effect": "Inflict Stunned [icon:stunned]"
+        }
       ]
     },
-    "Blue": {
+    {
+      "Color": "Blue",
       "Name": "Scout for Weaknesses",
       "Cost": 3,
       "Actions": [
         {
           "Action": "Special",
-          "Effect": "Roll the Blitz Attack die. If a Critical Strike is rolled, inflict Weakened on the closest enemy that is not already Weakened that a valid line of sight can be drawn to."
+          "Effect": "Roll the *Blitz* Attack die. If a *Critical Strike* [icon:critical-strike] is rolled, inflict *Weakened* [icon:weakened] on the closest enemy that is not already *Weakened* that a valid line of sight can be drawn to."
         }
       ]
     },
-    "Yellow": {
+    {
+      "Color": "Yellow",
       "Name": "Flashbang",
       "Cost": 4,
       "Actions": [
-        { "Action": "Attack", "Effect": "Inflict Blinded" }
+        {
+          "Action": "Attack",
+          "Effect": "Inflict Blinded [icon:blinded]"
+        }
       ]
     }
-  },
-  {
-    "Blue": {
+  ],
+  [
+    {
+      "Color": "Blue",
       "Name": "Scout for Weaknesses",
       "Cost": 3,
       "Actions": [
         {
           "Action": "Special",
-          "Effect": "Roll the Blitz Attack die. If a Critical Strike is rolled, inflict Weakened on the closest enemy that is not already Weakened that a valid line of sight can be drawn to."
+          "Effect": "Roll the *Blitz* Attack die. If a *Critical Strike* [icon:critical-strike] is rolled, inflict *Weakened* [icon:weakened] on the closest enemy that is not already *Weakened* that a valid line of sight can be drawn to."
         }
       ]
     },
-    "Yellow": {
+    {
+      "Color": "Yellow",
       "Name": "Scout for Vulnerability",
       "Cost": 3,
       "Actions": [
         {
           "Action": "Special",
-          "Effect": "Roll the Blitz Attack die. If a Critical Strike is rolled, inflict Vulnerable on the closest enemy that is not already Vulnerable that a valid line of sight can be drawn to."
+          "Effect": "Roll the *Blitz* Attack die. If a *Critical Strike* is rolled, inflict *Vulnerable* [icon:vulnerable] on the closest enemy that is not already *Vulnerable* that a valid line of sight can be drawn to."
         }
       ]
     },
-    "Red": {
+    {
+      "Color": "Red",
       "Name": "Flashbang",
       "Cost": 4,
       "Actions": [
-        { "Action": "Attack", "Effect": "Inflict Blinded" }
+        {
+          "Action": "Attack",
+          "Effect": "Inflict Blinded [icon:blinded]"
+        }
       ]
     },
-    "Cyan": {
+    {
+      "Color": "Cyan",
       "Name": "Flashbang",
       "Cost": 4,
       "Actions": [
-        { "Action": "Attack", "Effect": "Inflict Blinded" }
+        {
+          "Action": "Attack",
+          "Effect": "Inflict Blinded [icon:blinded]"
+        }
       ]
     }
-  },
-  {
-    "Red": {
+  ],
+  [
+    {
+      "Color": "Red",
       "Name": "Scout for Vulnerability",
       "Cost": 3,
       "Actions": [
         {
           "Action": "Special",
-          "Effect": "Roll the Blitz Attack die. If a Critical Strike is rolled, inflict Vulnerable on the closest enemy that is not already Vulnerable that a valid line of sight can be drawn to."
+          "Effect": "Roll the *Blitz* Attack die. If a *Critical Strike* is rolled, inflict *Vulnerable* [icon:vulnerable] on the closest enemy that is not already *Vulnerable* that a valid line of sight can be drawn to."
         }
       ]
     },
-    "Cyan": {
+    {
+      "Color": "Cyan",
       "Name": "Scout for Weaknesses",
       "Cost": 3,
       "Actions": [
         {
           "Action": "Special",
-          "Effect": "Roll the Blitz Attack die. If a Critical Strike is rolled, inflict Weakened on the closest enemy that is not already Weakened that a valid line of sight can be drawn to."
+          "Effect": "Roll the *Blitz* Attack die. If a *Critical Strike* [icon:critical-strike] is rolled, inflict *Weakened* [icon:weakened] on the closest enemy that is not already *Weakened* that a valid line of sight can be drawn to."
         }
       ]
     },
-    "Yellow": {
+    {
+      "Color": "Yellow",
       "Name": "Flashbang",
       "Cost": 4,
       "Actions": [
-        { "Action": "Attack", "Effect": "Inflict Blinded" }
+        {
+          "Action": "Attack",
+          "Effect": "Inflict Blinded [icon:blinded]"
+        }
       ]
     },
-    "Blue": {
+    {
+      "Color": "Blue",
       "Name": "Flashbang",
       "Cost": 4,
       "Actions": [
-        { "Action": "Attack", "Effect": "Inflict Blinded" }
+        {
+          "Action": "Attack",
+          "Effect": "Inflict Blinded [icon:blinded]"
+        }
       ]
     }
-  }
+  ]
 ]

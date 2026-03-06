@@ -5,7 +5,7 @@
     "Actions": [
       {
         "Action": "Special",
-        "Type": "Reaction",
+        "Type": "Round",
         "Effect": "After any melee attack completes against the Wolf, immediately perform an Attack against the attacker."
       }
     ]
@@ -31,7 +31,7 @@
     "Actions": [
       {
         "Action": "Special",
-        "Effect": "If no enemies are within range 5, gain Invisible. Otherwise, Leap 4."
+        "Effect": "If no enemies are within range 5, gain *Invisible* [icon:invisible]. [p] Otherwise, *Leap 4*."
       }
     ]
   },
@@ -39,32 +39,31 @@
     "Name": "Single Out",
     "Cost": 3,
     "Actions": [
-      { "Action": "Move", "Value": 4 },
-      {
-        "Action": "Special",
-        "Effect": "For this turn, the primary target is the enemy with the lowest HP that it is possible to move within range of to attack using this movement. If it is not possible to move within range to attack any enemy, select the primary target as normal."
-      }
+      { "Action": "Move", "Value": 4, "Effect": "For this turn, the primary target is the enemy with the lowest HP that it is possible to move within range of to attack using this movement. If it is not possible to move within range to attack any enemy, select the primary target as normal." }
     ]
   },
   {
     "Name": "Single Out",
     "Cost": 3,
     "Actions": [
-      { "Action": "Move", "Value": 4 },
-      {
-        "Action": "Special",
-        "Effect": "For this turn, the primary target is the enemy with the lowest HP that it is possible to move within range of to attack using this movement. If it is not possible to move within range to attack any enemy, select the primary target as normal."
-      }
+      { "Action": "Move", "Value": 4, "Effect": "For this turn, the primary target is the enemy with the lowest HP that it is possible to move within range of to attack using this movement. If it is not possible to move within range to attack any enemy, select the primary target as normal." }
     ]
   },
   {
     "Name": "Single Out",
     "Cost": 3,
     "Actions": [
-      { "Action": "Move", "Value": 4 },
+      { "Action": "Move", "Value": 4, "Effect": "For this turn, the primary target is the enemy with the lowest HP that it is possible to move within range of to attack using this movement. If it is not possible to move within range to attack any enemy, select the primary target as normal." }
+    ]
+  },
+  {
+    "Name": "Rending Fangs",
+    "Cost": 4,
+    "Actions": [
       {
         "Action": "Special",
-        "Effect": "For this turn, the primary target is the enemy with the lowest HP that it is possible to move within range of to attack using this movement. If it is not possible to move within range to attack any enemy, select the primary target as normal."
+        "Type": "Round",
+        "Effect": "Add inflict *Bleeding* [icon:bleeding] to all of the Wolf's attacks this turn."
       }
     ]
   },
@@ -74,17 +73,8 @@
     "Actions": [
       {
         "Action": "Special",
-        "Effect": "Add inflict Bleeding to all of the Wolf's attacks this turn."
-      }
-    ]
-  },
-  {
-    "Name": "Rending Fangs",
-    "Cost": 4,
-    "Actions": [
-      {
-        "Action": "Special",
-        "Effect": "Add inflict Bleeding to all of the Wolf's attacks this turn."
+        "Type": "Round",
+        "Effect": "Add inflict *Bleeding* [icon:bleeding] to all of the Wolf's attacks this turn."
       }
     ]
   }

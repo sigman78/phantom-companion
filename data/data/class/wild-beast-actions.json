@@ -1,33 +1,41 @@
 [
-  {
-    "Blue": {
+  [
+    {
+      "Color": "Blue",
       "Name": "Horrifying Howl",
       "Cost": 2,
       "Actions": [
-        { "Action": "Attack" },
         {
-          "Action": "Special",
-          "Effect": "All adjacent enemies perform a Retreat 3 using adversary movement rules."
+          "Action": "Attack", "Effect": "All adjacent enemies perform a *Retreat 3* using adversary movement rules."
         }
       ]
     },
-    "Red": {
+    {
+      "Color": "Red",
       "Name": "Savage Claws",
       "Cost": 3,
-      "Actions": [{ "Action": "Attack", "Value": -1, "Mod": "Pierce 4" }]
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -1,
+          "Mod": "Pierce 4"
+        }
+      ]
     },
-    "Cyan": {
+    {
+      "Color": "Cyan",
       "Name": "Ferocious Pounce",
       "Cost": 4,
       "Actions": [
-        { "Action": "Leap", "Value": 2 },
         {
-          "Action": "Special",
-          "Effect": "If possible, end adjacent to primary target. If adjacent to target, roll Accuracy die. Inflict Stunned and Bleeding on Success. Inflict Bleeding on Block."
+          "Action": "Leap",
+          "Value": 2,
+          "Effect": "If possible, end adjacent to primary target. If adjacent to target, roll *Accuracy* die. Inflict *Stunned* [icon:stunned] and *Bleeding* [icon:bleeding] on *Success*. Inflict *Bleeding* [icon:bleeding] on *Block*."
         }
       ]
     },
-    "Yellow": {
+    {
+      "Color": "Yellow",
       "Name": "Feral Beast",
       "Cost": 4,
       "Actions": [
@@ -37,25 +45,32 @@
         }
       ]
     }
-  },
-  {
-    "Cyan": {
+  ],
+  [
+    {
+      "Color": "Cyan",
       "Name": "Horrifying Howl",
       "Cost": 2,
       "Actions": [
-        { "Action": "Attack" },
         {
-          "Action": "Special",
-          "Effect": "All adjacent enemies perform a Retreat 3 using adversary movement rules."
+          "Action": "Attack", "Effect": "All adjacent enemies perform a *Retreat 3* using adversary movement rules."
         }
       ]
     },
-    "Blue": {
+    {
+      "Color": "Blue",
       "Name": "Savage Claws",
       "Cost": 3,
-      "Actions": [{ "Action": "Attack", "Value": -1, "Mod": "Pierce 4" }]
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -1,
+          "Mod": "Pierce 4"
+        }
+      ]
     },
-    "Red": {
+    {
+      "Color": "Red",
       "Name": "Rabid Response",
       "Cost": 4,
       "Actions": [
@@ -65,10 +80,15 @@
           "Type": "Reaction",
           "Trigger": "Any enemies that enter an adjacent space (each time they do so)."
         },
-        { "Action": "Guard", "Type": "Round", "Value": -1 }
+        {
+          "Action": "Guard",
+          "Type": "Round",
+          "Value": -1
+        }
       ]
     },
-    "Yellow": {
+    {
+      "Color": "Yellow",
       "Name": "Feral Beast",
       "Cost": 4,
       "Actions": [
@@ -78,25 +98,32 @@
         }
       ]
     }
-  },
-  {
-    "Red": {
+  ],
+  [
+    {
+      "Color": "Red",
       "Name": "Horrifying Howl",
       "Cost": 2,
       "Actions": [
-        { "Action": "Attack" },
         {
-          "Action": "Special",
-          "Effect": "All adjacent enemies perform a Retreat 3 using adversary movement rules."
+          "Action": "Attack", "Effect": "All adjacent enemies perform a *Retreat 3* using adversary movement rules."
         }
       ]
     },
-    "Blue": {
+    {
+      "Color": "Blue",
       "Name": "Savage Claws",
       "Cost": 3,
-      "Actions": [{ "Action": "Attack", "Value": -1, "Mod": "Pierce 4" }]
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -1,
+          "Mod": "Pierce 4"
+        }
+      ]
     },
-    "Cyan": {
+    {
+      "Color": "Cyan",
       "Name": "Rabid Response",
       "Cost": 4,
       "Actions": [
@@ -106,10 +133,15 @@
           "Type": "Reaction",
           "Trigger": "Any enemies that enter an adjacent space (each time they do so)."
         },
-        { "Action": "Guard", "Type": "Round", "Value": -1 }
+        {
+          "Action": "Guard",
+          "Type": "Round",
+          "Value": -1
+        }
       ]
     },
-    "Yellow": {
+    {
+      "Color": "Yellow",
       "Name": "Feral Beast",
       "Cost": 4,
       "Actions": [
@@ -119,31 +151,32 @@
         }
       ]
     }
-  },
-  {
-    "Red": {
+  ],
+  [
+    {
+      "Color": "Red",
       "Name": "Horrifying Howl",
       "Cost": 2,
       "Actions": [
-        { "Action": "Attack" },
         {
-          "Action": "Special",
-          "Effect": "All adjacent enemies perform a Retreat 3 using adversary movement rules."
+          "Action": "Attack", "Effect": "All adjacent enemies perform a *Retreat 3* using adversary movement rules."
         }
       ]
     },
-    "Yellow": {
+    {
+      "Color": "Yellow",
       "Name": "Ferocious Pounce",
       "Cost": 4,
       "Actions": [
-        { "Action": "Leap", "Value": 2 },
         {
-          "Action": "Special",
-          "Effect": "If possible, end adjacent to primary target. If adjacent to target, roll Accuracy die. Inflict Stunned and Bleeding on Success. Inflict Bleeding on Block."
+          "Action": "Leap",
+          "Value": 2,
+          "Effect": "If possible, end adjacent to primary target. If adjacent to target, roll *Accuracy* die. Inflict *Stunned* [icon:stunned] and *Bleeding* [icon:bleeding] on *Success*. Inflict *Bleeding* [icon:bleeding] on *Block*."
         }
       ]
     },
-    "Cyan": {
+    {
+      "Color": "Cyan",
       "Name": "Feral Beast",
       "Cost": 4,
       "Actions": [
@@ -153,7 +186,8 @@
         }
       ]
     },
-    "Blue": {
+    {
+      "Color": "Blue",
       "Name": "Rabid Response",
       "Cost": 4,
       "Actions": [
@@ -163,17 +197,29 @@
           "Type": "Reaction",
           "Trigger": "Any enemies that enter an adjacent space (each time they do so)."
         },
-        { "Action": "Guard", "Type": "Round", "Value": -1 }
+        {
+          "Action": "Guard",
+          "Type": "Round",
+          "Value": -1
+        }
       ]
     }
-  },
-  {
-    "Yellow": {
+  ],
+  [
+    {
+      "Color": "Yellow",
       "Name": "Savage Claws",
       "Cost": 3,
-      "Actions": [{ "Action": "Attack", "Value": -1, "Mod": "Pierce 4" }]
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -1,
+          "Mod": "Pierce 4"
+        }
+      ]
     },
-    "Blue": {
+    {
+      "Color": "Blue",
       "Name": "Rabid Response",
       "Cost": 4,
       "Actions": [
@@ -183,10 +229,15 @@
           "Type": "Reaction",
           "Trigger": "Any enemies that enter an adjacent space (each time they do so)."
         },
-        { "Action": "Guard", "Type": "Round", "Value": -1 }
+        {
+          "Action": "Guard",
+          "Type": "Round",
+          "Value": -1
+        }
       ]
     },
-    "Red": {
+    {
+      "Color": "Red",
       "Name": "Feral Beast",
       "Cost": 4,
       "Actions": [
@@ -196,7 +247,8 @@
         }
       ]
     },
-    "Cyan": {
+    {
+      "Color": "Cyan",
       "Name": "Feral Beast",
       "Cost": 4,
       "Actions": [
@@ -206,25 +258,32 @@
         }
       ]
     }
-  },
-  {
-    "Blue": {
+  ],
+  [
+    {
+      "Color": "Blue",
       "Name": "Horrifying Howl",
       "Cost": 2,
       "Actions": [
-        { "Action": "Attack" },
         {
-          "Action": "Special",
-          "Effect": "All adjacent enemies perform a Retreat 3 using adversary movement rules."
+          "Action": "Attack", "Effect": "All adjacent enemies perform a *Retreat 3* using adversary movement rules."
         }
       ]
     },
-    "Yellow": {
+    {
+      "Color": "Yellow",
       "Name": "Savage Claws",
       "Cost": 3,
-      "Actions": [{ "Action": "Attack", "Value": -1, "Mod": "Pierce 4" }]
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -1,
+          "Mod": "Pierce 4"
+        }
+      ]
     },
-    "Cyan": {
+    {
+      "Color": "Cyan",
       "Name": "Feral Beast",
       "Cost": 4,
       "Actions": [
@@ -234,7 +293,8 @@
         }
       ]
     },
-    "Red": {
+    {
+      "Color": "Red",
       "Name": "Rabid Response",
       "Cost": 4,
       "Actions": [
@@ -244,28 +304,39 @@
           "Type": "Reaction",
           "Trigger": "Any enemies that enter an adjacent space (each time they do so)."
         },
-        { "Action": "Guard", "Type": "Round", "Value": -1 }
+        {
+          "Action": "Guard",
+          "Type": "Round",
+          "Value": -1
+        }
       ]
     }
-  },
-  {
-    "Blue": {
+  ],
+  [
+    {
+      "Color": "Blue",
       "Name": "Horrifying Howl",
       "Cost": 2,
       "Actions": [
-        { "Action": "Attack" },
         {
-          "Action": "Special",
-          "Effect": "All adjacent enemies perform a Retreat 3 using adversary movement rules."
+          "Action": "Attack", "Effect": "All adjacent enemies perform a *Retreat 3* using adversary movement rules."
         }
       ]
     },
-    "Cyan": {
+    {
+      "Color": "Cyan",
       "Name": "Savage Claws",
       "Cost": 3,
-      "Actions": [{ "Action": "Attack", "Value": -1, "Mod": "Pierce 4" }]
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -1,
+          "Mod": "Pierce 4"
+        }
+      ]
     },
-    "Yellow": {
+    {
+      "Color": "Yellow",
       "Name": "Rabid Response",
       "Cost": 4,
       "Actions": [
@@ -275,10 +346,15 @@
           "Type": "Reaction",
           "Trigger": "Any enemies that enter an adjacent space (each time they do so)."
         },
-        { "Action": "Guard", "Type": "Round", "Value": -1 }
+        {
+          "Action": "Guard",
+          "Type": "Round",
+          "Value": -1
+        }
       ]
     },
-    "Red": {
+    {
+      "Color": "Red",
       "Name": "Feral Beast",
       "Cost": 4,
       "Actions": [
@@ -288,25 +364,34 @@
         }
       ]
     }
-  },
-  {
-    "Red": {
+  ],
+  [
+    {
+      "Color": "Red",
       "Name": "Savage Claws",
       "Cost": 3,
-      "Actions": [{ "Action": "Attack", "Value": -1, "Mod": "Pierce 4" }]
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -1,
+          "Mod": "Pierce 4"
+        }
+      ]
     },
-    "Cyan": {
+    {
+      "Color": "Cyan",
       "Name": "Ferocious Pounce",
       "Cost": 4,
       "Actions": [
-        { "Action": "Leap", "Value": 2 },
         {
-          "Action": "Special",
-          "Effect": "If possible, end adjacent to primary target. If adjacent to target, roll Accuracy die. Inflict Stunned and Bleeding on Success. Inflict Bleeding on Block."
+          "Action": "Leap",
+          "Value": 2,
+          "Effect": "If possible, end adjacent to primary target. If adjacent to target, roll *Accuracy* die. Inflict *Stunned* [icon:stunned] and *Bleeding* [icon:bleeding] on *Success*. Inflict *Bleeding* [icon:bleeding] on *Block*."
         }
       ]
     },
-    "Yellow": {
+    {
+      "Color": "Yellow",
       "Name": "Rabid Response",
       "Cost": 4,
       "Actions": [
@@ -316,10 +401,15 @@
           "Type": "Reaction",
           "Trigger": "Any enemies that enter an adjacent space (each time they do so)."
         },
-        { "Action": "Guard", "Type": "Round", "Value": -1 }
+        {
+          "Action": "Guard",
+          "Type": "Round",
+          "Value": -1
+        }
       ]
     },
-    "Blue": {
+    {
+      "Color": "Blue",
       "Name": "Feral Beast",
       "Cost": 4,
       "Actions": [
@@ -329,20 +419,20 @@
         }
       ]
     }
-  },
-  {
-    "Yellow": {
+  ],
+  [
+    {
+      "Color": "Yellow",
       "Name": "Horrifying Howl",
       "Cost": 2,
       "Actions": [
-        { "Action": "Attack" },
         {
-          "Action": "Special",
-          "Effect": "All adjacent enemies perform a Retreat 3 using adversary movement rules."
+          "Action": "Attack", "Effect": "All adjacent enemies perform a *Retreat 3* using adversary movement rules."
         }
       ]
     },
-    "Red": {
+    {
+      "Color": "Red",
       "Name": "Feral Beast",
       "Cost": 4,
       "Actions": [
@@ -352,7 +442,8 @@
         }
       ]
     },
-    "Blue": {
+    {
+      "Color": "Blue",
       "Name": "Rabid Response",
       "Cost": 4,
       "Actions": [
@@ -362,28 +453,39 @@
           "Type": "Reaction",
           "Trigger": "Any enemies that enter an adjacent space (each time they do so)."
         },
-        { "Action": "Guard", "Type": "Round", "Value": -1 }
+        {
+          "Action": "Guard",
+          "Type": "Round",
+          "Value": -1
+        }
       ]
     }
-  },
-  {
-    "Yellow": {
+  ],
+  [
+    {
+      "Color": "Yellow",
       "Name": "Horrifying Howl",
       "Cost": 2,
       "Actions": [
-        { "Action": "Attack" },
         {
-          "Action": "Special",
-          "Effect": "All adjacent enemies perform a Retreat 3 using adversary movement rules."
+          "Action": "Attack", "Effect": "All adjacent enemies perform a *Retreat 3* using adversary movement rules."
         }
       ]
     },
-    "Cyan": {
+    {
+      "Color": "Cyan",
       "Name": "Savage Claws",
       "Cost": 3,
-      "Actions": [{ "Action": "Attack", "Value": -1, "Mod": "Pierce 4" }]
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -1,
+          "Mod": "Pierce 4"
+        }
+      ]
     },
-    "Blue": {
+    {
+      "Color": "Blue",
       "Name": "Feral Beast",
       "Cost": 4,
       "Actions": [
@@ -393,16 +495,17 @@
         }
       ]
     },
-    "Red": {
+    {
+      "Color": "Red",
       "Name": "Ferocious Pounce",
       "Cost": 4,
       "Actions": [
-        { "Action": "Leap", "Value": 2 },
         {
-          "Action": "Special",
-          "Effect": "If possible, end adjacent to primary target. If adjacent to target, roll Accuracy die. Inflict Stunned and Bleeding on Success. Inflict Bleeding on Block."
+          "Action": "Leap",
+          "Value": 2,
+          "Effect": "If possible, end adjacent to primary target. If adjacent to target, roll *Accuracy* die. Inflict *Stunned* [icon:stunned] and *Bleeding* [icon:bleeding] on *Success*. Inflict *Bleeding* [icon:bleeding] on *Block*."
         }
       ]
     }
-  }
+  ]
 ]

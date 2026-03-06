@@ -1,22 +1,39 @@
 [
-  {
-    "Blue": {
+  [
+    {
+      "Color": "Blue",
       "Name": "Overextend",
       "Cost": 4,
       "Actions": [
-        { "Action": "Guard", "Type": "Round", "Value": -3 },
-        { "Action": "Attack", "Value": 3 }
+        {
+          "Action": "Guard",
+          "Type": "Round",
+          "Value": -3
+        },
+        {
+          "Action": "Attack",
+          "Value": 3
+        }
       ]
     },
-    "Cyan": {
+    {
+      "Color": "Cyan",
       "Name": "Overextend",
       "Cost": 4,
       "Actions": [
-        { "Action": "Guard", "Type": "Round", "Value": -3 },
-        { "Action": "Attack", "Value": 3 }
+        {
+          "Action": "Guard",
+          "Type": "Round",
+          "Value": -3
+        },
+        {
+          "Action": "Attack",
+          "Value": 3
+        }
       ]
     },
-    "Yellow": {
+    {
+      "Color": "Yellow",
       "Name": "Pain Fueled",
       "Cost": 5,
       "Actions": [
@@ -27,55 +44,110 @@
         }
       ]
     },
-    "Red": {
+    {
+      "Color": "Red",
       "Name": "Wild Fury",
       "Cost": 6,
       "Actions": [
-        { "Action": "Attack", "Value": -1, "Target": "Primary target" },
-        { "Action": "Attack", "Value": -1, "Target": "All other adjacent enemies" },
-        { "Action": "Attack", "Value": -1, "Target": "All adjacent allies" }
+        {
+          "Action": "Attack",
+          "Value": -1,
+          "Target": "Primary target"
+        },
+        {
+          "Action": "Attack",
+          "Value": -1,
+          "Target": "All other adjacent enemies"
+        },
+        {
+          "Action": "Attack",
+          "Value": -1,
+          "Target": "All adjacent allies"
+        }
       ]
     }
-  },
-  {
-    "Blue": {
+  ],
+  [
+    {
+      "Color": "Blue",
       "Name": "Fast Strike",
       "Cost": 1,
-      "Actions": [{ "Action": "Attack", "Value": -1 }]
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -1
+        }
+      ]
     },
-    "Yellow": {
+    {
+      "Color": "Yellow",
       "Name": "Overextend",
       "Cost": 4,
       "Actions": [
-        { "Action": "Guard", "Type": "Round", "Value": -3 },
-        { "Action": "Attack", "Value": 3 }
+        {
+          "Action": "Guard",
+          "Type": "Round",
+          "Value": -3
+        },
+        {
+          "Action": "Attack",
+          "Value": 3
+        }
       ]
     },
-    "Red": {
+    {
+      "Color": "Red",
       "Name": "Overextend",
       "Cost": 4,
       "Actions": [
-        { "Action": "Guard", "Type": "Round", "Value": -3 },
-        { "Action": "Attack", "Value": 3 }
+        {
+          "Action": "Guard",
+          "Type": "Round",
+          "Value": -3
+        },
+        {
+          "Action": "Attack",
+          "Value": 3
+        }
       ]
     },
-    "Cyan": {
+    {
+      "Color": "Cyan",
       "Name": "Wild Fury",
       "Cost": 6,
       "Actions": [
-        { "Action": "Attack", "Value": -1, "Target": "Primary target" },
-        { "Action": "Attack", "Value": -1, "Target": "All other adjacent enemies" },
-        { "Action": "Attack", "Value": -1, "Target": "All adjacent allies" }
+        {
+          "Action": "Attack",
+          "Value": -1,
+          "Target": "Primary target"
+        },
+        {
+          "Action": "Attack",
+          "Value": -1,
+          "Target": "All other adjacent enemies"
+        },
+        {
+          "Action": "Attack",
+          "Value": -1,
+          "Target": "All adjacent allies"
+        }
       ]
     }
-  },
-  {
-    "Cyan": {
+  ],
+  [
+    {
+      "Color": "Cyan",
       "Name": "Fast Strike",
       "Cost": 1,
-      "Actions": [{ "Action": "Attack", "Value": -1 }]
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -1
+        }
+      ]
     },
-    "Red": {
+    {
+      "Color": "Red",
       "Name": "Pain Fueled",
       "Cost": 5,
       "Actions": [
@@ -86,39 +158,76 @@
         }
       ]
     },
-    "Blue": {
+    {
+      "Color": "Blue",
       "Name": "Wild Fury",
       "Cost": 6,
       "Actions": [
-        { "Action": "Attack", "Value": -1, "Target": "Primary target" },
-        { "Action": "Attack", "Value": -1, "Target": "All other adjacent enemies" },
-        { "Action": "Attack", "Value": -1, "Target": "All adjacent allies" }
+        {
+          "Action": "Attack",
+          "Value": -1,
+          "Target": "Primary target"
+        },
+        {
+          "Action": "Attack",
+          "Value": -1,
+          "Target": "All other adjacent enemies"
+        },
+        {
+          "Action": "Attack",
+          "Value": -1,
+          "Target": "All adjacent allies"
+        }
       ]
     },
-    "Yellow": {
+    {
+      "Color": "Yellow",
       "Name": "Severing Blow",
       "Cost": 7,
-      "Actions": [{ "Action": "Attack", "Value": 2, "Effect": "Inflict Bleeding" }]
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": 2,
+          "Effect": "Inflict Bleeding"
+        }
+      ]
     }
-  },
-  {
-    "Red": {
+  ],
+  [
+    {
+      "Color": "Red",
       "Name": "Overextend",
       "Cost": 4,
       "Actions": [
-        { "Action": "Guard", "Type": "Round", "Value": -3 },
-        { "Action": "Attack", "Value": 3 }
+        {
+          "Action": "Guard",
+          "Type": "Round",
+          "Value": -3
+        },
+        {
+          "Action": "Attack",
+          "Value": 3
+        }
       ]
     },
-    "Blue": {
+    {
+      "Color": "Blue",
       "Name": "Overextend",
       "Cost": 4,
       "Actions": [
-        { "Action": "Guard", "Type": "Round", "Value": -3 },
-        { "Action": "Attack", "Value": 3 }
+        {
+          "Action": "Guard",
+          "Type": "Round",
+          "Value": -3
+        },
+        {
+          "Action": "Attack",
+          "Value": 3
+        }
       ]
     },
-    "Cyan": {
+    {
+      "Color": "Cyan",
       "Name": "Pain Fueled",
       "Cost": 5,
       "Actions": [
@@ -129,47 +238,90 @@
         }
       ]
     },
-    "Yellow": {
+    {
+      "Color": "Yellow",
       "Name": "Severing Blow",
       "Cost": 7,
-      "Actions": [{ "Action": "Attack", "Value": 2, "Effect": "Inflict Bleeding" }]
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": 2,
+          "Effect": "Inflict Bleeding"
+        }
+      ]
     }
-  },
-  {
-    "Red": {
+  ],
+  [
+    {
+      "Color": "Red",
       "Name": "Fast Strike",
       "Cost": 1,
-      "Actions": [{ "Action": "Attack", "Value": -1 }]
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -1
+        }
+      ]
     },
-    "Blue": {
+    {
+      "Color": "Blue",
       "Name": "Fast Strike",
       "Cost": 1,
-      "Actions": [{ "Action": "Attack", "Value": -1 }]
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -1
+        }
+      ]
     },
-    "Yellow": {
+    {
+      "Color": "Yellow",
       "Name": "Overextend",
       "Cost": 4,
       "Actions": [
-        { "Action": "Guard", "Type": "Round", "Value": -3 },
-        { "Action": "Attack", "Value": 3 }
+        {
+          "Action": "Guard",
+          "Type": "Round",
+          "Value": -3
+        },
+        {
+          "Action": "Attack",
+          "Value": 3
+        }
       ]
     },
-    "Cyan": {
+    {
+      "Color": "Cyan",
       "Name": "Severing Blow",
       "Cost": 7,
-      "Actions": [{ "Action": "Attack", "Value": 2, "Effect": "Inflict Bleeding" }]
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": 2,
+          "Effect": "Inflict Bleeding"
+        }
+      ]
     }
-  },
-  {
-    "Cyan": {
+  ],
+  [
+    {
+      "Color": "Cyan",
       "Name": "Overextend",
       "Cost": 4,
       "Actions": [
-        { "Action": "Guard", "Type": "Round", "Value": -3 },
-        { "Action": "Attack", "Value": 3 }
+        {
+          "Action": "Guard",
+          "Type": "Round",
+          "Value": -3
+        },
+        {
+          "Action": "Attack",
+          "Value": 3
+        }
       ]
     },
-    "Blue": {
+    {
+      "Color": "Blue",
       "Name": "Pain Fueled",
       "Cost": 5,
       "Actions": [
@@ -180,7 +332,8 @@
         }
       ]
     },
-    "Yellow": {
+    {
+      "Color": "Yellow",
       "Name": "Pain Fueled",
       "Cost": 5,
       "Actions": [
@@ -191,30 +344,54 @@
         }
       ]
     },
-    "Red": {
+    {
+      "Color": "Red",
       "Name": "Severing Blow",
       "Cost": 7,
-      "Actions": [{ "Action": "Attack", "Value": 2, "Effect": "Inflict Bleeding" }]
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": 2,
+          "Effect": "Inflict Bleeding"
+        }
+      ]
     }
-  },
-  {
-    "Blue": {
+  ],
+  [
+    {
+      "Color": "Blue",
       "Name": "Overextend",
       "Cost": 4,
       "Actions": [
-        { "Action": "Guard", "Type": "Round", "Value": -3 },
-        { "Action": "Attack", "Value": 3 }
+        {
+          "Action": "Guard",
+          "Type": "Round",
+          "Value": -3
+        },
+        {
+          "Action": "Attack",
+          "Value": 3
+        }
       ]
     },
-    "Yellow": {
+    {
+      "Color": "Yellow",
       "Name": "Overextend",
       "Cost": 4,
       "Actions": [
-        { "Action": "Guard", "Type": "Round", "Value": -3 },
-        { "Action": "Attack", "Value": 3 }
+        {
+          "Action": "Guard",
+          "Type": "Round",
+          "Value": -3
+        },
+        {
+          "Action": "Attack",
+          "Value": 3
+        }
       ]
     },
-    "Cyan": {
+    {
+      "Color": "Cyan",
       "Name": "Pain Fueled",
       "Cost": 5,
       "Actions": [
@@ -225,22 +402,38 @@
         }
       ]
     },
-    "Red": {
+    {
+      "Color": "Red",
       "Name": "Severing Blow",
       "Cost": 7,
-      "Actions": [{ "Action": "Attack", "Value": 2, "Effect": "Inflict Bleeding" }]
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": 2,
+          "Effect": "Inflict Bleeding"
+        }
+      ]
     }
-  },
-  {
-    "Cyan": {
+  ],
+  [
+    {
+      "Color": "Cyan",
       "Name": "Overextend",
       "Cost": 4,
       "Actions": [
-        { "Action": "Guard", "Type": "Round", "Value": -3 },
-        { "Action": "Attack", "Value": 3 }
+        {
+          "Action": "Guard",
+          "Type": "Round",
+          "Value": -3
+        },
+        {
+          "Action": "Attack",
+          "Value": 3
+        }
       ]
     },
-    "Red": {
+    {
+      "Color": "Red",
       "Name": "Pain Fueled",
       "Cost": 5,
       "Actions": [
@@ -251,33 +444,66 @@
         }
       ]
     },
-    "Yellow": {
+    {
+      "Color": "Yellow",
       "Name": "Wild Fury",
       "Cost": 5,
       "Actions": [
-        { "Action": "Attack", "Value": -1, "Target": "Primary target" },
-        { "Action": "Attack", "Value": -1, "Target": "All other adjacent enemies" },
-        { "Action": "Attack", "Value": -1, "Target": "All adjacent allies" }
+        {
+          "Action": "Attack",
+          "Value": -1,
+          "Target": "Primary target"
+        },
+        {
+          "Action": "Attack",
+          "Value": -1,
+          "Target": "All other adjacent enemies"
+        },
+        {
+          "Action": "Attack",
+          "Value": -1,
+          "Target": "All adjacent allies"
+        }
       ]
     },
-    "Blue": {
+    {
+      "Color": "Blue",
       "Name": "Severing Blow",
       "Cost": 7,
-      "Actions": [{ "Action": "Attack", "Value": 2, "Effect": "Inflict Bleeding" }]
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": 2,
+          "Effect": "Inflict Bleeding"
+        }
+      ]
     }
-  },
-  {
-    "Yellow": {
+  ],
+  [
+    {
+      "Color": "Yellow",
       "Name": "Fast Strike",
       "Cost": 1,
-      "Actions": [{ "Action": "Attack", "Value": -1 }]
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -1
+        }
+      ]
     },
-    "Red": {
+    {
+      "Color": "Red",
       "Name": "Fast Strike",
       "Cost": 1,
-      "Actions": [{ "Action": "Attack", "Value": -1 }]
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -1
+        }
+      ]
     },
-    "Blue": {
+    {
+      "Color": "Blue",
       "Name": "Pain Fueled",
       "Cost": 5,
       "Actions": [
@@ -288,36 +514,69 @@
         }
       ]
     },
-    "Cyan": {
+    {
+      "Color": "Cyan",
       "Name": "Severing Blow",
       "Cost": 7,
-      "Actions": [{ "Action": "Attack", "Value": 2, "Effect": "Inflict Bleeding" }]
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": 2,
+          "Effect": "Inflict Bleeding"
+        }
+      ]
     }
-  },
-  {
-    "Yellow": {
+  ],
+  [
+    {
+      "Color": "Yellow",
       "Name": "Fast Strike",
       "Cost": 1,
-      "Actions": [{ "Action": "Attack", "Value": -1 }]
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -1
+        }
+      ]
     },
-    "Cyan": {
+    {
+      "Color": "Cyan",
       "Name": "Fast Strike",
       "Cost": 1,
-      "Actions": [{ "Action": "Attack", "Value": -1 }]
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": -1
+        }
+      ]
     },
-    "Red": {
+    {
+      "Color": "Red",
       "Name": "Overextend",
       "Cost": 4,
       "Actions": [
-        { "Action": "Guard", "Type": "Round", "Value": -3 },
-        { "Action": "Attack", "Value": 3 }
+        {
+          "Action": "Guard",
+          "Type": "Round",
+          "Value": -3
+        },
+        {
+          "Action": "Attack",
+          "Value": 3
+        }
       ]
     },
-    "Blue": {
+    {
+      "Color": "Blue",
       "Name": "Severing Blow",
       "Cost": 7,
-      "Actions": [{ "Action": "Attack", "Value": 2, "Effect": "Inflict Bleeding" }]
+      "Actions": [
+        {
+          "Action": "Attack",
+          "Value": 2,
+          "Effect": "Inflict Bleeding"
+        }
+      ]
     }
-  }
+  ]
 ]
-
