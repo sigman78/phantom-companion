@@ -50,8 +50,8 @@ for use during play.
 
 - 22 adversary types across 6 classes and 8 species (bosses excluded from Phase 1)
 - All game data served as static JSON from `/game-data/`
-- Card art and icons converted from source PNGs to compressed JPGs (116 MB to 4.7 MB)
-- Icons at 150x150, card art at 300x420 equivalent aspect
+- Source art is resized and converted to apropriate graphics formats
+- Target art size corresponds to displayed sizes
 
 ---
 
@@ -59,7 +59,6 @@ for use during play.
 
 - Astro 4 + Svelte 4 + TypeScript
 - No backend; all state in Svelte stores, data loaded client-side
-- CSS custom properties for the full design token system (dark leather/brass theme)
 
 ## Development
 

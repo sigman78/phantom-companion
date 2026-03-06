@@ -58,3 +58,18 @@ App's design:
 - On the right (~1/3) shown currently selected adversary (color) group - aversary stats, portrait, action
 - There is a bottom bar which displays current turn number and currently active UI actions: 'next', 'prev', 'end of turn' etc
 
+Phase 2: UI/UX Playtested redesign
+----------------------------------
+
+After playtesting following ui layout is proposed @see `data/UI-LAYOUT.md`. 
+
+As for stylistic choice - generally keep humanistic, skeuomorphic approach - material colors, add slightly visible texture to backgronds.
+All text should be clearly readable, but more important - slightly highlighted. Adjust and harmoize palette for game keywords, modifiers,
+buffs, debuffs.
+
+Target tightly packed touch based interface - no desktop style 'buttons'
+
+Dont use 'dimmed' versions of adversary colors - they look muddy. Use accents, decorations or anything else for that matter.
+
+Visual deck clue - show approximated height stack of each deck cards non drawn and drawn. Then last card is drawn - the deck is reshuffled before next turn.
+
