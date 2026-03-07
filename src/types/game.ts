@@ -86,6 +86,7 @@ export interface SetupState {
   selectedTypeName: string | null;
   difficulty: DifficultyLevel;
   colorToggles: Record<AdversaryColor, boolean>;
+  selectedTypes: string[]; // types toggled "in play" for the upcoming mission
 }
 
 // Runtime turn state
