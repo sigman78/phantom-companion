@@ -1,0 +1,171 @@
+@import './tokens.css';
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  height: 100%;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: clamp(15px, 1.5vw, 20px);
+  line-height: 1.5;
+  overflow: hidden;
+}
+
+#app-root {
+  display: flex;
+  flex-direction: column;
+  /* dvh shrinks when Android Chrome's address bar is visible; vh as fallback */
+  height: 100vh;
+  height: 100dvh;
+  /* account for gesture bar on notched/gesture-nav devices */
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.game-layout {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.panel-left {
+  width: var(--panel-left-width);
+  overflow-y: auto;
+  border-right: 1px solid var(--color-border);
+}
+
+.panel-right {
+  width: var(--panel-right-width);
+  overflow-y: auto;
+}
+
+/* Shared overlay backdrop */
+.overlay-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+/* Shared overlay header bar */
+.overlay-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) var(--space-6);
+  border-bottom: 1px solid var(--color-border);
+  flex-shrink: 0;
+}
+
+/* Action phrase highlights e.g. "Attack -2", "Retreat 3" */
+.kw-action {
+  display: inline-block;
+  font-weight: 700;
+  font-style: normal;
+  padding: 0 3px;
+  border-radius: var(--radius-sm);
+  background: rgba(184, 115, 51, 0.15);
+  text-decoration: underline;
+  text-decoration-color: rgba(184, 115, 51, 0.5);
+  text-underline-offset: 2px;
+  color: var(--color-text);
+  white-space: nowrap;
+}
+
+/* Die reference badges */
+.kw-die {
+  display: inline-block;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 1px 4px;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.kw-die-red {
+  background: rgba(192, 57, 43, 0.15);
+  border: 1px solid rgba(192, 57, 43, 0.35);
+  color: #e07060;
+  text-decoration-color: rgba(192, 57, 43, 0.5);
+}
+.kw-die-yellow {
+  background: rgba(212, 172, 13, 0.15);
+  border: 1px solid rgba(212, 172, 13, 0.35);
+  color: var(--color-yellow);
+  text-decoration-color: rgba(212, 172, 13, 0.5);
+}
+.kw-die-cyan {
+  background: rgba(0, 180, 216, 0.12);
+  border: 1px solid rgba(0, 180, 216, 0.3);
+  color: var(--color-cyan);
+  text-decoration-color: rgba(0, 180, 216, 0.4);
+}
+
+/* Condition keyword badges inside effect/trigger text */
+.kw-neg {
+  display: inline-block;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 1px 4px;
+  border-radius: var(--radius-sm);
+  background: rgba(192, 57, 43, 0.18);
+  border: 1px solid rgba(192, 57, 43, 0.45);
+  color: #e07060;
+  white-space: nowrap;
+}
+.kw-pos {
+  display: inline-block;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 1px 4px;
+  border-radius: var(--radius-sm);
+  background: rgba(39, 174, 96, 0.15);
+  border: 1px solid rgba(39, 174, 96, 0.4);
+  color: #5dba7d;
+  white-space: nowrap;
+}
+
+/* Grain texture — fixed overlay, tiles the SVG fractalNoise, no pointer interaction */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 300px 300px;
+  mix-blend-mode: overlay;
+  opacity: 0.35;
+}
+
+/* Explicit *emphasis* from data formatting */
+.kw-em {
+  font-style: normal;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+/* Card draw reveal animation */
+@keyframes card-deal {
+  from { opacity: 0; transform: translateY(-14px) scale(0.93) rotate(-1.5deg); }
+  to   { opacity: 1; transform: translateY(0) scale(1) rotate(0deg); }
+}
+@keyframes deck-pulse {
+  0%,100% { outline-color: rgba(184,115,51,0.0); }
+  50%     { outline-color: rgba(184,115,51,0.35); }
+}
+.card-revealed { animation: card-deal 0.22s cubic-bezier(0.25, 0.46, 0.45, 0.94); }

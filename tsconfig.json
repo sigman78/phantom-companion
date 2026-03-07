@@ -1,0 +1,9 @@
+{
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    "paths": {
+      "$data/*": ["./public/game-data/data/*"],
+      "$art/*":  ["./public/game-data/art/*"]
+    }
+  }
+}
