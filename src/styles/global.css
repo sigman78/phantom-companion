@@ -104,10 +104,10 @@ html, body {
   text-decoration-color: rgba(212, 172, 13, 0.5);
 }
 .kw-die-cyan {
-  background: rgba(0, 180, 216, 0.12);
-  border: 1px solid rgba(0, 180, 216, 0.3);
+  background: rgba(0, 191, 165, 0.12);
+  border: 1px solid rgba(0, 191, 165, 0.3);
   color: var(--color-cyan);
-  text-decoration-color: rgba(0, 180, 216, 0.4);
+  text-decoration-color: rgba(0, 191, 165, 0.4);
 }
 
 /* Condition keyword badges inside effect/trigger text */

@@ -15,7 +15,7 @@ export const COLOR_VAR: Record<AdversaryColor, string> = {
 
 export const COLOR_BG: Record<AdversaryColor, string> = {
   Red:    'rgba(192,57,43,0.15)',
-  Blue:   'rgba(41,128,185,0.15)',
-  Cyan:   'rgba(0,180,216,0.12)',
+  Blue:   'rgba(40,120,214,0.15)',
+  Cyan:   'rgba(0,191,165,0.12)',
   Yellow: 'rgba(212,172,13,0.15)',
 };

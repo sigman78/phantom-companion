@@ -11,8 +11,8 @@
 
   /* Unit colors */
   --color-red:      #c0392b;
-  --color-blue:     #2980b9;
-  --color-cyan:     #00b4d8;
+  --color-blue:     #2878d6;
+  --color-cyan:     #00bfa5;
   --color-yellow:   #d4ac0d;
   --color-positive: #3a7a4a;
 
@@ -49,8 +49,8 @@
 
   /* Per-color background tints */
   --color-red-bg:    rgba(192,57,43,0.15);
-  --color-blue-bg:   rgba(41,128,185,0.15);
-  --color-cyan-bg:   rgba(0,180,216,0.12);
+  --color-blue-bg:   rgba(40,120,214,0.15);
+  --color-cyan-bg:   rgba(0,191,165,0.12);
   --color-yellow-bg: rgba(212,172,13,0.15);
 
   /* Shadows */
