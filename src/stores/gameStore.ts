@@ -6,7 +6,7 @@ import type {
 } from '../types/game';
 import { createDeck, drawCard, deckKey } from '../lib/deck';
 import { calcInitiative, sortActivations, numberActivations } from '../lib/initiative';
-import { CLASS_FILE, SPECIES_FILE } from '../lib/adversaries';
+import { CLASS_FILE, SPECIES_FILE, ADVERSARY_TYPES } from '../lib/adversaries';
 import { saveState, clearSavedState, isAutosaveEnabled } from '../lib/persistence';
 import type { SavedState } from '../lib/persistence';
 
@@ -27,6 +27,7 @@ const initialSetup: SetupState = {
   selectedTypeName: null,
   difficulty: 1,
   colorToggles: { Red: true, Blue: true, Cyan: true, Yellow: true },
+  selectedTypes: [],
 };
 
 const initialTurn: TurnState = {
@@ -94,7 +95,30 @@ export function toggleSetupColor(color: AdversaryColor): void {
   }));
 }
 
+// Toggle a type in the mission's "in play" list and focus it for stats preview.
+export function toggleSetupType(name: string): void {
+  gameStore.update(s => {
+    const types = s.setup.selectedTypes;
+    const next = types.includes(name) ? types.filter(n => n !== name) : [...types, name];
+    return { ...s, setup: { ...s.setup, selectedTypeName: name, selectedTypes: next } };
+  });
+}
+
 export function goToBattle(): void {
+  gameStore.update(s => ({ ...s, phase: 'battle' }));
+}
+
+// Batch-add all selected types with current difficulty then start battle.
+// All four colors are always included in the simplified setup flow.
+export async function startBattle(): Promise<void> {
+  const { setup } = get(gameStore);
+  // Reset turn state (keeps jsonCache for efficiency)
+  gameStore.update(s => ({ ...s, turn: { ...initialTurn } }));
+  const allColors: Record<AdversaryColor, boolean> = { Red: true, Blue: true, Cyan: true, Yellow: true };
+  for (const name of setup.selectedTypes) {
+    const type = ADVERSARY_TYPES.find(t => t.name === name);
+    if (type) await addAdversaryGroup(type, setup.difficulty, allColors);
+  }
   gameStore.update(s => ({ ...s, phase: 'battle' }));
 }
 

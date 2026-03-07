@@ -59,8 +59,8 @@
     flex-shrink: 0;
   }
   .action-tag.mod {
-    background: rgba(0,180,216,0.12);
-    border: 1px solid rgba(0,180,216,0.3);
+    background: rgba(0,191,165,0.12);
+    border: 1px solid rgba(0,191,165,0.3);
     color: var(--color-cyan);
   }
   .action-tag.type {
