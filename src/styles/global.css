@@ -149,7 +149,7 @@ body::before {
   background-repeat: repeat;
   background-size: 300px 300px;
   mix-blend-mode: overlay;
-  opacity: 0.45;
+  opacity: 0.35;
 }
 
 /* Explicit *emphasis* from data formatting */

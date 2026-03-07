@@ -27,7 +27,7 @@
           class:current={state === 'current'}
           class:future={state === 'future'}
           class:dead={!entry.unit.alive}
-          style="--row-bg:{colorBg}; --row-accent:{colorAccent}"
+          style="--row-accent:{colorAccent}"
         >
           <span class="order">{entry.activationOrder}</span>
           <div class="icon-crop">
@@ -37,7 +37,9 @@
             <span class="name">{entry.unit.adversaryName}</span>
             <span class="color-tag" style="color:{colorAccent}; border-color:{colorAccent}">{entry.unit.color}</span>
           </div>
-          <span class="init">{entry.initiative}</span>
+          <div class="init-badge">
+            <span class="init-num">{entry.initiative}</span>
+          </div>
         </div>
       {/each}
 
@@ -96,8 +98,8 @@
     align-items: center;
     gap: var(--space-2);
     border-bottom: 1px solid var(--color-border);
-    border-left: 3px solid var(--row-accent);
-    background: var(--row-bg);
+    border-left: 6px solid var(--row-accent);
+    background: var(--color-surface);
   }
   .act-row.dead { opacity: 0.25; }
 
@@ -110,17 +112,17 @@
   .act-row.past .order { font-size: 11px; width: 18px; }
   .act-row.past .name  { font-size: 12px; }
   .act-row.past .color-tag { display: none; }
-  .act-row.past .init  { font-size: 14px; }
+  .act-row.past .init-num  { font-size: 18px; }
 
   .act-row.current {
     --icon-sz: 88px;
     padding: var(--space-3) var(--space-3);
-    border-left-width: 4px;
+    border-left-width: 8px;
     filter: brightness(1.15);
   }
   .act-row.current .order { font-size: 13px; width: 22px; }
   .act-row.current .name  { font-size: 17px; font-weight: 600; }
-  .act-row.current .init  { font-size: 24px; }
+  .act-row.current .init-num  { font-size: 31px; }
 
   .act-row.future {
     --icon-sz: 68px;
@@ -128,7 +130,7 @@
   }
   .act-row.future .order { font-size: 12px; width: 20px; }
   .act-row.future .name  { font-size: 13px; }
-  .act-row.future .init  { font-size: 16px; }
+  .act-row.future .init-num  { font-size: 21px; }
 
   .order {
     text-align: right;
@@ -164,12 +166,21 @@
     align-self: flex-start;
   }
 
-  .init {
-    font-weight: bold;
-    color: var(--color-accent);
-    min-width: 28px;
-    text-align: right;
+  /* Initiative badge — accent-colored fill, dark text for contrast */
+  .init-badge {
     flex-shrink: 0;
+    background: var(--color-accent);
+    border-radius: var(--radius-sm);
+    padding: 3px 7px;
+    min-width: 32px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+  }
+  .init-num {
+    display: block;
+    font-weight: 900;
+    line-height: 1;
+    color: var(--color-bg);
   }
 
   /* --- Pre-draw group rows (display-only) --- */
