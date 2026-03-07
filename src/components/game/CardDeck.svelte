@@ -5,7 +5,7 @@
 </script>
 
 <div class="deck-unit">
-  <div class="deck-stack" style="--rem:{remaining}">
+  <div class="deck-stack" class:has-drawn={!!drawnUrl} style="--rem:{remaining}">
     {#if remaining >= 3}
       <div class="card c1" style="background-image:url('{backUrl}')"></div>
     {/if}
@@ -65,10 +65,17 @@
     transform: none;
   }
 
+  /* In drawn mode: shift backs down so the face-up card stays at the anchor position.
+     Decorative backs may clip at the bottom — that is intentional. */
+  .has-drawn .c3 { transform: translate(-10px, 28px); }
+  .has-drawn .c2 { transform: rotate(-1.5deg) translate(-14px, 38px); }
+  .has-drawn .c1 { transform: rotate(-2.5deg) translate(-18px, 48px); }
+
   .face-up {
     z-index: 5;
     filter: none;
-    transform: translate(30px, -36px);
+    /* Anchored at inset:0 — no upward offset, always within container bounds. */
+    transform: translate(12px, 0);
     box-shadow: 4px 10px 20px rgba(0,0,0,0.95), 0 0 0 2px var(--color-accent);
   }
 

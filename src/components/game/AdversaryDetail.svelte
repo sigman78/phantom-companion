@@ -172,9 +172,9 @@
     overflow: hidden;
   }
 
-  /* TOP SECTION: fixed 30% of panel height */
+  /* TOP SECTION: fixed 34% of panel height */
   .top-section {
-    flex: 0 0 30%;
+    flex: 0 0 34%;
     min-height: 0;
     overflow: hidden;
     display: flex;
@@ -338,9 +338,9 @@
     flex-shrink: 0;
   }
 
-  /* BOTTOM SECTION: fixed 70% of panel height */
+  /* BOTTOM SECTION: fixed 66% of panel height */
   .bottom-section {
-    flex: 0 0 70%;
+    flex: 0 0 66%;
     min-height: 0;
     display: flex;
     flex-direction: column;

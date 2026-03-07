@@ -102,7 +102,7 @@
   .act-row.dead { opacity: 0.25; }
 
   .act-row.past {
-    --icon-sz: 72px;
+    --icon-sz: 56px;
     padding: 4px var(--space-3);
     opacity: 0.35;
     filter: grayscale(0.6);
@@ -113,9 +113,9 @@
   .act-row.past .init  { font-size: 14px; }
 
   .act-row.current {
-    --icon-sz: 120px;
+    --icon-sz: 88px;
     padding: var(--space-3) var(--space-3);
-    border-left-width: 5px;
+    border-left-width: 4px;
     filter: brightness(1.15);
   }
   .act-row.current .order { font-size: 13px; width: 22px; }
@@ -123,7 +123,7 @@
   .act-row.current .init  { font-size: 24px; }
 
   .act-row.future {
-    --icon-sz: 84px;
+    --icon-sz: 68px;
     padding: 6px var(--space-3);
   }
   .act-row.future .order { font-size: 12px; width: 20px; }

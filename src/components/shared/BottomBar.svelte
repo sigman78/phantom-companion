@@ -38,9 +38,9 @@
     &#8250;
   </button>
 
-  <!-- Adversaries -->
+  <!-- Roster -->
   <button class="cell adversaries-btn" on:click={onOpenRoster}>
-    Adversaries
+    Roster
   </button>
 
   <!-- End Turn -->

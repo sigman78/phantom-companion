@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { fade } from 'svelte/transition';
   import { gameStore } from '../stores/gameStore';
   import BottomBar from './shared/BottomBar.svelte';
   import ActivationList from './game/ActivationList.svelte';
@@ -11,20 +12,24 @@
 </script>
 
 {#if phase === 'setup'}
-  <SetupScreen />
+  <div transition:fade={{ duration: 120 }} style="display:contents">
+    <SetupScreen />
+  </div>
 
 {:else if rosterOpen}
   <BattleRosterScreen on:close={() => rosterOpen = false} />
 
 {:else}
   <!-- Battle screen -->
-  <div class="game-layout">
-    <div class="panel-left">
-      <ActivationList />
+  <div transition:fade={{ duration: 120 }} style="display:contents">
+    <div class="game-layout">
+      <div class="panel-left">
+        <ActivationList />
+      </div>
+      <div class="panel-right">
+        <AdversaryDetail />
+      </div>
     </div>
-    <div class="panel-right">
-      <AdversaryDetail />
-    </div>
+    <BottomBar onOpenRoster={() => rosterOpen = true} />
   </div>
-  <BottomBar onOpenRoster={() => rosterOpen = true} />
 {/if}

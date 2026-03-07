@@ -369,6 +369,7 @@
   }
 
   .type-cell {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -385,19 +386,34 @@
   .type-cell.sel   { border-color: var(--color-accent); background: rgba(184,115,51,0.12); }
   .type-cell:disabled,
   .type-cell.added {
-    opacity: 0.28;
+    opacity: 0.45;
     cursor: not-allowed;
     pointer-events: none;
+  }
+  .type-cell.added::after {
+    content: 'Added';
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    font-size: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-positive);
+    background: rgba(58, 122, 74, 0.18);
+    border: 1px solid rgba(58, 122, 74, 0.4);
+    border-radius: var(--radius-sm);
+    padding: 1px 3px;
+    line-height: 1.4;
   }
   .type-icon { width: 68px; height: 68px; object-fit: contain; }
   .type-name {
     font-size: 12px;
     font-weight: 500;
     text-align: center;
-    color: var(--color-text-dim);
+    color: var(--color-text);
     line-height: 1.3;
   }
-  .type-cell.sel .type-name { color: var(--color-text); }
 
   /* Setup bottom bar */
   .setup-bar {
@@ -430,15 +446,15 @@
     color: var(--color-text-dim);
     font-size: 13px;
     cursor: pointer;
-    min-height: 36px;
+    min-height: 40px;
     transition: all 0.1s;
   }
   .diff-btn:hover  { border-color: var(--color-accent-dim); color: var(--color-text); }
   .diff-btn.active { border-color: var(--color-accent); color: var(--color-accent); background: rgba(184,115,51,0.1); }
 
   .color-btn {
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
     border: 2px solid var(--color-border);
     border-radius: var(--radius-sm);
     background: transparent;
@@ -454,7 +470,6 @@
   /* Action buttons */
   .bar-btn {
     padding: 0 var(--space-3);
-    height: 36px;
     border-radius: var(--radius-md);
     font-size: 15px;
     font-weight: 600;
