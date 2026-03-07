@@ -18,7 +18,7 @@ export function highlight(text: string): string {
   s = s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
   // Restore [p] as visual paragraph break
-  s = s.replace(/\x01/g, '<br><br>');
+  s = s.replace(/\x01/g, '<br>');
 
   // *text* emphasis (explicit highlight in data)
   s = s.replace(/\*([^*]+)\*/g, '<em class="kw-em">$1</em>');

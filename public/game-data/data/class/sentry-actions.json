@@ -7,7 +7,7 @@
       "Actions": [
         {
           "Action": "Special",
-          "Effect": "*Guard +1* to self, adjacent non-Sentry allies, and adjacent objects. If able, *Attack -2* on primary target. If not, *Move 3* toward closest ally. If no path to an ally exists, *Move* normally."
+          "Effect": "*Guard +1* to self, adjacent non-Sentry allies, and adjacent objects. [p] If able, *Attack -2* on primary target. If not, *Move 3* toward closest ally. If no path to an ally exists, *Move* normally."
         }
       ]
     },
@@ -55,7 +55,7 @@
       "Actions": [
         {
           "Action": "Special",
-          "Effect": "*Guard +1* to self, adjacent non-Sentry allies, and adjacent objects. If able, *Attack -2* on primary target. If not, *Move 3* toward closest ally. If no path to an ally exists, *Move* normally."
+          "Effect": "*Guard +1* to self, adjacent non-Sentry allies, and adjacent objects. [p] If able, *Attack -2* on primary target. If not, *Move 3* toward closest ally. If no path to an ally exists, *Move* normally."
         }
       ]
     },
@@ -66,7 +66,7 @@
       "Actions": [
         {
           "Action": "Special",
-          "Effect": "*Guard +1* to self, adjacent non-Sentry allies, and adjacent objects. If able, *Attack -2* on primary target. If not, *Move 3* toward closest ally. If no path to an ally exists, *Move* normally."
+          "Effect": "*Guard +1* to self, adjacent non-Sentry allies, and adjacent objects. [p] If able, *Attack -2* on primary target. If not, *Move 3* toward closest ally. If no path to an ally exists, *Move* normally."
         }
       ]
     },
@@ -99,7 +99,7 @@
       "Actions": [
         {
           "Action": "Special",
-          "Effect": "Adjacent allies and objects use the higher of this adversary's Guard value or their own. If able, *Attack -2* on primary target. If not, *Move 3* toward closest ally. If no path to an ally exists, *Move* normally."
+          "Effect": "Adjacent allies and objects use the higher of this adversary's Guard value or their own. [p] If able, *Attack -2* on primary target. If not, *Move 3* toward closest ally. If no path to an ally exists, *Move* normally."
         }
       ]
     },
@@ -110,7 +110,7 @@
       "Actions": [
         {
           "Action": "Special",
-          "Effect": "*Guard +1* to self, adjacent non-Sentry allies, and adjacent objects. If able, *Attack -2* on primary target. If not, *Move 3* toward closest ally. If no path to an ally exists, *Move* normally."
+          "Effect": "*Guard +1* to self, adjacent non-Sentry allies, and adjacent objects. [p] If able, *Attack -2* on primary target. If not, *Move 3* toward closest ally. If no path to an ally exists, *Move* normally."
         }
       ]
     },
@@ -144,7 +144,7 @@
       "Actions": [
         {
           "Action": "Special",
-          "Effect": "Adjacent allies and objects use the higher of this adversary's Guard value or their own. If able, *Attack -2* on primary target. If not, *Move 3* toward closest ally. If no path to an ally exists, *Move* normally."
+          "Effect": "Adjacent allies and objects use the higher of this adversary's Guard value or their own. [p] If able, *Attack -2* on primary target. If not, *Move 3* toward closest ally. If no path to an ally exists, *Move* normally."
         }
       ]
     },
@@ -155,7 +155,7 @@
       "Actions": [
         {
           "Action": "Special",
-          "Effect": "*Guard +1* to self, adjacent non-Sentry allies, and adjacent objects. If able, *Attack -2* on primary target. If not, *Move 3* toward closest ally. If no path to an ally exists, *Move* normally."
+          "Effect": "*Guard +1* to self, adjacent non-Sentry allies, and adjacent objects. [p] If able, *Attack -2* on primary target. If not, *Move 3* toward closest ally. If no path to an ally exists, *Move* normally."
         }
       ]
     },
@@ -194,7 +194,7 @@
       "Actions": [
         {
           "Action": "Special",
-          "Effect": "Adjacent allies and objects use the higher of this adversary's Guard value or their own. If able, *Attack -2* on primary target. If not, *Move 3* toward closest ally. If no path to an ally exists, *Move* normally."
+          "Effect": "Adjacent allies and objects use the higher of this adversary's Guard value or their own. [p] If able, *Attack -2* on primary target. If not, *Move 3* toward closest ally. If no path to an ally exists, *Move* normally."
         }
       ]
     },
@@ -244,7 +244,7 @@
       "Actions": [
         {
           "Action": "Special",
-          "Effect": "Adjacent allies and objects use the higher of this adversary's Guard value or their own. If able, *Attack -2* on primary target. If not, *Move 3* toward closest ally. If no path to an ally exists, *Move* normally."
+          "Effect": "Adjacent allies and objects use the higher of this adversary's Guard value or their own. [p] If able, *Attack -2* on primary target. If not, *Move 3* toward closest ally. If no path to an ally exists, *Move* normally."
         }
       ]
     },
@@ -275,7 +275,7 @@
       "Actions": [
         {
           "Action": "Special",
-          "Effect": "*Guard +1* to self, adjacent non-Sentry allies, and adjacent objects. If able, *Attack -2* on primary target. If not, *Move 3* toward closest ally. If no path to an ally exists, *Move* normally."
+          "Effect": "*Guard +1* to self, adjacent non-Sentry allies, and adjacent objects. [p] If able, *Attack -2* on primary target. If not, *Move 3* toward closest ally. If no path to an ally exists, *Move* normally."
         }
       ]
     }
@@ -288,7 +288,7 @@
       "Actions": [
         {
           "Action": "Special",
-          "Effect": "Adjacent allies and objects use the higher of this adversary's Guard value or their own. If able, *Attack -2* on primary target. If not, *Move 3* toward closest ally. If no path to an ally exists, *Move* normally."
+          "Effect": "Adjacent allies and objects use the higher of this adversary's Guard value or their own. [p] If able, *Attack -2* on primary target. If not, *Move 3* toward closest ally. If no path to an ally exists, *Move* normally."
         }
       ]
     },
@@ -319,7 +319,7 @@
       "Actions": [
         {
           "Action": "Special",
-          "Effect": "*Guard +1* to self, adjacent non-Sentry allies, and adjacent objects. If able, *Attack -2* on primary target. If not, *Move 3* toward closest ally. If no path to an ally exists, *Move* normally."
+          "Effect": "*Guard +1* to self, adjacent non-Sentry allies, and adjacent objects. [p] If able, *Attack -2* on primary target. If not, *Move 3* toward closest ally. If no path to an ally exists, *Move* normally."
         }
       ]
     }
@@ -332,7 +332,7 @@
       "Actions": [
         {
           "Action": "Special",
-          "Effect": "Adjacent allies and objects use the higher of this adversary's Guard value or their own. If able, *Attack -2* on primary target. If not, *Move 3* toward closest ally. If no path to an ally exists, *Move* normally."
+          "Effect": "Adjacent allies and objects use the higher of this adversary's Guard value or their own. [p] If able, *Attack -2* on primary target. If not, *Move 3* toward closest ally. If no path to an ally exists, *Move* normally."
         }
       ]
     },
@@ -377,7 +377,7 @@
       "Actions": [
         {
           "Action": "Special",
-          "Effect": "Adjacent allies and objects use the higher of this adversary's Guard value or their own. If able, *Attack -2* on primary target. If not, *Move 3* toward closest ally. If no path to an ally exists, *Move* normally."
+          "Effect": "Adjacent allies and objects use the higher of this adversary's Guard value or their own. [p] If able, *Attack -2* on primary target. If not, *Move 3* toward closest ally. If no path to an ally exists, *Move* normally."
         }
       ]
     },
@@ -426,7 +426,7 @@
       "Actions": [
         {
           "Action": "Special",
-          "Effect": "Adjacent allies and objects use the higher of this adversary's Guard value or their own. If able, *Attack -2* on primary target. If not, *Move 3* toward closest ally. If no path to an ally exists, *Move* normally."
+          "Effect": "Adjacent allies and objects use the higher of this adversary's Guard value or their own. [p] If able, *Attack -2* on primary target. If not, *Move 3* toward closest ally. If no path to an ally exists, *Move* normally."
         }
       ]
     },
@@ -437,7 +437,7 @@
       "Actions": [
         {
           "Action": "Special",
-          "Effect": "*Guard +1* to self, adjacent non-Sentry allies, and adjacent objects. If able, *Attack -2* on primary target. If not, *Move 3* toward closest ally. If no path to an ally exists, *Move* normally."
+          "Effect": "*Guard +1* to self, adjacent non-Sentry allies, and adjacent objects. [p] If able, *Attack -2* on primary target. If not, *Move 3* toward closest ally. If no path to an ally exists, *Move* normally."
         }
       ]
     },

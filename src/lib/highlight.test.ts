@@ -70,7 +70,7 @@ describe('highlight', () => {
 
   it('converts [p] to paragraph break', () => {
     const result = highlight('First sentence. [p] Second sentence.');
-    expect(result).toContain('<br><br>');
+    expect(result).toContain('<br>');
   });
 
   it('strips [icon:name] tags and collapses spaces', () => {
