@@ -7,6 +7,8 @@ import type {
 import { createDeck, drawCard, deckKey } from '../lib/deck';
 import { calcInitiative, sortActivations, numberActivations } from '../lib/initiative';
 import { CLASS_FILE, SPECIES_FILE } from '../lib/adversaries';
+import { saveState, clearSavedState, isAutosaveEnabled } from '../lib/persistence';
+import type { SavedState } from '../lib/persistence';
 
 export type ClassDeckJson   = Array<ColorCard[]>;
 export type SpeciesDeckJson = SpeciesCard[];
@@ -43,6 +45,19 @@ export const gameStore = writable<GameStore>({
   setup: initialSetup,
   turn: initialTurn,
   jsonCache: { class: {}, species: {} },
+});
+
+// Auto-save on every meaningful state change.
+// The isAutosaveEnabled() guard ensures this is a complete no-op during the
+// initial page load, so the store's empty initial state never clears a valid save
+// before onMount can read it.
+gameStore.subscribe(s => {
+  if (!isAutosaveEnabled()) return;
+  if (s.turn.units.length === 0 && s.phase === 'setup') {
+    clearSavedState();
+  } else if (s.turn.units.length > 0) {
+    saveState(s.phase, s.turn);
+  }
 });
 
 export const activations  = derived(gameStore, s => s.turn.activations);
@@ -280,4 +295,37 @@ export function reviveUnit(id: string): void {
     ...s,
     turn: { ...s.turn, units: s.turn.units.map(u => u.id === id ? { ...u, alive: true } : u) },
   }));
+}
+
+// Re-fetch action-card JSON for all units present in a saved TurnState.
+// Called during restore so drawTurn() can function without re-adding groups.
+async function fetchCacheForUnits(units: AdversaryUnit[]): Promise<GameStore['jsonCache']> {
+  const classNames   = [...new Set(units.map(u => u.className))];
+  const speciesNames = [...new Set(units.map(u => u.species))];
+
+  const [classEntries, speciesEntries] = await Promise.all([
+    Promise.all(classNames.map(async cn => {
+      const r = await fetch(`/game-data/data/class/${CLASS_FILE[cn]}`);
+      return [cn, await r.json() as ClassDeckJson] as const;
+    })),
+    Promise.all(speciesNames.map(async sn => {
+      const r = await fetch(`/game-data/data/species/${SPECIES_FILE[sn]}`);
+      return [sn, await r.json() as SpeciesDeckJson] as const;
+    })),
+  ]);
+
+  return {
+    class:   Object.fromEntries(classEntries)   as Partial<Record<ClassName,   ClassDeckJson>>,
+    species: Object.fromEntries(speciesEntries) as Partial<Record<SpeciesName, SpeciesDeckJson>>,
+  };
+}
+
+export async function restoreFromSave(saved: SavedState): Promise<void> {
+  const jsonCache = await fetchCacheForUnits(saved.turn.units);
+  gameStore.set({
+    phase: saved.phase,
+    setup: initialSetup,
+    turn:  saved.turn,
+    jsonCache,
+  });
 }
