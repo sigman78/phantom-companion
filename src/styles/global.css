@@ -7,7 +7,7 @@ html, body {
   background: var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-body);
-  font-size: 15px;
+  font-size: clamp(15px, 1.5vw, 20px);
   line-height: 1.5;
   overflow: hidden;
 }

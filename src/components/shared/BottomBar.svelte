@@ -87,7 +87,7 @@
   /* Prev / Next: largest touch targets */
   .nav-btn {
     flex: 2;
-    font-size: 38px;
+    font-size: clamp(40px, 4.5vw, 58px);
     line-height: 1;
     color: var(--color-accent);
   }
@@ -100,13 +100,13 @@
     cursor: default;
     border-right: 1px solid var(--color-border);
   }
-  .turn-num { font-size: 13px; font-weight: 600; color: var(--color-text); }
-  .turn-sub { font-size: 11px; color: var(--color-text-dim); }
+  .turn-num { font-size: clamp(18px, 1.9vw, 23px); font-weight: 600; color: var(--color-text); }
+  .turn-sub { font-size: clamp(14px, 1.5vw, 19px); color: var(--color-text-dim); }
 
   /* Adversaries */
   .adversaries-btn {
     flex: 1.5;
-    font-size: 14px;
+    font-size: clamp(18px, 2vw, 25px);
     color: var(--color-accent);
   }
   .adversaries-btn:hover { background: rgba(184,115,51,0.1); }
@@ -114,7 +114,7 @@
   /* End Turn */
   .end-turn-btn {
     flex: 1.5;
-    font-size: 14px;
+    font-size: clamp(18px, 2vw, 25px);
     font-weight: 500;
     color: var(--color-text);
   }
