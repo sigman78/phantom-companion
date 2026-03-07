@@ -233,7 +233,7 @@
   }
   .adv-name {
     font-family: var(--font-heading);
-    font-size: 15px;
+    font-size: 18px;
     color: var(--color-accent);
     min-width: 0;
     overflow: hidden;
@@ -242,7 +242,7 @@
     text-align: center;
   }
   .stars {
-    font-size: 12px;
+    font-size: 14px;
     color: var(--color-accent);
     letter-spacing: 1px;
     flex-shrink: 0;
@@ -269,13 +269,13 @@
     flex-shrink: 0;
   }
   .sl {
-    font-size: 9px;
+    font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 0.07em;
     color: var(--color-text-dim);
     margin-bottom: 1px;
   }
-  .sv { font-size: 18px; font-weight: bold; line-height: 1; }
+  .sv { font-size: 22px; font-weight: bold; line-height: 1; }
 
   .crit-line {
     display: flex;
@@ -285,12 +285,12 @@
     text-align: center;
   }
   .crit-lbl {
-    font-size: 9px;
+    font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 0.07em;
     color: var(--color-text-dim);
   }
-  .crit-val { font-size: 12px; color: var(--color-text); font-style: italic; }
+  .crit-val { font-size: 15px; color: var(--color-text); font-style: italic; }
 
   .no-sel {
     flex: 1;
@@ -349,8 +349,8 @@
     border-bottom: 1px solid var(--color-border);
     flex-shrink: 0;
   }
-  .ag-name { font-family: var(--font-heading); font-size: 13px; flex: 1; }
-  .ag-ap   { font-size: 16px; font-weight: bold; color: var(--color-accent); flex-shrink: 0; }
+  .ag-name { font-family: var(--font-heading); font-size: 16px; flex: 1; }
+  .ag-ap   { font-size: 20px; font-weight: bold; color: var(--color-accent); flex-shrink: 0; }
 
   .actions-list {
     padding: var(--space-1) var(--space-3);
