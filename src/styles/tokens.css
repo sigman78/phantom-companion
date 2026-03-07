@@ -16,6 +16,11 @@
   --color-yellow:   #d4ac0d;
   --color-positive: #3a7a4a;
 
+  /* Polished brass border gradients — horizontal (for top/bottom borders)
+     and vertical (for left/right borders). Edge-to-center: shadow→copper→brass→shine→brass→copper→shadow */
+  --brass-border-h: linear-gradient(to right,  #2c1506, #8a4a18, #b87333, #f0d060, #b87333, #8a4a18, #2c1506);
+  --brass-border-v: linear-gradient(to bottom, #2c1506, #8a4a18, #b87333, #f0d060, #b87333, #8a4a18, #2c1506);
+
   /* Skeuomorphic texture tints */
   --texture-leather: rgba(92, 60, 30, 0.15);
   --texture-wood:    rgba(60, 40, 20, 0.12);

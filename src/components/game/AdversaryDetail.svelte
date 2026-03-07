@@ -186,7 +186,9 @@
     min-height: 0;
     overflow: hidden;
     display: flex;
-    border-bottom: 2px solid var(--color-border);
+    border-bottom: 3px solid;
+    border-image-source: var(--brass-border-h);
+    border-image-slice: 1;
   }
 
   /* Left col: portrait + stats (30% of top width) */
@@ -310,7 +312,9 @@
     display: flex;
     flex-direction: row;
     overflow: hidden;
-    border-top: 1px solid var(--color-accent);
+    border-top: 2px solid;
+    border-image-source: var(--brass-border-h);
+    border-image-slice: 1;
     background: var(--color-surface);
   }
 

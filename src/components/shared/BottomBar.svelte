@@ -61,7 +61,9 @@
     display: flex;
     align-items: stretch;
     background: var(--color-surface-alt);
-    border-top: 2px solid var(--color-border);
+    border-top: 3px solid;
+    border-image-source: var(--brass-border-h);
+    border-image-slice: 1;
   }
 
   .cell {

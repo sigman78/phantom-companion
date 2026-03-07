@@ -424,7 +424,9 @@
     gap: var(--space-2);
     padding: 0 var(--space-3);
     background: var(--color-surface-alt);
-    border-top: 2px solid var(--color-border);
+    border-top: 3px solid;
+    border-image-source: var(--brass-border-h);
+    border-image-slice: 1;
   }
 
   .bar-group { display: flex; align-items: center; gap: var(--space-2); }
