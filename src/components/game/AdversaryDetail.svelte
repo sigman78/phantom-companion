@@ -94,28 +94,36 @@
       {/if}
     </div>
 
-    <!-- Right col: drawn card action text -->
+    <!-- Right area: two action columns side by side -->
     <div class="top-right">
       {#if activation && ownClassCard}
-        <div class="actions-group-header">
-          <span class="ag-name">{activation.speciesCard.Name}</span>
-          <span class="ag-ap">{activation.speciesCard.Cost} AP</span>
-        </div>
-        <div class="actions-list">
-          {#each activation.speciesCard.Actions as step}
-            <ActionStepRow {step} />
-          {/each}
+        <!-- Species / racial actions -->
+        <div class="action-col">
+          <div class="actions-group-header">
+            <span class="ag-name">{activation.speciesCard.Name}</span>
+            <span class="ag-ap">{activation.speciesCard.Cost} AP</span>
+          </div>
+          <div class="actions-list">
+            {#each activation.speciesCard.Actions as step}
+              <ActionStepRow {step} />
+            {/each}
+          </div>
         </div>
 
-        <div class="actions-group-header">
-          <span class="ag-name">{ownClassCard.Name}</span>
-          <span class="ag-ap">{ownClassCard.Cost} AP</span>
-          <ColorBadge color={activation.unit.color} />
-        </div>
-        <div class="actions-list">
-          {#each ownClassCard.Actions as step}
-            <ActionStepRow {step} />
-          {/each}
+        <div class="action-col-sep"></div>
+
+        <!-- Class actions -->
+        <div class="action-col">
+          <div class="actions-group-header">
+            <span class="ag-name">{ownClassCard.Name}</span>
+            <span class="ag-ap">{ownClassCard.Cost} AP</span>
+            <ColorBadge color={activation.unit.color} />
+          </div>
+          <div class="actions-list">
+            {#each ownClassCard.Actions as step}
+              <ActionStepRow {step} />
+            {/each}
+          </div>
         </div>
       {:else}
         <div class="no-actions">
@@ -296,14 +304,28 @@
     text-align: center;
   }
 
-  /* Right col: action text (55% of top width) */
+  /* Right area: two action columns side by side */
   .top-right {
     flex: 1;
     display: flex;
-    flex-direction: column;
-    overflow-y: auto;
+    flex-direction: row;
+    overflow: hidden;
     border-top: 1px solid var(--color-accent);
     background: var(--color-surface);
+  }
+
+  .action-col {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+
+  .action-col-sep {
+    width: 1px;
+    flex-shrink: 0;
+    background: var(--color-border);
   }
 
   .no-actions {
