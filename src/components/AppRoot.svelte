@@ -8,7 +8,7 @@
   import ActivationList from './game/ActivationList.svelte';
   import AdversaryDetail from './game/AdversaryDetail.svelte';
   import SetupScreen from './game/SetupScreen.svelte';
-  import BattleRosterScreen from './game/BattleRosterScreen.svelte';
+  import BattleMgmtScreen from './game/BattleMgmtScreen.svelte';
 
   $: phase = $gameStore.phase;
   let rosterOpen = false;
@@ -75,7 +75,7 @@
   </div>
 
 {:else if rosterOpen}
-  <BattleRosterScreen on:close={() => rosterOpen = false} />
+  <BattleMgmtScreen on:close={() => rosterOpen = false} />
 
 {:else}
   <!-- Battle screen -->
