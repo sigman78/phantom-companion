@@ -17,7 +17,7 @@
     disabled={!drawn || idx <= 0}
     aria-label="Previous"
   >
-    &#9204;
+    &#9664;
   </button>
 
   <!-- Turn counter -->
@@ -35,7 +35,7 @@
     disabled={!drawn || idx >= total - 1}
     aria-label="Next"
   >
-    &#9205;
+    &#9654;
   </button>
 
   <!-- Roster -->
