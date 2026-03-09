@@ -12,6 +12,7 @@ const CLEAN_STATE = {
     selectedTypeName: null,
     difficulty: 1 as const,
     colorToggles: { Red: true, Blue: true, Cyan: true, Yellow: true },
+    selectedTypes: [],
   },
   turn: {
     turnNumber: 1,
