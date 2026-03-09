@@ -17,7 +17,7 @@
     disabled={!drawn || idx <= 0}
     aria-label="Previous"
   >
-    &#8249;
+    &#9204;
   </button>
 
   <!-- Turn counter -->
@@ -35,7 +35,7 @@
     disabled={!drawn || idx >= total - 1}
     aria-label="Next"
   >
-    &#8250;
+    &#9205;
   </button>
 
   <!-- Roster -->
@@ -94,6 +94,7 @@
     font-size: clamp(40px, 4.5vw, 58px);
     line-height: 1;
     color: var(--color-accent);
+    padding-bottom: 10px;
   }
   .nav-btn:not(:disabled):hover { background: rgba(184,115,51,0.12); }
 
@@ -104,6 +105,7 @@
     cursor: default;
     border-right: 1px solid var(--color-border);
     line-height: 1.2;
+    padding: 0;
   }
   .turn-num { font-size: clamp(18px, 1.9vw, 23px); font-weight: 600; color: var(--color-text); }
   .turn-sub { font-size: clamp(14px, 1.5vw, 19px); color: var(--color-text-dim); }
