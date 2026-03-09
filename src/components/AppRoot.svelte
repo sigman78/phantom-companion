@@ -1,6 +1,5 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { fade } from 'svelte/transition';
   import { gameStore, restoreFromSave } from '../stores/gameStore';
   import { loadSavedState, clearSavedState, enableAutosave } from '../lib/persistence';
   import type { SavedState } from '../lib/persistence';
@@ -47,7 +46,7 @@
 </script>
 
 {#if savedState}
-  <div class="restore-backdrop" transition:fade={{ duration: 100 }}>
+  <div class="restore-backdrop">
     <div class="restore-dialog">
       <h2 class="restore-title">Resume saved game?</h2>
       <p class="restore-info">
@@ -70,26 +69,21 @@
 {/if}
 
 {#if phase === 'setup'}
-  <div transition:fade={{ duration: 120 }} style="display:contents">
-    <SetupScreen />
-  </div>
+  <SetupScreen />
 
 {:else if rosterOpen}
   <BattleMgmtScreen on:close={() => rosterOpen = false} />
 
 {:else}
-  <!-- Battle screen -->
-  <div transition:fade={{ duration: 120 }} style="display:contents">
-    <div class="game-layout">
-      <div class="panel-left">
-        <ActivationList />
-      </div>
-      <div class="panel-right">
-        <AdversaryDetail />
-      </div>
+  <div class="game-layout">
+    <div class="panel-left">
+      <ActivationList />
     </div>
-    <BottomBar onOpenRoster={() => rosterOpen = true} />
+    <div class="panel-right">
+      <AdversaryDetail />
+    </div>
   </div>
+  <BottomBar onOpenRoster={() => rosterOpen = true} />
 {/if}
 
 <style>
@@ -140,6 +134,8 @@
   .r-btn {
     padding: 0 var(--space-6);
     min-height: 44px;
+    min-width: 110px;
+    text-align: center;
     border-radius: var(--radius-md);
     font-size: 15px;
     font-weight: 600;

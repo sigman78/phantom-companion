@@ -55,7 +55,7 @@
 
     {#if focusedName && focusedStats}
       <div class="stats-preview">
-        <img src={adversaryPortraitUrl(focusedName)} alt={focusedName} class="preview-portrait" />
+        <img src={adversaryPortraitUrl(focusedName)} alt={focusedName} class="preview-portrait" width="40" height="40" />
         <span class="preview-name">{focusedName}</span>
         <div class="preview-stats">
           <span class="ps"><span class="pl">HP</span><span class="pv">{focusedStats.HP}</span></span>
@@ -84,7 +84,7 @@
           class:focused={focusedName === type.name}
           on:click={() => toggleSetupType(type.name)}
         >
-          <img src={adversaryIconUrl(type.name)} alt={type.name} class="type-icon" />
+          <img src={adversaryIconUrl(type.name)} alt={type.name} class="type-icon" width="72" height="72" />
           <span class="type-name">{type.name}</span>
           {#if selectedTypes.has(type.name)}
             <span class="in-play-dot"></span>
@@ -210,6 +210,7 @@
     flex: 1;
     min-height: 0;
     overflow-y: auto;
+    scrollbar-gutter: stable;
     background: var(--color-surface-alt);
   }
 
