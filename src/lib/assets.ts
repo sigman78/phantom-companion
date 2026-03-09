@@ -6,19 +6,19 @@ const BASE_SPECIES_ART = '/game-data/art/adv-species-actions';
 const BASE_ICONS       = '/game-data/art/adv-icons';
 
 export function classCardArtUrl(className: ClassName, cardIndex: number): string {
-  return `${BASE_CLASS_ART}/${CLASS_ART_PREFIX[className]}_act${cardIndex}.png`;
+  return `${BASE_CLASS_ART}/${CLASS_ART_PREFIX[className]}_act${cardIndex}.jpg`;
 }
 
 export function classCardBackUrl(className: ClassName): string {
-  return `${BASE_CLASS_ART}/${CLASS_ART_PREFIX[className]}_back.png`;
+  return `${BASE_CLASS_ART}/${CLASS_ART_PREFIX[className]}_back.jpg`;
 }
 
 export function speciesCardArtUrl(species: SpeciesName, cardIndex: number): string {
-  return `${BASE_SPECIES_ART}/${SPECIES_ART_PREFIX[species]}_act${cardIndex}.png`;
+  return `${BASE_SPECIES_ART}/${SPECIES_ART_PREFIX[species]}_act${cardIndex}.jpg`;
 }
 
 export function speciesCardBackUrl(species: SpeciesName): string {
-  return `${BASE_SPECIES_ART}/${SPECIES_ART_PREFIX[species]}_back.png`;
+  return `${BASE_SPECIES_ART}/${SPECIES_ART_PREFIX[species]}_back.jpg`;
 }
 
 // "Grallok Archer" -> /game-data/art/adv-icons/Grallok_Archer.png
