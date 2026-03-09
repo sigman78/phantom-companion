@@ -10,8 +10,7 @@ export function classCardArtUrl(className: ClassName, cardIndex: number): string
 }
 
 export function classCardBackUrl(className: ClassName): string {
-  const prefix = CLASS_ART_PREFIX[className];
-  return `${BASE_CLASS_ART}/${prefix}_back.jpg`;
+  return `${BASE_CLASS_ART}/${CLASS_ART_PREFIX[className]}_back.jpg`;
 }
 
 export function speciesCardArtUrl(species: SpeciesName, cardIndex: number): string {
