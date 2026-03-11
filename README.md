@@ -7,60 +7,53 @@ Dark-themed, fullscreen SPA targeting laptop and tablet browsers.
 
 ---
 
-## Phase 1 - Adversary Tracker (POC complete)
+## Current state
 
-The first phase delivers a working adversary initiative and activation tracker
-for use during play.
+The app covers the full adversary lifecycle from pre-battle setup through
+end of mission. Before combat begins, a setup screen lets you add adversary
+groups by type, set difficulty per group (1-4 stars), and toggle which color
+units (Red, Blue, Cyan, Yellow) are active. Once battle starts, a turn engine
+draws one species card and one class card per unique type combination, calculates
+initiative from card costs, and sorts all living units into an activation order
+list. Stepping through activations shows each unit's drawn card art and aggregated
+action steps in a right-hand detail panel. At any point a roster overlay can be
+opened to mark individual units dead or alive and remove fully defeated groups.
 
-### What is built
+Session state is auto-saved to local storage. On next open, a resume dialog shows
+the saved turn number and group count so the mission can be picked up where it
+left off. The app is installable as a PWA with a service worker and app icons.
 
-**Adversary management**
-
-- Add any of the 22 standard adversary types to a mission at any time
-- Difficulty set per adversary group (1-4 stars) at add time
-- All four color units (Red, Blue, Cyan, Yellow) tracked automatically per group
-- Mark individual units dead or alive mid-mission via the roster overlay
-- Remove entire adversary groups when they are defeated
-
-**Turn engine**
-
-- Draw a turn: one species card + one class card drawn per unique species/class
-  combination, shared across all color units of that type
-- Initiative calculated as species card AP + color class card AP
-- Activation order sorted ascending (lowest initiative activates first)
-- Turn counter and End Turn control; decks reshuffle automatically when exhausted
-
-**Activation list (left panel)**
-
-- Pre-draw: shows adversary groups with color pip indicators and star difficulty
-- Post-draw: flat sorted list of all living units with activation order numbers
-- Per-color background tint and colored left border for instant color recognition
-- Select any unit to load its detail in the right panel
-
-**Adversary detail panel (right panel)**
-
-- Portrait, name, and star difficulty rating in a compact header
-- Stats inline in the header: HP / Guard / Attack / Range, with Crit effect below
-- Pre-draw: species and class card deck stack visuals
-- Post-draw: drawn card art displayed at readable size for both species and class
-- Aggregated action list below the cards: species card actions first,
-  then the selected unit's own-color class card actions
-
-**Data and assets**
-
-- 22 adversary types across 6 classes and 8 species (bosses excluded from Phase 1)
-- All game data served as static JSON from `/game-data/`
-- Source art is resized and converted to apropriate graphics formats
-- Target art size corresponds to displayed sizes
+The UI is dark and skeuomorphic in style, touch-friendly, and designed for
+fullscreen use.
 
 ---
 
-## Stack
+## What is implemented
 
-- Astro 4 + Svelte 4 + TypeScript
-- No backend; all state in Svelte stores, data loaded client-side
+**Adversary data**
+22 standard adversary types across 6 classes and 8 species (bosses excluded).
+Game data is served as static JSON from `/game-data/`. Source art is resized and
+converted to JPEG at display-appropriate sizes.
+
+**Turn engine**
+Card draw, initiative calculation (species AP + color class AP), activation order
+sorting, turn counter, and automatic deck reshuffling when exhausted.
+
+**UI screens**
+Pre-battle setup screen (type picker, stats preview, difficulty and color controls);
+game screen with activation list on the left and adversary detail panel on the right;
+roster management overlay accessible mid-battle.
+
+**Persistence and PWA**
+Auto-save to local storage with resume dialog. Installable via `manifest.webmanifest`
+and offline-capable via `sw.js`.
+
+---
 
 ## Development
+
+Built with Astro 5 + Svelte 5 + TypeScript; no backend, all state in Svelte stores,
+data loaded client-side.
 
 ```
 npm install
@@ -69,16 +62,22 @@ npm run dev
 
 Open `http://localhost:4321` in a browser.
 
+---
+
 ## Project layout
 
 ```
 src/
-  components/game/   Svelte UI components
-  lib/               Game logic (deck, initiative, adversary data, asset URLs)
-  stores/            gameStore (writable Svelte store + action functions)
-  types/             TypeScript domain types
-  styles/            Global CSS and design tokens
-data/                Source game data and art (not served directly)
-public/game-data/    Converted and optimised assets served to the browser
-docs/planning/       Phase 1 implementation plan and task breakdown
+  components/game/     Game screens and panels (Svelte)
+  components/shared/   Shared UI (BottomBar)
+  lib/                 Game logic: deck, initiative, adversary data, asset URLs
+  stores/              gameStore (writable Svelte store + action functions)
+  types/               TypeScript domain types
+  styles/              Global CSS and design tokens
+data/                  Source game data and art (not served directly)
+public/game-data/      Converted and optimised assets served to the browser
+public/icons/          PWA app icons
+public/manifest.webmanifest
+public/sw.js
+docs/planning/         Implementation plans and task breakdowns
 ```
