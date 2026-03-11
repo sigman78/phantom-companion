@@ -91,10 +91,9 @@
   /* Prev / Next: largest touch targets */
   .nav-btn {
     flex: 2;
-    font-size: clamp(40px, 4.5vw, 58px);
+    font-size: clamp(30px, 2.5vw, 50px);
     line-height: 1;
     color: var(--color-accent);
-    padding-bottom: 10px;
   }
   .nav-btn:not(:disabled):hover { background: rgba(184,115,51,0.12); }
 

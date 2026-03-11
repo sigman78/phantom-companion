@@ -31,7 +31,6 @@ html, body {
 .panel-left {
   width: var(--panel-left-width);
   overflow-y: auto;
-  scrollbar-gutter: stable;
   border-right: 2px solid;
   border-image-source: var(--brass-border-v);
   border-image-slice: 1;
@@ -40,7 +39,6 @@ html, body {
 .panel-right {
   width: var(--panel-right-width);
   overflow-y: auto;
-  scrollbar-gutter: stable;
 }
 
 /* Shared overlay backdrop */
