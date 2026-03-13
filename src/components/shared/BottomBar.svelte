@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { gameStore, activations, currentTurn, endTurn, nextActivation, prevActivation } from '../../stores/gameStore';
+  import { gameStore, activations, currentTurn, endTurn, nextActivation, prevActivation, drawTurn } from '../../stores/gameStore';
 
   export let onOpenRoster: () => void = () => {};
 
@@ -7,7 +7,20 @@
   $: idx     = $gameStore.turn.activeActivationIndex;
   $: total   = $activations.length;
   $: isLast  = drawn && idx === total - 1;
+
+  function handleKey(e: KeyboardEvent) {
+    if (e.key === 'ArrowLeft') {
+      if (drawn && idx > 0) { e.preventDefault(); prevActivation(); }
+    } else if (e.key === 'ArrowRight') {
+      if (drawn && idx < total - 1) { e.preventDefault(); nextActivation(); }
+    } else if (e.key === 'Enter') {
+      if (!drawn) { e.preventDefault(); drawTurn(); }
+      else if (isLast) { e.preventDefault(); endTurn(); }
+    }
+  }
 </script>
+
+<svelte:window on:keydown={handleKey} />
 
 <div class="bottom-bar">
   <!-- Prev -->
