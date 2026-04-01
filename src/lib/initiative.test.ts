@@ -22,11 +22,33 @@ function makeEntry(unit: AdversaryUnit, initiative: number): ActivationEntry {
   return {
     unit,
     speciesCard: { Name: 'S', Cost: 0, Actions: [] },
-    classCard:   { Name: 'C', Cost: 0, Actions: [] },
+    classCard:   { Color: unit.color, Name: 'C', Cost: 0, Actions: [] },
     initiative,
     activationOrder: 0,
     speciesCardIndex: 0,
     classCardIndex: 0,
+    classCardOrderIndex: 0,
+    drawGroupOrder: 0,
+  };
+}
+
+function makeEntryWithMeta(
+  unit: AdversaryUnit,
+  initiative: number,
+  classCost: number,
+  classCardOrderIndex: number,
+  drawGroupOrder: number
+): ActivationEntry {
+  return {
+    unit,
+    speciesCard: { Name: 'S', Cost: 0, Actions: [] },
+    classCard:   { Color: unit.color, Name: 'C', Cost: classCost, Actions: [] },
+    initiative,
+    activationOrder: 0,
+    speciesCardIndex: 0,
+    classCardIndex: 0,
+    classCardOrderIndex,
+    drawGroupOrder,
   };
 }
 
@@ -64,15 +86,86 @@ describe('sortActivations', () => {
     const sorted = sortActivations(entries);
     expect(sorted.map(e => e.initiative)).toEqual([2, 5, 8]);
   });
-  it('tie-breaks by COLOR_ORDER: Red < Blue < Cyan < Yellow', () => {
+  it('tie-breaks same-cost entries by class card JSON order', () => {
     const entries = [
-      makeEntry(makeUnit('Yellow'), 3),
-      makeEntry(makeUnit('Red'),    3),
-      makeEntry(makeUnit('Cyan'),   3),
-      makeEntry(makeUnit('Blue'),   3),
+      makeEntryWithMeta(makeUnit('Yellow'), 3, 3, 1, 0),
+      makeEntryWithMeta(makeUnit('Red'),    3, 3, 3, 0),
+      makeEntryWithMeta(makeUnit('Cyan'),   3, 3, 0, 0),
+      makeEntryWithMeta(makeUnit('Blue'),   3, 3, 2, 0),
     ];
     const sorted = sortActivations(entries);
-    expect(sorted.map(e => e.unit.color)).toEqual(['Red', 'Blue', 'Cyan', 'Yellow']);
+    expect(sorted.map(e => e.unit.color)).toEqual(['Cyan', 'Yellow', 'Blue', 'Red']);
+  });
+  it('keeps initiative as the primary sort before class card order', () => {
+    const entries = [
+      makeEntryWithMeta(makeUnit('Yellow'), 4, 3, 0, 0),
+      makeEntryWithMeta(makeUnit('Red'),    2, 1, 3, 0),
+      makeEntryWithMeta(makeUnit('Cyan'),   3, 2, 1, 0),
+      makeEntryWithMeta(makeUnit('Blue'),   1, 0, 2, 0),
+    ];
+    const sorted = sortActivations(entries);
+    expect(sorted.map(e => e.initiative)).toEqual([1, 2, 3, 4]);
+  });
+  it('keeps cross-group equal initiatives in draw group order', () => {
+    const entries = [
+      makeEntryWithMeta(makeUnit('Yellow'), 3, 3, 1, 1),
+      makeEntryWithMeta(makeUnit('Red'),    3, 3, 2, 0),
+      makeEntryWithMeta(makeUnit('Cyan'),   3, 3, 0, 1),
+      makeEntryWithMeta(makeUnit('Blue'),   3, 3, 3, 0),
+    ];
+    const sorted = sortActivations(entries);
+    expect(sorted.map(e => `${e.drawGroupOrder}:${e.unit.color}`)).toEqual([
+      '0:Red',
+      '0:Blue',
+      '1:Cyan',
+      '1:Yellow',
+    ]);
+  });
+  it('keeps different adversary types grouped while preserving per-type card order', () => {
+    const typeAEntries = [
+      makeEntryWithMeta(
+        { ...makeUnit('Yellow'), adversaryName: 'TypeA', id: 'TypeA:Yellow' },
+        4,
+        4,
+        1,
+        0
+      ),
+      makeEntryWithMeta(
+        { ...makeUnit('Cyan'), adversaryName: 'TypeA', id: 'TypeA:Cyan' },
+        4,
+        4,
+        0,
+        0
+      ),
+    ];
+    const typeBEntries = [
+      makeEntryWithMeta(
+        { ...makeUnit('Red'), adversaryName: 'TypeB', id: 'TypeB:Red' },
+        4,
+        4,
+        1,
+        1
+      ),
+      makeEntryWithMeta(
+        { ...makeUnit('Blue'), adversaryName: 'TypeB', id: 'TypeB:Blue' },
+        4,
+        4,
+        0,
+        1
+      ),
+    ];
+    const sorted = sortActivations([
+      typeBEntries[0],
+      typeAEntries[0],
+      typeBEntries[1],
+      typeAEntries[1],
+    ]);
+    expect(sorted.map(e => `${e.unit.adversaryName}:${e.unit.color}`)).toEqual([
+      'TypeA:Cyan',
+      'TypeA:Yellow',
+      'TypeB:Blue',
+      'TypeB:Red',
+    ]);
   });
 });
 

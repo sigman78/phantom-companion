@@ -1,6 +1,4 @@
-import type { AdversaryColor, AdversaryUnit, ActivationEntry, SpeciesCard, ColorCard } from '../types/game';
-
-const COLOR_ORDER: AdversaryColor[] = ['Red', 'Blue', 'Cyan', 'Yellow'];
+import type { AdversaryUnit, ActivationEntry, SpeciesCard, ColorCard } from '../types/game';
 
 export function calcInitiative(
   unit: AdversaryUnit,
@@ -14,7 +12,14 @@ export function calcInitiative(
 export function sortActivations(entries: ActivationEntry[]): ActivationEntry[] {
   return [...entries].sort((a, b) => {
     if (a.initiative !== b.initiative) return a.initiative - b.initiative;
-    return COLOR_ORDER.indexOf(a.unit.color) - COLOR_ORDER.indexOf(b.unit.color);
+    if (a.drawGroupOrder !== b.drawGroupOrder) return a.drawGroupOrder - b.drawGroupOrder;
+    if (
+      a.classCardIndex === b.classCardIndex &&
+      a.classCard.Cost === b.classCard.Cost
+    ) {
+      return a.classCardOrderIndex - b.classCardOrderIndex;
+    }
+    return 0;
   });
 }
 

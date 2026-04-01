@@ -76,6 +76,8 @@ export interface ActivationEntry {
   activationOrder: number;    // 1-based after sorting
   speciesCardIndex: number;   // drawn index for art URL
   classCardIndex: number;     // drawn index for art URL
+  classCardOrderIndex: number; // color order on the drawn class card JSON entry
+  drawGroupOrder: number;      // stable adversary-group order used for cross-type initiative ties
 }
 
 // App-level phase drives screen routing
