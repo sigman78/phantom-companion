@@ -212,6 +212,13 @@ export function drawTurn(): void {
     const livingUnits = turn.units.filter(u => u.alive);
     if (livingUnits.length === 0) return s;
 
+    const groupOrderByName = new Map<string, number>();
+    for (const unit of turn.units) {
+      if (!groupOrderByName.has(unit.adversaryName)) {
+        groupOrderByName.set(unit.adversaryName, groupOrderByName.size);
+      }
+    }
+
     const groups = new Map<string, AdversaryUnit[]>();
     for (const unit of livingUnits) {
       const key = deckKey(unit.species, unit.className);
@@ -233,13 +240,17 @@ export function drawTurn(): void {
       const classEntry  = classJson[classIndex];
 
       for (const unit of units) {
-        const classCard  = classEntry.find(c => c.Color === unit.color) ?? classEntry[0];
+        const classCardOrderIndex = classEntry.findIndex(c => c.Color === unit.color);
+        const classCard  = classCardOrderIndex >= 0 ? classEntry[classCardOrderIndex] : classEntry[0];
         const initiative = calcInitiative(unit, speciesCard, classEntry);
+        const drawGroupOrder = groupOrderByName.get(unit.adversaryName) ?? Number.MAX_SAFE_INTEGER;
         entries.push({
           unit, speciesCard, classCard, initiative,
           activationOrder: 0,
           speciesCardIndex: speciesIndex,
           classCardIndex:   classIndex,
+          classCardOrderIndex: classCardOrderIndex >= 0 ? classCardOrderIndex : 0,
+          drawGroupOrder,
         });
       }
     }

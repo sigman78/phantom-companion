@@ -40,6 +40,8 @@ function makeEntry(unit: AdversaryUnit, order: number): ActivationEntry {
     activationOrder: order,
     speciesCardIndex: 0,
     classCardIndex: 0,
+    classCardOrderIndex: 0,
+    drawGroupOrder: 0,
   };
 }
 
